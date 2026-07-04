@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>At Your Services — Practical web apps for organizations</title>
+  <meta name="description" content="At Your Services builds practical, secure web applications for nonprofits and community organizations. See the Volunteer Scheduling Application demo." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/">At Your <span>Services</span></a>
+      <nav class="nav">
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <h1>Practical web apps that help organizations get things done.</h1>
+      <p class="lead">
+        At Your Services designs and builds secure, easy-to-use web applications for nonprofits, ministries,
+        schools, clubs, and community groups — software that solves a real coordination problem without
+        the overhead.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://schedule.atyourservices.org" target="_blank" rel="noopener">Try the live demo</a>
+        <a class="btn btn-ghost" href="#products">See what we build</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="products" class="section">
+      <div class="wrap">
+        <h2>Products</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Volunteer Scheduling Application</h3>
+            <p>
+              A web-based scheduler that lets people sign themselves into role-scoped, capacity-limited
+              activities on a shared weekly calendar — with private/public jobs &amp; events,
+              per-activity limits, and role-based visibility for schedulers, supervisors, and
+              administrators.
+            </p>
+            <ul class="feature-bullets">
+              <li>Self-service scheduling with per-activity limits</li>
+              <li>Administrator, Scheduler, and Viewer/Supervisor roles</li>
+              <li>Branding &amp; terminology configurable per organization</li>
+              <li>Layered, server-enforced security</li>
+            </ul>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="https://schedule.atyourservices.org" target="_blank" rel="noopener">Live Demo</a>
+              <a class="btn btn-ghost" href="products/scheduling.html">Product Description</a>
+            </div>
+          </article>
+
+          <article class="card card-muted">
+            <h3>More on the way</h3>
+            <p>Additional tools for volunteer and community coordination are in development. Have a need in mind? <a href="#contact">Get in touch.</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section section-alt">
+      <div class="wrap">
+        <h2>About</h2>
+        <p>
+          At Your Services is the work of Russ McFadden — building focused, dependable software for
+          organizations that coordinate people. The goal is simple: practical tools, sensible
+          configuration, and security that's built in rather than bolted on. For nonprofits and early
+          adopters, setup and onboarding are currently provided free of charge.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="wrap">
+        <h2>Contact</h2>
+        <p>Interested in a demo tailored to your organization, or in hosting an instance? Reach out:</p>
+        <ul class="contact-list">
+          <li><strong>Russ McFadden</strong></li>
+          <li>Email: <a href="mailto:russ.mcfadden@gmail.com">russ.mcfadden@gmail.com</a></li>
+          <li>Phone: 714-322-3284</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span>© <span id="year"></span> Russ McFadden · At Your Services</span>
+      <a href="https://schedule.atyourservices.org" target="_blank" rel="noopener">Live Demo</a>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

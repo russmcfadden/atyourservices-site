@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Volunteer Scheduling Application — At Your Services</title>
+  <meta name="description" content="Product description for the Volunteer Scheduling Application: roles, calendar, security, configuration, hosting, and pricing." />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/">At Your <span>Services</span></a>
+      <nav class="nav">
+        <a href="/#products">Products</a>
+        <a href="https://schedule.atyourservices.org" target="_blank" rel="noopener">Live Demo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="doc">
+    <div class="wrap">
+      <a class="backlink" href="/">← Back to At Your Services</a>
+      <h1>Volunteer Scheduling Application</h1>
+      <p class="subtitle">Product Description</p>
+      <p>
+        <a class="btn btn-primary" href="https://schedule.atyourservices.org" target="_blank" rel="noopener">Open the live demo</a>
+      </p>
+
+      <h2>Overview</h2>
+      <p>
+        The Volunteer Scheduling Application (VSA) is a web-based scheduling tool that enables
+        individuals to schedule themselves into role-specific, capacity-limited activities on a shared
+        weekly calendar. VSA is ideal for organizations that coordinate volunteers or staff across
+        events and recurring activities and struggle with the maintenance, staffing, and coordination
+        that scheduling involves. Unlike generic sign-up sheets, spreadsheets, or shared calendars, VSA
+        enforces per-activity limits, role-based visibility, and private/public access — so schedulers
+        manage only their own activities, supervisors see the complete roster, and administrators
+        maintain control.
+      </p>
+
+      <h2>Who it's for</h2>
+      <ul>
+        <li><strong>Churches &amp; ministries</strong> — greeters, worship team, nursery, ushers.</li>
+        <li><strong>Food banks &amp; nonprofits</strong> — recurring shifts and event slots.</li>
+        <li><strong>Schools &amp; PTAs</strong> — parent volunteers for events and classroom help.</li>
+        <li><strong>Sports clubs &amp; teams</strong> — coaches, snack duty, field setup.</li>
+        <li><strong>Community &amp; one-time events</strong> — coordinating numerous volunteers across single or multiple days.</li>
+      </ul>
+      <p>VSA is not limited to these organizations — it is a flexible application that can accommodate many types of organizations with scheduling needs.</p>
+
+      <h2>How it works</h2>
+      <p>
+        Volunteers and staff schedule their time for planned activities within a Job/Event. A
+        <strong>Job</strong> is a general category (e.g. Kitchen, Greeter); an <strong>Event</strong> is
+        a set of specific dates for planned activities (e.g. Art Fair). Each Job/Event contains one or
+        more activities (e.g. Serving Breakfast, Fair Check-in). (The "Job" label is configurable — for
+        example, Department, Skill Type, Ministry, or Team.) Jobs/Events may be private or public: to
+        view or schedule a private one, an account must be assigned to it, while public ones are
+        available to all registered accounts.
+      </p>
+      <p>
+        The calendar view shows the logged-in account, its role, and a pulldown to select assigned
+        private and listed public Jobs/Events. The left panel shows three months with the
+        selected week highlighted; the right panel shows a column per day with the activities available
+        for the selection. Each activity shows a name, the current number of people scheduled, the
+        maximum allowed (<code>max: *</code> means no limit), and status symbols. Colors convey status:
+      </p>
+      <ul class="legend">
+        <li><span style="background:#9e9e9e"></span><strong>Gray</strong> — in the past; cannot be modified.</li>
+        <li><span style="background:#808000"></span><strong>Olive</strong> — assigned count is at the maximum.</li>
+        <li><span style="background:#2e78d6"></span><strong>Blue</strong> — assigned count is below the maximum.</li>
+        <li><span style="background:#ffa500"></span><strong>Orange</strong> — (Scheduler) your assigned people equal your account's number of associated people.</li>
+      </ul>
+
+      <h2>Roles</h2>
+      <ul>
+        <li><strong>Administrator</strong> — creates accounts; creates Jobs/Events and their activity plans (the recurring templates that generate the calendar's activities); assigns Schedulers and Viewers to private Jobs/Events; and adds people to a Scheduler account. Administrators do not view or schedule in the calendar.</li>
+        <li><strong>Scheduler</strong> ("Scheduler/User") — views, adds, and removes associated people on activities. An account may hold one or more associated people (a family) or be a group account (a contact/group lead plus members). This role sees and manages only the people associated with the account.</li>
+        <li><strong>Viewer</strong> ("Viewer/Supervisor") — like a supervisor, sees everyone assigned to an activity but cannot add or remove people.</li>
+      </ul>
+
+      <h2>Sign-in &amp; registration</h2>
+      <p>
+        The application supports username/password and/or email-link ("magic link") sign-in; the
+        available methods depend on configuration. "Forgot Password" uses an email link to verify the
+        account and set up a password reset. It can also be configured to let people self-register from
+        the Home page, with the allowed roles controlled by configuration.
+      </p>
+
+      <h2>Security</h2>
+      <p class="callout">
+        Built with layered, industry-standard security. Passwords are never stored in readable form,
+        sign-ins are protected against guessing and abuse, and every action is permission-checked on the
+        server based on your role.
+      </p>
+      <ul>
+        <li>Passwords hashed (never stored in readable form); optional passwordless email sign-in with expiring links.</li>
+        <li>Signed-token sessions that expire automatically; protection against session theft (XSS); logout clears cached data.</li>
+        <li>Role-based access control enforced server-side; private Jobs/Events visible only to assigned users.</li>
+        <li>Rate limiting against brute-force and email-spam abuse; security HTTP headers; input validation and injection guards.</li>
+        <li>Information transmitted over HTTPS when deployed behind TLS.</li>
+      </ul>
+
+      <h2>Configuration &amp; branding</h2>
+      <ul>
+        <li><strong>Branding</strong> — application name/title, home page, color scheme, logo/symbols.</li>
+        <li><strong>Terminology</strong> — the "Job" label to fit your organization (Department, Skill Type, Ministry, etc.).</li>
+        <li><strong>Sign-in &amp; registration</strong> — which methods and which self-registration roles are allowed.</li>
+        <li><strong>Password rules</strong> — length and required character types.</li>
+        <li><strong>Allowed admin actions</strong> — add/edit/delete for users, Jobs/Events, and activity plans.</li>
+      </ul>
+
+      <h2>Getting started</h2>
+      <p>Getting started begins with a conversation. <a href="/#contact">Contact us</a> and we'll walk through your organization's needs, gather a short configuration &amp; branding checklist, choose hosting, provision and brand your instance, and hand it off with admin guidance.</p>
+
+      <h2>Hosting &amp; pricing</h2>
+      <ul>
+        <li><strong>Software — free.</strong> There is no software-license cost.</li>
+        <li><strong>Self-hosted</strong> — you host and manage it on your own infrastructure, with our onboarding help.</li>
+        <li><strong>Managed hosting</strong> — we set up and run your instance for you. Costs are pass-through infrastructure only (app hosting, database, and email): typically <strong>about $10&ndash;40/month</strong> for most organizations depending on size and email volume, and up to roughly <strong>$60&ndash;100/month</strong> for larger organizations needing dedicated resources. A one-time setup/installation fee (typically <strong>$150&ndash;500</strong>) is <strong>currently waived for nonprofits and early adopters</strong> &mdash; you cover only the third-party hosting/email costs.</li>
+        <li><strong>Open-source licensing</strong> — the app is built on open-source components, each under its own license; a complete list is displayed within the application.</li>
+      </ul>
+
+      <p style="margin-top:32px">
+        <a class="btn btn-primary" href="https://schedule.atyourservices.org" target="_blank" rel="noopener">Try the live demo</a>
+        <a class="btn btn-ghost" href="/">Back to At Your Services</a>
+      </p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span>© <span id="year"></span> Russ McFadden · At Your Services</span>
+      <a href="/#contact">Contact</a>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

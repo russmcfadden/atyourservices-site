@@ -1,0 +1,87 @@
+/* At Your Services portfolio site - single stylesheet, no build step */
+:root {
+  --ink: #14213d;
+  --muted: #5b6472;
+  --accent: #00639e;
+  --accent-dark: #011329;
+  --bg: #ffffff;
+  --bg-alt: #f4f7fa;
+  --border: #e2e8f0;
+  --radius: 10px;
+  --wrap: 960px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--bg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+}
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 20px; }
+a { color: var(--accent); }
+
+/* header */
+.site-header {
+  background: linear-gradient(to right, var(--accent-dark) 0%, var(--accent) 44%, var(--accent-dark) 100%);
+  color: #fff;
+}
+.header-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; }
+.brand { color: #fff; font-weight: 800; font-size: 1.4rem; text-decoration: none; letter-spacing: 0.5px; }
+.brand span { color: #7ec8ef; }
+.nav a { color: #fff; text-decoration: none; margin-left: 20px; font-size: 0.95rem; opacity: 0.9; }
+.nav a:hover { opacity: 1; text-decoration: underline; }
+
+/* hero */
+.hero { padding: 64px 0 48px; background: var(--bg-alt); border-bottom: 1px solid var(--border); }
+.hero h1 { font-size: 2.2rem; line-height: 1.2; margin: 0 0 16px; }
+.lead { font-size: 1.15rem; color: var(--muted); max-width: 680px; }
+
+/* buttons */
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.btn { display: inline-block; padding: 10px 20px; border-radius: var(--radius); text-decoration: none; font-weight: 600; border: 1px solid transparent; }
+.btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn-primary:hover { background: #004f7e; }
+.btn-ghost { background: #fff; color: var(--accent); border-color: var(--accent); }
+.btn-ghost:hover { background: #eef6fb; }
+
+/* sections */
+.section { padding: 56px 0; }
+.section-alt { background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.section h2 { font-size: 1.6rem; margin: 0 0 20px; }
+
+/* product cards */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+.card h3 { margin-top: 0; }
+.card-muted { background: var(--bg-alt); }
+.feature-bullets { color: var(--muted); padding-left: 18px; margin: 12px 0 18px; }
+.feature-bullets li { margin: 4px 0; }
+
+.contact-list { list-style: none; padding: 0; }
+.contact-list li { margin: 4px 0; }
+
+/* footer */
+.site-footer { background: var(--accent-dark); color: #cbd5e1; }
+.footer-inner { display: flex; align-items: center; justify-content: space-between; padding: 20px; font-size: 0.9rem; }
+.site-footer a { color: #7ec8ef; text-decoration: none; }
+.site-footer a:hover { text-decoration: underline; }
+
+/* product description page */
+.doc { padding: 40px 0 64px; }
+.doc h1 { font-size: 2rem; margin-bottom: 8px; }
+.doc .subtitle { color: var(--muted); margin-top: 0; }
+.doc h2 { font-size: 1.35rem; margin-top: 36px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+.doc h3 { font-size: 1.1rem; margin-top: 24px; }
+.doc ul { padding-left: 20px; }
+.doc .backlink { display: inline-block; margin-bottom: 8px; }
+.doc .legend span { display: inline-block; width: 14px; height: 14px; border-radius: 3px; vertical-align: middle; margin-right: 8px; }
+.doc .callout { background: var(--bg-alt); border-left: 4px solid var(--accent); padding: 12px 16px; border-radius: 6px; }
+
+@media (max-width: 600px) {
+  .hero h1 { font-size: 1.7rem; }
+  .header-inner { flex-direction: column; gap: 8px; }
+  .nav a { margin: 0 10px; }
+}
