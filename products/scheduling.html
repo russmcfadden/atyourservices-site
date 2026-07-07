@@ -61,10 +61,12 @@
       </p>
       <p>
         The calendar view shows the logged-in account, its role, and a pulldown to select assigned
-        private and listed public Jobs/Events. The left panel shows three months with the
-        selected week highlighted; the right panel shows a column per day with the activities available
-        for the selection. Each activity shows a name, the current number of people scheduled, the
-        maximum allowed (<code>max: *</code> means no limit), and status symbols. Colors convey status:
+        private and listed public Jobs/Events. A 3-month navigator on the left highlights the selected
+        week; the schedule on the right can be shown as a <strong>week</strong> grid or a single
+        <strong>day</strong>, with arrows to step forward and back by day or week and an adjustable row
+        height — and it defaults to the day view on phones. Each activity shows a name, the current
+        number of people scheduled, the maximum allowed (<code>max: *</code> means no limit), the
+        assigned people's names, and status symbols. Colors convey status:
       </p>
       <ul class="legend">
         <li><span style="background:#9e9e9e"></span><strong>Gray</strong> — in the past; cannot be modified.</li>
@@ -76,8 +78,8 @@
       <h2>Roles</h2>
       <ul>
         <li><strong>Administrator</strong> — creates accounts; creates Jobs/Events and their activity plans (the recurring templates that generate the calendar's activities); assigns Schedulers and Viewers to private Jobs/Events; and adds people to a Scheduler account. Administrators do not view or schedule in the calendar.</li>
-        <li><strong>Scheduler</strong> ("Scheduler/User") — views, adds, and removes associated people on activities. An account may hold one or more associated people (a family) or be a group account (a contact/group lead plus members). This role sees and manages only the people associated with the account.</li>
-        <li><strong>Viewer</strong> ("Viewer/Supervisor") — like a supervisor, sees everyone assigned to an activity but cannot add or remove people.</li>
+        <li><strong>Scheduler</strong> ("Scheduler/User") — views, adds, and removes associated people on activities. An account may hold one or more associated people (a family) or be a group account (a contact/group lead plus members). This role sees and manages only the people associated with the account. A self-service <strong>profile</strong> panel lets the Scheduler edit their contact name and add, rename, or remove their own people (configurable).</li>
+        <li><strong>Viewer</strong> ("Viewer/Supervisor") — like a supervisor, sees everyone assigned to an activity but cannot add or remove people. A Viewer can also <strong>manage access</strong> for the private Jobs/Events it is assigned to — granting or revoking which Scheduler accounts may see and schedule them (configurable).</li>
       </ul>
 
       <h2>Sign-in &amp; registration</h2>
@@ -109,6 +111,9 @@
             <li><code>mike</code> — <strong>Viewer/Supervisor</strong>. See the full roster read-only,
               and note that the private <strong>Board Committee</strong> Job appears in mike's pulldown —
               it's hidden from accounts not assigned to it.</li>
+            <li><strong>Administrator</strong> — not shared publicly; email
+              <a href="mailto:russ.mcfadden@gmail.com">Russ McFadden</a> for access to see the
+              Administrator role's capabilities (creating accounts, Jobs/Events, and activity plans).</li>
           </ul>
         </li>
       </ul>
@@ -122,6 +127,8 @@
       <ul>
         <li><strong>Kitchen</strong> (public Job) — daily meal and prep shifts.</li>
         <li><strong>Greeter</strong> (public Job) — Sunday greeter and info-table activities.</li>
+        <li><strong>Summer Concert</strong> (public Job) — weekend stage setup, musicians, and
+          equipment teardown, recurring Saturdays and Sundays through the summer.</li>
         <li><strong>Board Committee</strong> (private Job) — visible only to assigned accounts; sign in
           as <code>mike</code> to see it. Illustrates private-vs-public access.</li>
         <li><strong>Summer Art Fair</strong> (public Event) — a multi-day event with setup, check-in,
