@@ -73,14 +73,36 @@
         <li><span style="background:#808000"></span><strong>Olive</strong> — assigned count is at the maximum.</li>
         <li><span style="background:#2e78d6"></span><strong>Blue</strong> — assigned count is below the maximum.</li>
         <li><span style="background:#ffa500"></span><strong>Orange</strong> — (Scheduler) your assigned people equal your account's number of associated people.</li>
+        <li><span style="background:#9e9e9e"></span><strong>Gray, name struck through ("Cancelled")</strong> — the occurrence has been cancelled for that day/time and takes no assignments.</li>
       </ul>
 
       <h2>Roles</h2>
       <ul>
-        <li><strong>Administrator</strong> — creates accounts; creates Jobs/Events and their activity plans (the recurring templates that generate the calendar's activities); assigns Schedulers and Viewers to private Jobs/Events; and adds people to a Scheduler account. Administrators do not view or schedule in the calendar.</li>
+        <li><strong>Administrator</strong> — creates accounts; creates Jobs/Events and their activity plans (the recurring templates that generate the calendar's activities); assigns Schedulers and Viewers to private Jobs/Events; and adds people to a Scheduler account. Administrators do not schedule people, but can open the calendar to <strong>lock</strong> or <strong>cancel/restore</strong> individual activity occurrences on any Job/Event, public or private (see below; each is configurable).</li>
         <li><strong>Scheduler</strong> ("Scheduler/User") — views, adds, and removes associated people on activities. An account may hold one or more associated people (a family) or be a group account (a contact/group lead plus members). This role sees and manages only the people associated with the account. A self-service <strong>profile</strong> panel lets the Scheduler edit their contact name and add, rename, or remove their own people (configurable).</li>
-        <li><strong>Viewer</strong> ("Viewer/Supervisor") — like a supervisor, sees everyone assigned to an activity but cannot add or remove people. A Viewer can also <strong>manage access</strong> for the private Jobs/Events it is assigned to — granting or revoking which Scheduler accounts may see and schedule them (configurable). When enabled, a Viewer can also <strong>create its own Jobs/Events</strong> and their activities; a private one it creates is automatically assigned to it, so it can immediately manage that item's access (private and public creation are each independently configurable).</li>
+        <li><strong>Viewer</strong> ("Viewer/Supervisor") — like a supervisor, sees everyone assigned to an activity but cannot add or remove people. A Viewer can also <strong>manage access</strong> for the private Jobs/Events it is assigned to — granting or revoking which Scheduler accounts may see and schedule them (configurable). When enabled, a Viewer can also <strong>create its own Jobs/Events</strong> and their activities; a private one it creates is automatically assigned to it, so it can immediately manage that item's access (private and public creation are each independently configurable). A Viewer can also <strong>lock</strong> or <strong>cancel/restore</strong> individual activity occurrences on the private Jobs/Events it is assigned to (see below; each is configurable).</li>
       </ul>
+
+      <h2>Locking &amp; cancelling occurrences</h2>
+      <p>
+        Beyond scheduling people, VSA can control a single activity occurrence on a specific day and
+        time (today or in the future) without changing the recurring plan behind it:
+      </p>
+      <ul>
+        <li><strong>Lock / Unlock</strong> — freeze an occurrence so no additional people can be
+          assigned, while everyone already assigned stays (and can still be removed). A padlock marks a
+          locked activity — useful when a shift is already staffed enough.</li>
+        <li><strong>Cancel / Restore</strong> — make a single occurrence unavailable, for when a
+          regularly scheduled activity should be skipped on a particular day/time. A cancelled
+          occurrence shows gray with its name struck through and takes no assignments; it can be
+          cancelled only when no one is assigned, and <strong>Restore</strong> brings it back. The rest
+          of the recurring schedule is untouched.</li>
+      </ul>
+      <p>
+        Each capability is independently configurable per role: a <strong>Viewer</strong> can lock
+        and/or cancel occurrences on the private Jobs/Events it is assigned to, and an
+        <strong>Administrator</strong> can do so on any Job/Event, public or private.
+      </p>
 
       <h2>Sign-in &amp; registration</h2>
       <p>
@@ -111,7 +133,9 @@
             <li><code>mike</code> — <strong>Viewer/Supervisor</strong>. See the full roster read-only,
               and note that the private <strong>Board Committee</strong> Job appears in mike's pulldown —
               it's hidden from accounts not assigned to it. mike can also use <strong>Add Job/Event</strong>
-              (top-right) to create its own Job or Event with activities.</li>
+              (top-right) to create its own Job or Event with activities. On its own private items (such as
+              <strong>Board Committee</strong>), click a current or upcoming activity to <strong>Lock</strong>
+              it against new assignments or <strong>Cancel/Restore</strong> that occurrence.</li>
             <li><strong>Administrator</strong> — not shared publicly; email
               <a href="mailto:russ.mcfadden@gmail.com">Russ McFadden</a> for access to see the
               Administrator role's capabilities (creating accounts, Jobs/Events, and activity plans).</li>
