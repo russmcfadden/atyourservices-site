@@ -126,7 +126,7 @@
       <ul>
         <li><strong>Administrator</strong> — creates accounts; creates Jobs/Events and their activity plans (the recurring templates that generate the calendar's activities); assigns Schedulers and Viewers to private Jobs/Events; and adds people to a Scheduler account. Administrators do not schedule people, but can open the calendar to <strong>lock</strong> or <strong>cancel/restore</strong> individual activity occurrences on any Job/Event, public or private (see below; each is configurable).</li>
         <li><strong>Scheduler</strong> ("Scheduler/User") — views, adds, and removes associated people on activities. An account may hold one or more associated people (a family) or be a group account (a contact/group lead plus members). This role sees and manages only the people associated with the account. A self-service <strong>profile</strong> panel lets the Scheduler edit their contact name and add, rename, or remove their own people (configurable).</li>
-        <li><strong>Viewer</strong> ("Viewer/Supervisor") — like a supervisor, sees everyone assigned to an activity but cannot add or remove people. A Viewer can also <strong>manage access</strong> for the private Jobs/Events it is assigned to — granting or revoking which Scheduler accounts may see and schedule them (configurable). When enabled, a Viewer can also <strong>create its own Jobs/Events</strong> and their activities; a private one it creates is automatically assigned to it, so it can immediately manage that item's access (private and public creation are each independently configurable). A Viewer can also <strong>lock</strong> or <strong>cancel/restore</strong> individual activity occurrences on the private Jobs/Events it is assigned to (see below; each is configurable).</li>
+        <li><strong>Viewer</strong> ("Viewer/Supervisor") — like a supervisor, sees everyone assigned to an activity but cannot add or remove people. A Viewer can also <strong>manage access</strong> for the private Jobs/Events it is assigned to — granting or revoking which Scheduler accounts may see and schedule them (configurable). When enabled, a Viewer can also <strong>create its own Jobs/Events</strong> and their activities; a private one it creates is automatically assigned to it, so it can immediately manage that item's access (private and public creation are each independently configurable). A Viewer can also <strong>lock</strong> or <strong>cancel/restore</strong> individual activity occurrences on the private Jobs/Events it is assigned to (see below; each is configurable). A Viewer can also <strong>generate a printable or CSV check-in report</strong> of who is assigned to each activity for a day or date range (configurable).</li>
       </ul>
 
       <h2>Locking &amp; cancelling occurrences</h2>
@@ -148,6 +148,29 @@
         Each capability is independently configurable per role: a <strong>Viewer</strong> can lock
         and/or cancel occurrences on the private Jobs/Events it is assigned to, and an
         <strong>Administrator</strong> can do so on any Job/Event, public or private.
+      </p>
+
+      <h2>Check-in reports</h2>
+      <p>
+        When enabled, a <strong>Viewer/Supervisor</strong> can turn the on-screen roster into an
+        offline <strong>check-in list</strong> — the people assigned to each activity — for signing
+        volunteers in on the day. A setup panel offers:
+      </p>
+      <ul>
+        <li><strong>Scope</strong> — a single <strong>day</strong> or a custom <strong>date
+          range</strong> (a range can cover a whole multi-day event).</li>
+        <li><strong>Layout</strong> — <strong>check-off boxes</strong> beside each name, or a compact
+          <strong>names-only</strong> list.</li>
+        <li><strong>Blank write-in lines</strong> — optionally add empty lines for open slots so
+          walk-ins can be added by hand; for activities with no maximum, you choose how many extra
+          lines to add.</li>
+      </ul>
+      <p>
+        Two outputs are available: a <strong>printable sheet</strong> (print on paper, or save as PDF
+        from the browser's print dialog) and a <strong>CSV</strong> download for a spreadsheet. Both
+        note the Job/Event name and the date(s), group the activities by day, and omit cancelled
+        occurrences. Members of a group account are marked <strong>(G)</strong> so they are easy to
+        tell apart, and the group name can optionally be shown. The capability is configurable.
       </p>
 
       <h2>Sign-in &amp; registration</h2>
@@ -181,7 +204,9 @@
               it's hidden from accounts not assigned to it. mike can also use <strong>Add Job/Event</strong>
               (top-right) to create its own Job or Event with activities. On its own private items (such as
               <strong>Board Committee</strong>), click a current or upcoming activity to <strong>Lock</strong>
-              it against new assignments or <strong>Cancel/Restore</strong> that occurrence.</li>
+              it against new assignments or <strong>Cancel/Restore</strong> that occurrence. Use
+              <strong>Generate Report</strong> (top-right) to produce a printable or CSV check-in list
+              for a day or date range.</li>
             <li><strong>Administrator</strong> — not shared publicly; email
               <a href="mailto:russ.mcfadden@gmail.com">Russ McFadden</a> for access to see the
               Administrator role's capabilities (creating accounts, Jobs/Events, and activity plans).</li>
@@ -227,6 +252,7 @@
         <li><strong>Sign-in &amp; registration</strong> — which methods and which self-registration roles are allowed.</li>
         <li><strong>Password rules</strong> — length and required character types.</li>
         <li><strong>Allowed admin actions</strong> — add/edit/delete for users, Jobs/Events, and activity plans.</li>
+        <li><strong>Scheduling window</strong> — how many months of past activity history are retained, and how many months ahead planned activities are generated and open for scheduling.</li>
       </ul>
 
       <h2>Getting started</h2>
