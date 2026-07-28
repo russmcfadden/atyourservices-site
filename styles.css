@@ -48,7 +48,7 @@ a { color: var(--accent); }
 .btn-ghost:hover { background: #eef6fb; }
 
 /* sections */
-.section { padding: 56px 0; }
+.section { padding: 40px 0; }
 .section-alt { background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .section h2 { font-size: 1.6rem; margin: 0 0 20px; }
 
