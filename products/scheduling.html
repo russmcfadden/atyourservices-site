@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Volunteer Scheduling Application — At Your Services</title>
   <meta name="description" content="Self-service volunteer scheduling that stops the chasing and back-and-forth email. Volunteers book and cancel their own spots, capacity limits prevent over- and under-staffing, and everyone sees only what their role needs." />
-  <link rel="canonical" href="https://atyourservices.org/products/scheduling.html" />
+  <link rel="canonical" href="https://atyourservices.org/products/scheduling" />
   <meta name="theme-color" content="#00639e" />
 
   <!-- Icons -->
@@ -18,7 +18,7 @@
   <meta property="og:site_name" content="At Your Services" />
   <meta property="og:title" content="Volunteer Scheduling Application — At Your Services" />
   <meta property="og:description" content="Stop chasing volunteers. A simple, self-service schedule your community will actually use — book and cancel their own spots, capacity limits prevent over- and under-staffing, privacy by role." />
-  <meta property="og:url" content="https://atyourservices.org/products/scheduling.html" />
+  <meta property="og:url" content="https://atyourservices.org/products/scheduling" />
   <meta property="og:image" content="https://atyourservices.org/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -90,32 +90,6 @@
         administrators keep control.
       </p>
 
-      <h2>Why it helps</h2>
-      <ul>
-        <li><strong>Stop chasing signups.</strong> Volunteers sign up and cancel their own spots, any
-          time, from any phone — instead of waiting on you to sort out email threads.</li>
-        <li><strong>No more over- or under-staffing.</strong> Per-activity limits stop five people from
-          signing up to cook while nobody signs up to serve; a slot simply fills and closes at its
-          maximum.</li>
-        <li><strong>One account for a whole family or team.</strong> A parent can sign up their kids, or a
-          group leader their whole crew — no separate account for every individual, and group members are
-          marked so they're easy to tell apart.</li>
-        <li><strong>Everyone sees only what they should.</strong> Volunteers see their own signups;
-          coordinators and supervisors see the master roster; private groups stay hidden from accounts
-          not assigned to them.</li>
-        <li><strong>Leaders run their own areas.</strong> Supervisors can set up and manage their own
-          Jobs/Events and who's allowed to access them — coordination doesn't all funnel through one
-          administrator.</li>
-        <li><strong>Handle the exceptions without breaking the schedule.</strong> Closed for a holiday, or
-          a shift already covered? Cancel a single date, or lock it to new signups, without disturbing the
-          recurring plan behind it.</li>
-        <li><strong>Easy to join, nothing to install.</strong> People register with just an email and
-          they're in — optional passwordless sign-in means no password to remember — and they keep their
-          own details and family members up to date themselves.</li>
-        <li><strong>Digital check-in, not paper.</strong> Generate a printable or spreadsheet check-in
-          list for the day instead of a roster that gets lost, coffee-stained, and re-typed.</li>
-      </ul>
-
       <h2>Who it's for</h2>
       <ul>
         <li><strong>Churches &amp; ministries</strong> — greeters, worship team, nursery, ushers.</li>
@@ -125,6 +99,20 @@
         <li><strong>Community &amp; one-time events</strong> — coordinating numerous volunteers across single or multiple days.</li>
       </ul>
       <p>VSA is not limited to these organizations — it is a flexible application that can accommodate many types of organizations with scheduling needs.</p>
+
+      <h2>Features at a glance</h2>
+      <ul>
+        <li><strong>Self-service scheduling</strong> — volunteers sign themselves up and cancel, from any phone; one account can cover a family or a whole group (a parent can sign up their kids, or a group leader their whole crew).</li>
+        <li><strong>Capacity limits &amp; live status</strong> — per-activity maximums, current counts, and color-coded availability so full slots and gaps are obvious at a glance.</li>
+        <li><strong>Role-based privacy</strong> — Scheduler, Supervisor, and Administrator roles; volunteers see only their own signups, and private Jobs/Events stay hidden from unassigned accounts (enforced on the server).</li>
+        <li><strong>Delegation</strong> — Supervisors can create and manage their own Jobs/Events and control who may access them, without routing everything through one administrator.</li>
+        <li><strong>Exception handling</strong> — lock a fully-staffed occurrence, or cancel and restore a single date, without disturbing the recurring plan behind it.</li>
+        <li><strong>Flexible recurrence &amp; events</strong> — daily, weekday, day-of-week, or monthly schedules with open-ended or fixed end dates; dated multi-day events that can automatically reappear next season.</li>
+        <li><strong>Check-in reports</strong> — printable or CSV rosters for a day or date range, with optional check-off boxes and write-in lines.</li>
+        <li><strong>Easy sign-in</strong> — password and/or passwordless email ("magic link") sign-in, with optional self-registration.</li>
+        <li><strong>Security built in</strong> — hashed passwords, expiring sessions, rate limiting, and server-side access control over HTTPS.</li>
+        <li><strong>Branding &amp; configuration</strong> — your name, colors, and logo; configurable terminology (the "Job" label); adjustable admin actions and scheduling window.</li>
+      </ul>
 
       <h2>How it works</h2>
       <p>
@@ -186,9 +174,32 @@
       <h2>Roles</h2>
       <p>Everyone sees exactly what their role needs — no more, no less.</p>
       <ul>
-        <li><strong>Administrator</strong> — creates accounts; creates Jobs/Events and their activity plans (the recurring templates that generate the calendar's activities); assigns Schedulers and Viewers to private Jobs/Events; and adds people to a Scheduler account. Administrators do not schedule people, but can open the calendar to <strong>lock</strong> or <strong>cancel/restore</strong> individual activity occurrences on any Job/Event, public or private (see below; each is configurable).</li>
-        <li><strong>Scheduler</strong> ("Scheduler/User") — views, adds, and removes associated people on activities. An account may hold one or more associated people (a family) or be a group account (a contact/group lead plus members). This role sees and manages only the people associated with the account. A self-service <strong>profile</strong> panel lets the Scheduler edit their contact name and add, rename, or remove their own people; when enabled it also lets them update their own <strong>email</strong> (adding one if the account has none) and, for a group account, rename its <strong>group name</strong>. Where email sign-in is available, changing the email sends a verification link to the new address to confirm it. Each of these is independently configurable.</li>
-        <li><strong>Viewer</strong> ("Viewer/Supervisor") — like a supervisor, sees everyone assigned to an activity but cannot add or remove people. A Viewer can also <strong>manage access</strong> for the private Jobs/Events it is assigned to — granting or revoking which Scheduler accounts may see and schedule them (configurable). When enabled, a Viewer can also <strong>create its own Jobs/Events</strong> and their activities; a private one it creates is automatically assigned to it, so it can immediately manage that item's access (private and public creation are each independently configurable). A Viewer can also <strong>lock</strong> or <strong>cancel/restore</strong> individual activity occurrences on the private Jobs/Events it is assigned to (see below; each is configurable). A Viewer can also <strong>generate a printable or CSV check-in report</strong> of who is assigned to each activity for a day or date range (configurable).</li>
+        <li><strong>Scheduler</strong> — the volunteer's account; schedules the people it's responsible for, and no one else's. A Scheduler:
+          <ul>
+            <li>views, adds, and removes its associated people on activities;</li>
+            <li>may hold one or more associated people (a family) or be a group account (a contact/group lead plus members);</li>
+            <li>sees and manages only the people associated with the account;</li>
+            <li>has a self-service <strong>profile</strong> panel to edit its contact name and add, rename, or remove its own people. When enabled it can also update its own <strong>email</strong> (adding one if the account has none) and rename a group account's <strong>group name</strong> — each independently configurable;</li>
+            <li>where email sign-in is available, changing the email sends a verification link to the new address to confirm it.</li>
+          </ul>
+        </li>
+        <li><strong>Supervisor</strong> — read-only oversight; sees everyone assigned to an activity but cannot add or remove people. A Supervisor can:
+          <ul>
+            <li><strong>manage access</strong> for the private Jobs/Events it is assigned to — granting or revoking which Scheduler accounts may see and schedule them (configurable);</li>
+            <li><strong>create its own Jobs/Events</strong> and their activities; a private one it creates is automatically assigned to it, so it can immediately manage that item's access (private and public creation are each independently configurable);</li>
+            <li><strong>lock</strong> or <strong>cancel/restore</strong> individual activity occurrences on the private Jobs/Events it is assigned to (see below; each is configurable);</li>
+            <li><strong>generate a printable or CSV check-in report</strong> of who is assigned to each activity for a day or date range (configurable).</li>
+          </ul>
+        </li>
+        <li><strong>Administrator</strong> — the organization's owner account, with full control over setup and people. An Administrator:
+          <ul>
+            <li>creates and manages accounts;</li>
+            <li>creates Jobs/Events and their <strong>activity plans</strong> (the recurring templates that generate the calendar's activities);</li>
+            <li>assigns Schedulers and Supervisors to private Jobs/Events;</li>
+            <li>adds people to a Scheduler account;</li>
+            <li>does not schedule people, but can open the calendar to <strong>lock</strong> or <strong>cancel/restore</strong> individual activity occurrences on any Job/Event, public or private (see below; each is configurable).</li>
+          </ul>
+        </li>
       </ul>
 
       <h2>Locking &amp; cancelling occurrences</h2>
@@ -207,7 +218,7 @@
           of the recurring schedule is untouched.</li>
       </ul>
       <p>
-        Each capability is independently configurable per role: a <strong>Viewer</strong> can lock
+        Each capability is independently configurable per role: a <strong>Supervisor</strong> can lock
         and/or cancel occurrences on the private Jobs/Events it is assigned to, and an
         <strong>Administrator</strong> can do so on any Job/Event, public or private.
       </p>
@@ -215,7 +226,7 @@
       <h2>Check-in reports</h2>
       <p>When you need a roster in hand on the day, generate it from the live schedule — no separate spreadsheet to maintain, and no re-entry afterward.</p>
       <p>
-        When enabled, a <strong>Viewer/Supervisor</strong> can turn the on-screen roster into an
+        When enabled, a <strong>Supervisor</strong> can turn the on-screen roster into an
         offline <strong>check-in list</strong> — the people assigned to each activity — for signing
         volunteers in on the day. A setup panel offers:
       </p>
@@ -252,18 +263,18 @@
       <ul>
         <li>
           <strong>Register (self-serve, needs your email)</strong> — Open the demo and click
-          <strong>Register</strong>. Enter a name, pick <strong>Scheduler/User</strong> (schedule
-          yourself into activities) or <strong>Viewer/Supervisor</strong> (see the full roster,
+          <strong>Register</strong>. Enter a name, pick <strong>Scheduler</strong> (schedule
+          yourself into activities) or <strong>Supervisor</strong> (see the full roster,
           read-only), and enter your email. Click the verification link we email you and you're signed in.
         </li>
         <li>
           <strong>Quick sign-in, no email (shared demo accounts)</strong> — Log in with one of the
           accounts below; the password for both is <code>test</code>:
           <ul>
-            <li><code>betty</code> — <strong>Scheduler/User</strong>, the "Bicycle Club" group account
+            <li><code>betty</code> — <strong>Scheduler</strong>, the "Bicycle Club" group account
               with 10 people. Add several people to an activity and watch a slot fill to its maximum
               (Blue&nbsp;→&nbsp;Olive), and see the Orange state.</li>
-            <li><code>mike</code> — <strong>Viewer/Supervisor</strong>. See the full roster read-only,
+            <li><code>mike</code> — <strong>Supervisor</strong>. See the full roster read-only,
               and note that the private <strong>Board Committee</strong> Job appears in mike's pulldown —
               it's hidden from accounts not assigned to it. mike can also use <strong>Add Job/Event</strong>
               (top-right) to create its own Job or Event with activities. On its own private items (such as
@@ -315,7 +326,7 @@
         <li><strong>Terminology</strong> — the "Job" label to fit your organization (Department, Skill Type, Ministry, etc.).</li>
         <li><strong>Sign-in &amp; registration</strong> — which methods and which self-registration roles are allowed.</li>
         <li><strong>Password rules</strong> — length and required character types.</li>
-        <li><strong>Allowed admin actions</strong> — add/edit/delete for users, Jobs/Events, and activity plans.</li>
+        <li><strong>Allowed admin actions</strong> — add/edit/delete for accounts, Jobs/Events, and activity plans.</li>
         <li><strong>Scheduling window</strong> — how many months of past activity history are retained, and how many months ahead planned activities are generated and open for scheduling.</li>
       </ul>
 
