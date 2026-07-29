@@ -57,22 +57,32 @@
         <a href="#products">Products</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
+        <a class="nav-demo" href="https://schedule.atyourservices.org" target="_blank" rel="noopener">Try Demo</a>
       </nav>
     </div>
   </header>
 
   <section class="hero">
-    <div class="wrap">
-      <h1>Practical web apps that help organizations get things done.</h1>
-      <p class="lead">
-        At Your Services designs and builds secure, easy-to-use web applications for nonprofits, ministries,
-        schools, clubs, and community groups — software that solves a real coordination problem without
-        the overhead.
-      </p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="https://schedule.atyourservices.org" target="_blank" rel="noopener">Try the live demo</a>
-        <a class="btn btn-ghost" href="#products">See what we build</a>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1>Practical web apps that help organizations get things done.</h1>
+        <p class="lead">
+          At Your Services designs and builds secure, easy-to-use web applications for nonprofits, ministries,
+          schools, clubs, and community groups — software that solves a real coordination problem without
+          the overhead.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary btn-lg" href="https://schedule.atyourservices.org" target="_blank" rel="noopener">Try the live demo</a>
+          <a class="btn btn-ghost" href="#products">See what we build</a>
+        </div>
       </div>
+      <figure class="hero-shot">
+        <img src="products/schedule-preview.png"
+             alt="Volunteer Scheduling Application — a week of food-pantry shifts, each color-coded by how many volunteers are still needed"
+             loading="eager"
+             onerror="this.closest('.hero-grid').classList.add('no-shot')" />
+        <figcaption>Color-coded shifts make it instantly clear which still need volunteers.</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -80,34 +90,64 @@
     <section id="products" class="section">
       <div class="wrap">
         <h2>Products</h2>
-        <div class="cards">
-          <article class="card">
-            <h3>Volunteer Scheduling Application</h3>
-            <p>
-              Stop chasing volunteers and managing signups. Give your community a simple, self-service
-              schedule they'll actually use:
-            </p>
-            <ul class="feature-bullets">
-              <li>Volunteers sign up and cancel their own spots — from any phone, nothing to install</li>
-              <li>One account can cover a whole family or team</li>
-              <li>Activity capacity limits stop over-staffing before it happens</li>
-              <li>See at a glance which activities still need people</li>
-              <li>Volunteers see only their own signups; coordinators see the full roster</li>
-              <li>Add as many team leaders as you need — each runs their own area, locking or cancelling a date and exporting a roster to print or share</li>
-              <li>No third-party ads — volunteers see your organization, not someone else's advertising</li>
-              <li>Branded and worded for your organization; secure by design</li>
-            </ul>
-            <div class="cta-row">
-              <a class="btn btn-primary" href="https://schedule.atyourservices.org" target="_blank" rel="noopener">Live Demo</a>
-              <a class="btn btn-ghost" href="products/scheduling">Product Description</a>
+        <article class="product">
+          <h3>Volunteer Scheduling Application</h3>
+          <p class="product-intro">
+            Stop chasing volunteers and managing signups. Give your community a simple, self-service
+            schedule they'll actually use.
+          </p>
+          <div class="feature-grid">
+            <div class="feature-item">
+              <span class="ico" aria-hidden="true">📅</span>
+              <h4>Self-service scheduling</h4>
+              <p>Volunteers sign up and cancel their own spots from any phone — nothing to install.</p>
             </div>
-          </article>
+            <div class="feature-item">
+              <span class="ico" aria-hidden="true">👨‍👩‍👧</span>
+              <h4>Family &amp; team accounts</h4>
+              <p>One login can cover a whole family or team.</p>
+            </div>
+            <div class="feature-item">
+              <span class="ico" aria-hidden="true">📊</span>
+              <h4>Capacity limits</h4>
+              <p>Per-activity caps stop over-staffing before it happens.</p>
+            </div>
+            <div class="feature-item">
+              <span class="ico" aria-hidden="true">🚦</span>
+              <h4>Fill at a glance</h4>
+              <p>Color-coded shifts show exactly which still need people.</p>
+            </div>
+            <div class="feature-item highlight">
+              <span class="ico" aria-hidden="true">👥</span>
+              <h4>As many coordinators as you need</h4>
+              <p>Add unlimited team leaders — each runs their own area. No single-admin bottleneck.</p>
+            </div>
+            <div class="feature-item highlight">
+              <span class="ico" aria-hidden="true">🚫</span>
+              <h4>No third-party ads</h4>
+              <p>Volunteers see your organization, not someone else's advertising.</p>
+            </div>
+            <div class="feature-item">
+              <span class="ico" aria-hidden="true">🖨️</span>
+              <h4>Roster export</h4>
+              <p>Print or share a roster in a click.</p>
+            </div>
+            <div class="feature-item">
+              <span class="ico" aria-hidden="true">🔒</span>
+              <h4>Secure &amp; branded</h4>
+              <p>Worded and branded for your organization, with security built in.</p>
+            </div>
+          </div>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://schedule.atyourservices.org" target="_blank" rel="noopener">Live Demo</a>
+            <a class="btn btn-ghost" href="products/scheduling">Product Description</a>
+          </div>
+        </article>
 
-          <article class="card card-muted">
-            <h3>More on the way</h3>
-            <p>Additional tools for volunteer and community coordination are in development. Have a need in mind? <a href="#contact">Get in touch.</a></p>
-          </article>
-        </div>
+        <article class="card card-muted more-card">
+          <h3>More on the way</h3>
+          <p>Additional tools for volunteer and community coordination are in development. Have a need in mind? <a href="#contact">Get in touch.</a></p>
+        </article>
       </div>
     </section>
 
@@ -145,7 +185,11 @@
   <footer class="site-footer">
     <div class="wrap footer-inner">
       <span>© <span id="year"></span> Russ McFadden · At Your Services</span>
-      <a href="https://schedule.atyourservices.org" target="_blank" rel="noopener">Live Demo</a>
+      <nav class="footer-links">
+        <a href="products/scheduling">Product</a>
+        <a href="https://schedule.atyourservices.org" target="_blank" rel="noopener">Live Demo</a>
+        <a href="mailto:contact@atyourservices.org">Support</a>
+      </nav>
     </div>
   </footer>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
