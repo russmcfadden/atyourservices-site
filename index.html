@@ -63,30 +63,47 @@
   </header>
 
   <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <h1>Practical web apps that help organizations get things done.</h1>
-        <p class="lead">
-          At Your Services designs and builds secure, easy-to-use web applications for nonprofits, ministries,
-          schools, clubs, and community groups — software that solves a real coordination problem without
-          the overhead.
-        </p>
-        <div class="cta-row">
-          <a class="btn btn-primary btn-lg" href="https://schedule.atyourservices.org" target="_blank" rel="noopener">Try the live demo</a>
-          <a class="btn btn-ghost" href="#products">See what we build</a>
-        </div>
+    <div class="wrap">
+      <h1>Practical web apps that help organizations get things done.</h1>
+      <p class="lead">
+        At Your Services designs and builds secure, easy-to-use web applications for nonprofits, ministries,
+        schools, clubs, and community groups — software that solves a real coordination problem without
+        the overhead.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary btn-lg" href="https://schedule.atyourservices.org" target="_blank" rel="noopener">Try the live demo</a>
+        <a class="btn btn-ghost" href="#products">See what we build</a>
       </div>
-      <figure class="hero-shot">
-        <img src="products/schedule-preview.png"
-             alt="Volunteer Scheduling Application — a week of food-pantry shifts, each color-coded by how many volunteers are still needed"
-             loading="eager"
-             onerror="this.closest('.hero-grid').classList.add('no-shot')" />
-        <figcaption>Color-coded shifts make it instantly clear which still need volunteers.</figcaption>
-      </figure>
     </div>
   </section>
 
   <main>
+    <section class="section showcase">
+      <div class="wrap">
+        <h2>Two views, one simple app</h2>
+        <p class="showcase-intro">
+          The same schedule, tailored to who's looking — volunteers manage their own spots, coordinators
+          see the whole roster.
+        </p>
+        <div class="shots">
+          <figure class="shot">
+            <img src="products/scheduler-preview.png"
+                 alt="Volunteer view — a week of food-pantry shifts, each color-coded by how many volunteers are still needed"
+                 loading="lazy"
+                 onerror="this.closest('figure').style.display='none'" />
+            <figcaption><strong>What volunteers see</strong> — color-coded shifts; sign up or cancel your own spot in a tap.</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="products/viewer-preview.png"
+                 alt="Coordinator view — full rosters listed on each shift, including group and family members"
+                 loading="lazy"
+                 onerror="this.closest('figure').style.display='none'" />
+            <figcaption><strong>What coordinators see</strong> — full rosters at a glance, including group and family members.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <section id="products" class="section">
       <div class="wrap">
         <h2>Products</h2>
