@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Free Volunteer Scheduling for Nonprofits — At Your Services</title>
+  <meta name="description" content="Free, ad-free volunteer scheduling for nonprofits and churches: volunteers book and cancel their own spots, with capacity limits and shift reminders." />
+  <link rel="canonical" href="https://atyourservices.org/free-volunteer-scheduling" />
+  <meta name="theme-color" content="#00639e" />
+
+  <!-- Icons -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="At Your Services" />
+  <meta property="og:title" content="Free Volunteer Scheduling for Nonprofits — At Your Services" />
+  <meta property="og:description" content="A privacy-first, ad-free alternative to spreadsheets, group texts, and typical sign-up sites. Volunteers manage their own spots; you stop chasing." />
+  <meta property="og:url" content="https://atyourservices.org/free-volunteer-scheduling" />
+  <meta property="og:image" content="https://atyourservices.org/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Free Volunteer Scheduling for Nonprofits — At Your Services" />
+  <meta name="twitter:description" content="A privacy-first, ad-free alternative to spreadsheets, group texts, and typical sign-up sites. Volunteers manage their own spots; you stop chasing." />
+  <meta name="twitter:image" content="https://atyourservices.org/og-image.png" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* page-scoped styling for the comparison table + FAQ, reusing the site's tokens */
+    .cmp-wrap { overflow-x: auto; margin: 8px 0 4px; }
+    table.cmp { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 0.95rem; }
+    table.cmp th, table.cmp td { border: 1px solid var(--border); padding: 10px 12px; text-align: left; vertical-align: top; }
+    table.cmp thead th { background: var(--bg-alt); color: var(--ink); }
+    table.cmp th.rowh { font-weight: 600; background: #fff; }
+    table.cmp th.us, table.cmp td.us { background: rgba(0, 99, 158, 0.06); }
+    table.cmp thead th.us { background: var(--accent); color: #fff; }
+    table.cmp .yes { color: #0a7d3c; font-weight: 600; }
+    table.cmp .no { color: #b4232a; }
+    table.cmp .maybe { color: var(--muted); }
+    .faq h3 { margin-top: 22px; }
+    .faq p { margin-top: 6px; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://atyourservices.org/" },
+      { "@type": "ListItem", "position": 2, "name": "Free Volunteer Scheduling for Nonprofits", "item": "https://atyourservices.org/free-volunteer-scheduling" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is At Your Services really free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The software is free to use. If you'd like us to host and manage it for you, that's available at pass-through infrastructure cost, and setup and onboarding for small nonprofits are provided free of charge." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do volunteers need to download an app?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. It runs in any phone or computer web browser. Volunteers sign up and cancel their own spots from a link — nothing to install." }
+      },
+      {
+        "@type": "Question",
+        "name": "Will my volunteers see ads?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Never. There is no third-party advertising anywhere in the app. The page is your organization's, not a billboard for someone else's." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can one person sign up their whole family or group?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. A single account can cover a family or a group, so a parent can sign up their kids or a group leader their whole crew." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it send confirmations and reminders?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Optionally, yes. Volunteers can get an email confirmation when they sign up or cancel and a reminder before each shift, each with an add-to-calendar (.ics) file. They choose per sign-up or set a default in their profile." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can we use our own name and branding?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Your organization's name, colors, and logo — and even the terminology (the \"Job\" label) is configurable to fit your world." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is our data private and secure?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Role-based access means volunteers see only their own sign-ups, and the app uses hashed passwords, expiring sessions, rate limiting, and server-side access control over HTTPS. No ads, and no selling of your data." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/">At Your <span>Services</span></a>
+      <nav class="nav">
+        <a href="/products/scheduling">Product</a>
+        <a href="https://schedule.atyourservices.org" target="_blank" rel="noopener">Live Demo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="doc">
+    <div class="wrap">
+      <a class="backlink" href="/">← Back to At Your Services</a>
+      <h1>Free Volunteer Scheduling for Nonprofits</h1>
+      <p class="subtitle">A privacy-first, ad-free alternative to spreadsheets, group texts, and typical sign-up sites.</p>
+      <p class="lead-hook">
+        <strong>Stop chasing volunteers.</strong> Give your nonprofit, church, school, or club a simple,
+        self-service schedule your people will actually use — they claim and cancel their own spots, and
+        the schedule keeps itself organized. No ads, no per-volunteer fees, and your data stays yours.
+      </p>
+      <p class="cta-row">
+        <a class="btn btn-primary" href="https://schedule.atyourservices.org" target="_blank" rel="noopener">Try the live demo</a>
+        <a class="btn btn-ghost" href="/#contact">Book a free consultation</a>
+      </p>
+
+      <h2>The old way vs. a self-service schedule</h2>
+      <p>
+        Most volunteer coordinators are stuck between two frustrations: a spreadsheet or group text that
+        only one person can keep straight, or a free sign-up website that puts ads in front of their
+        volunteers. Here's how those compare with a purpose-built, ad-free option.
+      </p>
+      <div class="cmp-wrap">
+        <table class="cmp">
+          <thead>
+            <tr>
+              <th class="rowh">&nbsp;</th>
+              <th>Spreadsheet &amp; group texts</th>
+              <th>Typical free sign-up sites</th>
+              <th class="us">At Your Services</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="rowh">Volunteers sign up &amp; cancel themselves</th>
+              <td><span class="no">✗</span> you edit for them</td>
+              <td><span class="yes">✓</span></td>
+              <td class="us"><span class="yes">✓</span></td>
+            </tr>
+            <tr>
+              <th class="rowh">Prevents over- &amp; under-staffing (capacity limits)</th>
+              <td><span class="no">✗</span></td>
+              <td class="maybe">varies</td>
+              <td class="us"><span class="yes">✓</span> per-activity limits + live counts</td>
+            </tr>
+            <tr>
+              <th class="rowh">One login covers a family or group</th>
+              <td><span class="no">✗</span></td>
+              <td class="maybe">often no</td>
+              <td class="us"><span class="yes">✓</span></td>
+            </tr>
+            <tr>
+              <th class="rowh">Role-based privacy (see only your own sign-ups)</th>
+              <td><span class="no">✗</span> everyone sees everything</td>
+              <td class="maybe">limited</td>
+              <td class="us"><span class="yes">✓</span> enforced on the server</td>
+            </tr>
+            <tr>
+              <th class="rowh">Confirmations &amp; shift reminders (with calendar file)</th>
+              <td><span class="no">✗</span> manual</td>
+              <td class="maybe">varies</td>
+              <td class="us"><span class="yes">✓</span> optional email + .ics</td>
+            </tr>
+            <tr>
+              <th class="rowh">Printable / CSV check-in rosters</th>
+              <td class="maybe">re-typed by hand</td>
+              <td class="maybe">varies</td>
+              <td class="us"><span class="yes">✓</span></td>
+            </tr>
+            <tr>
+              <th class="rowh">No third-party ads shown to volunteers</th>
+              <td class="maybe">n/a</td>
+              <td class="maybe">often ad-supported</td>
+              <td class="us"><span class="yes">✓</span> never</td>
+            </tr>
+            <tr>
+              <th class="rowh">Your organization's branding</th>
+              <td><span class="no">✗</span></td>
+              <td class="maybe">limited</td>
+              <td class="us"><span class="yes">✓</span> name, colors, logo</td>
+            </tr>
+            <tr>
+              <th class="rowh">Cost</th>
+              <td>free, but all-manual</td>
+              <td class="maybe">free tier; ads or paid upgrades</td>
+              <td class="us">free software; optional low-cost managed hosting</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="subtitle" style="font-size:0.85rem;">
+        "Typical free sign-up sites" describes the category in general; capabilities differ by provider —
+        compare any tool against your own needs.
+      </p>
+
+      <h2>Frequently asked questions</h2>
+      <div class="faq">
+        <h3>Is At Your Services really free?</h3>
+        <p>The software is free to use. If you'd like us to host and manage it for you, that's available at pass-through infrastructure cost — and setup and onboarding for small nonprofits are provided free of charge. Just ask.</p>
+
+        <h3>Do volunteers need to download an app?</h3>
+        <p>No. It runs in any phone or computer web browser. Volunteers sign up and cancel their own spots from a link — nothing to install.</p>
+
+        <h3>Will my volunteers see ads?</h3>
+        <p>Never. There is no third-party advertising anywhere in the app. The page is your organization's, not a billboard for someone else's.</p>
+
+        <h3>Can one person sign up their whole family or group?</h3>
+        <p>Yes. A single account can cover a family or a group, so a parent can sign up their kids or a group leader their whole crew.</p>
+
+        <h3>Does it send confirmations and reminders?</h3>
+        <p>Optionally, yes — an email confirmation when a volunteer signs up or cancels, and a reminder before each shift, each with an add-to-calendar (.ics) file. Volunteers choose per sign-up or set a default (send automatically, ask each time, or off) in their profile.</p>
+
+        <h3>Can we use our own name and branding?</h3>
+        <p>Yes. Your organization's name, colors, and logo — and even the terminology (the "Job" label) is configurable to fit your world.</p>
+
+        <h3>Is our data private and secure?</h3>
+        <p>Yes. Role-based access means volunteers see only their own sign-ups, and the app uses hashed passwords, expiring sessions, rate limiting, and server-side access control over HTTPS. No ads, and no selling of your data.</p>
+      </div>
+
+      <p class="cta-row" style="margin-top: 28px;">
+        <a class="btn btn-primary" href="/#contact">Book a free 15-minute consultation</a>
+        <a class="btn btn-ghost" href="https://schedule.atyourservices.org" target="_blank" rel="noopener">Try the live demo</a>
+      </p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span>© <span id="year"></span> Russ McFadden · At Your Services</span>
+      <a href="/#contact">Contact</a>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
