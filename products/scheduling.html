@@ -37,7 +37,7 @@
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
     "url": "https://schedule.atyourservices.org",
-    "description": "Self-service volunteer and staff scheduling on a shared calendar. Volunteers book and cancel their own spots from any phone, capacity limits prevent over- and under-staffing, and role-based access keeps volunteers seeing only their own signups while coordinators see the master roster.",
+    "description": "Self-service volunteer and staff scheduling on a shared calendar. Volunteers book and cancel their own spots from any phone, capacity limits prevent over- and under-staffing, and role-based access keeps volunteers seeing only their own signups while coordinators see the master roster. Volunteers can check in on the day (front-desk station or their own phone) for verified attendance, and reports cover volunteer hours and impact, verified hours with a fulfillment rate, and by-program capacity and fill rate.",
     "image": "https://atyourservices.org/og-image.png",
     "offers": {
       "@type": "Offer",
@@ -120,8 +120,10 @@
         <li><strong>Delegation, not a lone administrator</strong> — add as many Supervisors as you need; each creates and manages their own Jobs/Events and controls who may access them, instead of everything routing through a single admin account.</li>
         <li><strong>Exception handling</strong> — lock a fully-staffed occurrence, or cancel and restore a single date, without disturbing the recurring plan behind it.</li>
         <li><strong>Flexible recurrence &amp; events</strong> — daily, weekday, day-of-week, or monthly schedules with open-ended or fixed end dates; dated multi-day events that can automatically reappear next season.</li>
-        <li><strong>Check-in reports</strong> — printable or CSV rosters for a day or date range, with optional check-off boxes and write-in lines.</li>
-        <li><strong>Volunteer-hours reports</strong> — monthly, quarterly, and annual totals by account, job/program, or volunteer: hours, unique and new volunteers, and estimated economic value — for grants, boards, and recognition.</li>
+        <li><strong>Volunteer check-in (verified attendance)</strong> — capture who actually shows up: a front-desk check-in station where volunteers sign themselves in by name on a shared tablet, self check-in from a volunteer's own phone, or a supervisor recording it from the roster. Verified hours and a fulfillment rate then sit alongside scheduled in the reports.</li>
+        <li><strong>Printable check-in sheets</strong> — for signing people in on paper: printable or CSV rosters for a day or date range, with optional check-off boxes and write-in lines.</li>
+        <li><strong>Volunteer-hours &amp; impact reports</strong> — monthly, quarterly, and annual totals by account, job/program, or volunteer: <strong>scheduled and verified (checked-in)</strong> hours, unique and new volunteers, and estimated economic value — for grants, boards, and recognition.</li>
+        <li><strong>Capacity &amp; fill-rate reports</strong> — by Job/Event, available slots and hours shown next to sign-ups with a fill percentage, so under-subscribed programs stand out for recruiting.</li>
         <li><strong>Confirmations &amp; reminders</strong> — optional email confirmation when a volunteer signs up (or cancels) and a reminder before each shift, each with an add-to-calendar (.ics) file; volunteers choose per sign-up or set a default (send automatically, ask each time, or off) in their profile.</li>
         <li><strong>Easy sign-in</strong> — password and/or passwordless email ("magic link") sign-in, with optional self-registration.</li>
         <li><strong>Security built in</strong> — hashed passwords, expiring sessions, rate limiting, and server-side access control over HTTPS.</li>
@@ -192,6 +194,7 @@
         <li><strong>Scheduler</strong> — the volunteer's account; schedules the people it's responsible for, and no one else's. A Scheduler:
           <ul>
             <li>views, adds, and removes its associated people on activities;</li>
+            <li>when check-in is enabled, checks its own people <strong>in and out</strong> for a current-day shift right from its phone;</li>
             <li>may hold one or more associated people (a family) or be a group account (a contact/group lead plus members);</li>
             <li>sees and manages only the people associated with the account;</li>
             <li>has a self-service <strong>profile</strong> panel to edit its contact name and add, rename, or remove its own people. When enabled it can also update its own <strong>email</strong> (adding one if the account has none) and rename a group account's <strong>group name</strong> — each independently configurable;</li>
@@ -203,7 +206,8 @@
             <li><strong>manage access</strong> for the private Jobs/Events it is assigned to — granting or revoking which Scheduler accounts may see and schedule them (configurable);</li>
             <li><strong>create its own Jobs/Events</strong> and their activities; a private one it creates is automatically assigned to it, so it can immediately manage that item's access (private and public creation are each independently configurable);</li>
             <li><strong>lock</strong> or <strong>cancel/restore</strong> individual activity occurrences on the private Jobs/Events it is assigned to (see below; each is configurable);</li>
-            <li><strong>generate a printable or CSV check-in report</strong> of who is assigned to each activity for a day or date range (configurable).</li>
+            <li><strong>record volunteer check-in</strong> — mark who actually showed up (or correct a check-in/out time, or swap in a same-account substitute) from the roster on the day, feeding verified hours into the reports;</li>
+            <li><strong>generate reports</strong> — printable or CSV check-in sheets, volunteer-hours &amp; impact totals (scheduled and verified), and by-Job/Event capacity &amp; fill rate (each configurable).</li>
           </ul>
         </li>
         <li><strong>Administrator</strong> — full control over setup and people. An organization can have as many Administrator accounts as it needs, so top-level access (and a backup admin) is never stuck with one person. An Administrator:
@@ -212,9 +216,11 @@
             <li>creates Jobs/Events and their <strong>activity plans</strong> (the recurring templates that generate the calendar's activities);</li>
             <li>assigns Schedulers and Supervisors to private Jobs/Events;</li>
             <li>adds people to a Scheduler account;</li>
-            <li>does not schedule people, but can open the calendar to <strong>lock</strong> or <strong>cancel/restore</strong> individual activity occurrences on any Job/Event, public or private (see below; each is configurable).</li>
+            <li>generates the same <strong>reports</strong> as a Supervisor — check-in sheets, volunteer-hours &amp; impact totals (scheduled and verified), and by-Job/Event capacity &amp; fill rate (each configurable);</li>
+            <li>does not schedule people, but can open the calendar to <strong>record check-in</strong>, and to <strong>lock</strong> or <strong>cancel/restore</strong> individual activity occurrences on any Job/Event, public or private (see below; each is configurable).</li>
           </ul>
         </li>
+        <li><strong>Check-in Station</strong> — an optional front-desk kiosk account. Signed in once on a shared tablet and left open, it shows only a Job/Event picker and a name box: volunteers check themselves in and out for the day by typing their name. It can do nothing else — it never sees or changes anyone's schedule beyond recording attendance (configurable).</li>
       </ul>
 
       <h2>Locking &amp; cancelling occurrences</h2>
@@ -238,7 +244,21 @@
         <strong>Administrator</strong> can do so on any Job/Event, public or private.
       </p>
 
-      <h2>Check-in reports</h2>
+      <h2>Volunteer check-in &amp; verified attendance</h2>
+      <p>Know who actually turned up — not just who signed up. When enabled, volunteers can be checked in and out on the day, and those verified hours flow straight into the reports.</p>
+      <ul>
+        <li><strong>Front-desk check-in station</strong> — a dedicated kiosk account signed in on a shared tablet and left open at the entrance. A volunteer picks the Job/Event and types their own name to check in on arrival and out when they leave.</li>
+        <li><strong>From a volunteer's own phone</strong> — a Scheduler checks their own people in and out for a current-day shift, from shortly before it starts.</li>
+        <li><strong>Supervisor / Administrator</strong> — record or correct check-in and check-out times from the roster on the volunteer's behalf, or swap in a substitute from the same account.</li>
+      </ul>
+      <p>
+        Check-in captures the arrival time (a forgotten check-out defaults to the shift's scheduled end),
+        and the roll-up turns it into <strong>verified hours</strong> reported next to scheduled — with a
+        <strong>fulfillment rate</strong> (verified vs. scheduled). Each surface is independently
+        configurable, and the whole capability is off unless enabled.
+      </p>
+
+      <h2>Printable check-in sheets</h2>
       <p>When you need a roster in hand on the day, generate it from the live schedule — no separate spreadsheet to maintain, and no re-entry afterward.</p>
       <p>
         When enabled, a <strong>Supervisor</strong> can turn the on-screen roster into an
@@ -260,6 +280,19 @@
         note the Job/Event name and the date(s), group the activities by day, and omit cancelled
         occurrences. Members of a group account are marked <strong>👥</strong> (the same marker used on
         the calendar) so they are easy to tell apart, and the group name can optionally be shown. The capability is configurable.
+      </p>
+
+      <h2>Volunteer-hours &amp; capacity reports</h2>
+      <p>Turn the schedule into the numbers grants, boards, and recognition need — computed from a durable record that outlives the calendar's activity retention, so long-range reports stay accurate.</p>
+      <p>When enabled, a Supervisor or Administrator produces a summary over a <strong>month, quarter, year, or custom range</strong>, grouped by <strong>account</strong>, <strong>Job/Event</strong>, or <strong>volunteer</strong>:</p>
+      <ul>
+        <li><strong>Hours &amp; impact</strong> — sign-ups, scheduled hours, unique and new volunteers, and estimated economic value (hours × an hourly rate). Where check-in is used, <strong>verified</strong> hours, verified value, and a <strong>fulfillment&nbsp;%</strong> appear alongside.</li>
+        <li><strong>Capacity &amp; fill rate</strong> (by Job/Event) — available slots and hours next to what was filled, with a per-program <strong>fill percentage</strong>. Programs that offered capacity but drew no sign-ups appear too, so unused capacity is visible for recruiting.</li>
+      </ul>
+      <p>
+        Both print to a sheet (or PDF) and download as CSV, mark group-account members with
+        <strong>👥</strong>, and note when a chosen period only partly overlaps the recorded data. The
+        reports are configurable and off by default.
       </p>
 
       <h2>Sign-in &amp; registration</h2>
@@ -284,7 +317,7 @@
         </li>
         <li>
           <strong>Quick sign-in, no email (shared demo accounts)</strong> — Log in with one of the
-          accounts below; the password for both is <code>test</code>:
+          accounts below; the password for all is <code>test</code>:
           <ul>
             <li><code>betty</code> — <strong>Scheduler</strong>, the "Bicycle Club" group account
               with 10 people. Add several people to an activity and watch a slot fill to its maximum
@@ -295,8 +328,13 @@
               (top-right) to create its own Job or Event with activities. On its own private items (such as
               <strong>Board Committee</strong>), click a current or upcoming activity to <strong>Lock</strong>
               it against new assignments or <strong>Cancel/Restore</strong> that occurrence. Use
-              <strong>Generate Report</strong> (top-right) to produce a printable or CSV check-in list
-              for a day or date range.</li>
+              <strong>Generate Report</strong> (top-right) for a printable or CSV check-in sheet, and
+              <strong>Volunteer Hours</strong> for hours &amp; impact and by-Job/Event capacity &amp; fill-rate
+              reports (with verified hours where volunteers were checked in). mike can also
+              <strong>record check-in</strong> from an activity's roster on the day.</li>
+            <li><code>front</code> — <strong>Check-in Station</strong>. A front-desk kiosk: pick a Job/Event,
+              type a volunteer's name, and check them in or out for the day — the whole account does nothing
+              else. (Also try self check-in from <code>betty</code>'s phone view on a current-day shift.)</li>
             <li><strong>Administrator</strong> — not shared publicly; email
               <a href="mailto:contact@atyourservices.org">contact@atyourservices.org</a> for access to see the
               Administrator role's capabilities (creating accounts, Jobs/Events, and activity plans).</li>
@@ -315,6 +353,10 @@
         <li><strong>Greeter</strong> (public Job) — Sunday greeter and info-table activities.</li>
         <li><strong>Summer Concert</strong> (public Job) — weekend stage setup, musicians, and
           equipment teardown, recurring Saturdays and Sundays through the summer.</li>
+        <li><strong>Community Food Pantry</strong> (public Job) — weekly distribution and sorting shifts
+          on set days of the week.</li>
+        <li><strong>Safety Classes</strong> (public Job) — a summer series of classes on specific weekdays,
+          running July through August (a Job with a fixed end date).</li>
         <li><strong>Board Committee</strong> (private Job) — visible only to assigned accounts; sign in
           as <code>mike</code> to see it. Illustrates private-vs-public access.</li>
         <li><strong>Summer Art Fair</strong> (public Event) — a multi-day event with setup, check-in,
