@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Volunteer Scheduling Application — At Your Services</title>
-  <meta name="description" content="Self-service volunteer scheduling: volunteers book and cancel their own spots and get automatic confirmations and shift reminders, with capacity limits." />
+  <meta name="description" content="Self-service volunteer scheduling: book and cancel your own spots, with capacity limits, day-of check-in for verified attendance, and volunteer-hours reports." />
   <link rel="canonical" href="https://atyourservices.org/products/scheduling" />
   <meta name="theme-color" content="#00639e" />
 
@@ -171,25 +171,30 @@
         </ul>
       </details>
 
-      <p>
-        The calendar view shows the logged-in account, its role, and a pulldown to select assigned
-        private and listed public Jobs/Events. A 3-month navigator on the left highlights the selected
-        week; the schedule on the right can be shown as a <strong>week</strong> grid or a single
-        <strong>day</strong>, with arrows to step forward and back by day or week and an adjustable row
-        height — and it defaults to the day view on phones. Each activity shows a name, the current
-        number of people scheduled, the maximum allowed (<code>max: *</code> means no limit), the
-        assigned people's names, and status symbols. Colors convey status:
-      </p>
-      <ul class="legend">
-        <li><span style="background:#9e9e9e"></span><strong>Gray</strong> — in the past; cannot be modified.</li>
-        <li><span style="background:#808000"></span><strong>Olive</strong> — assigned count is at the maximum.</li>
-        <li><span style="background:#2e78d6"></span><strong>Blue</strong> — assigned count is below the maximum.</li>
-        <li><span style="background:#ffa500"></span><strong>Orange</strong> — (Scheduler) your assigned people equal your account's number of associated people.</li>
-        <li><span style="background:#9e9e9e"></span><strong>Gray, name struck through ("Cancelled")</strong> — the occurrence has been cancelled for that day/time and takes no assignments.</li>
-      </ul>
+      <details>
+        <summary>The calendar view &amp; color legend</summary>
+        <p>
+          The calendar view shows the logged-in account, its role, and a pulldown to select assigned
+          private and listed public Jobs/Events. A 3-month navigator on the left highlights the selected
+          week; the schedule on the right can be shown as a <strong>week</strong> grid or a single
+          <strong>day</strong>, with arrows to step forward and back by day or week and an adjustable row
+          height — and it defaults to the day view on phones. Each activity shows a name, the current
+          number of people scheduled, the maximum allowed (<code>max: *</code> means no limit), the
+          assigned people's names, and status symbols. Colors convey status:
+        </p>
+        <ul class="legend">
+          <li><span style="background:#9e9e9e"></span><strong>Gray</strong> — in the past; cannot be modified.</li>
+          <li><span style="background:#808000"></span><strong>Olive</strong> — assigned count is at the maximum.</li>
+          <li><span style="background:#2e78d6"></span><strong>Blue</strong> — assigned count is below the maximum.</li>
+          <li><span style="background:#ffa500"></span><strong>Orange</strong> — (Scheduler) your assigned people equal your account's number of associated people.</li>
+          <li><span style="background:#9e9e9e"></span><strong>Gray, name struck through ("Cancelled")</strong> — the occurrence has been cancelled for that day/time and takes no assignments.</li>
+        </ul>
+      </details>
 
       <h2>Roles</h2>
-      <p>Everyone sees exactly what their role needs — no more, no less.</p>
+      <p>Everyone sees exactly what their role needs — no more, no less: <strong>Scheduler</strong> (the volunteer), <strong>Supervisor</strong> (oversight &amp; setup), <strong>Administrator</strong> (full control), and an optional front-desk <strong>Check-in Station</strong>.</p>
+      <details>
+        <summary>See what each role can do</summary>
       <ul>
         <li><strong>Scheduler</strong> — the volunteer's account; schedules the people it's responsible for, and no one else's. A Scheduler:
           <ul>
@@ -206,7 +211,7 @@
             <li><strong>manage access</strong> for the private Jobs/Events it is assigned to — granting or revoking which Scheduler accounts may see and schedule them (configurable);</li>
             <li><strong>create its own Jobs/Events</strong> and their activities; a private one it creates is automatically assigned to it, so it can immediately manage that item's access (private and public creation are each independently configurable);</li>
             <li><strong>lock</strong> or <strong>cancel/restore</strong> individual activity occurrences on the private Jobs/Events it is assigned to (see below; each is configurable);</li>
-            <li><strong>record volunteer check-in</strong> — mark who actually showed up (or correct a check-in/out time, or swap in a same-account substitute) from the roster on the day, feeding verified hours into the reports;</li>
+            <li><strong>record volunteer check-in</strong> — mark who actually showed up (or correct a check-in/out time, or swap in a same-account substitute) from the roster on the day — or backfill it from a paper sign-in sheet a day or two later — feeding verified hours into the reports;</li>
             <li><strong>generate reports</strong> — printable or CSV check-in sheets, volunteer-hours &amp; impact totals (scheduled and verified), and by-Job/Event capacity &amp; fill rate (each configurable).</li>
           </ul>
         </li>
@@ -222,12 +227,15 @@
         </li>
         <li><strong>Check-in Station</strong> — an optional front-desk kiosk account. Signed in once on a shared tablet and left open, it shows only a Job/Event picker and a name box: volunteers check themselves in and out for the day by typing their name. It can do nothing else — it never sees or changes anyone's schedule beyond recording attendance (configurable).</li>
       </ul>
+      </details>
 
       <h2>Locking &amp; cancelling occurrences</h2>
       <p>
-        Beyond scheduling people, VSA can control a single activity occurrence on a specific day and
-        time (today or in the future) without changing the recurring plan behind it:
+        Control a single activity occurrence on a specific day — lock a fully-staffed shift, or skip one
+        date — without changing the recurring plan behind it.
       </p>
+      <details>
+        <summary>How locking &amp; cancelling work</summary>
       <ul>
         <li><strong>Lock / Unlock</strong> — freeze an occurrence so no additional people can be
           assigned, while everyone already assigned stays (and can still be removed). A padlock marks a
@@ -243,13 +251,16 @@
         and/or cancel occurrences on the private Jobs/Events it is assigned to, and an
         <strong>Administrator</strong> can do so on any Job/Event, public or private.
       </p>
+      </details>
 
       <h2>Volunteer check-in &amp; verified attendance</h2>
       <p>Know who actually turned up — not just who signed up. When enabled, volunteers can be checked in and out on the day, and those verified hours flow straight into the reports.</p>
+      <details>
+        <summary>Three ways to check in, and how verified hours work</summary>
       <ul>
-        <li><strong>Front-desk check-in station</strong> — a dedicated kiosk account signed in on a shared tablet and left open at the entrance. A volunteer picks the Job/Event and types their own name to check in on arrival and out when they leave.</li>
+        <li><strong>Front-desk check-in station</strong> — a dedicated kiosk account signed in on a shared tablet and left open at the entrance. A volunteer picks the Job/Event and types their own name to check in on arrival and out when they leave. Each button is a simple toggle, so a mistaken tap is undone by tapping again — no supervisor needed to fix it.</li>
         <li><strong>From a volunteer's own phone</strong> — a Scheduler checks their own people in and out for a current-day shift, from shortly before it starts.</li>
-        <li><strong>Supervisor / Administrator</strong> — record or correct check-in and check-out times from the roster on the volunteer's behalf, or swap in a substitute from the same account.</li>
+        <li><strong>Supervisor / Administrator</strong> — record or correct check-in and check-out times from the roster on the volunteer's behalf, or swap in a substitute from the same account. Attendance can also be <strong>entered after the fact</strong> from a paper sign-in sheet for the last few days — so a weekend's shifts can be logged on the next workday, not lost.</li>
       </ul>
       <p>
         Check-in captures the arrival time (a forgotten check-out defaults to the shift's scheduled end),
@@ -257,9 +268,12 @@
         <strong>fulfillment rate</strong> (verified vs. scheduled). Each surface is independently
         configurable, and the whole capability is off unless enabled.
       </p>
+      </details>
 
       <h2>Printable check-in sheets</h2>
       <p>When you need a roster in hand on the day, generate it from the live schedule — no separate spreadsheet to maintain, and no re-entry afterward.</p>
+      <details>
+        <summary>Options &amp; outputs</summary>
       <p>
         When enabled, a <strong>Supervisor</strong> can turn the on-screen roster into an
         offline <strong>check-in list</strong> — the people assigned to each activity — for signing
@@ -281,9 +295,12 @@
         occurrences. Members of a group account are marked <strong>👥</strong> (the same marker used on
         the calendar) so they are easy to tell apart, and the group name can optionally be shown. The capability is configurable.
       </p>
+      </details>
 
       <h2>Volunteer-hours &amp; capacity reports</h2>
       <p>Turn the schedule into the numbers grants, boards, and recognition need — computed from a durable record that outlives the calendar's activity retention, so long-range reports stay accurate.</p>
+      <details>
+        <summary>What the reports show</summary>
       <p>When enabled, a Supervisor or Administrator produces a summary over a <strong>month, quarter, year, or custom range</strong>, grouped by <strong>account</strong>, <strong>Job/Event</strong>, or <strong>volunteer</strong>:</p>
       <ul>
         <li><strong>Hours &amp; impact</strong> — sign-ups, scheduled hours, unique and new volunteers, and estimated economic value (hours × an hourly rate). Where check-in is used, <strong>verified</strong> hours, verified value, and a <strong>fulfillment&nbsp;%</strong> appear alongside.</li>
@@ -294,6 +311,7 @@
         <strong>👥</strong>, and note when a chosen period only partly overlaps the recorded data. The
         reports are configurable and off by default.
       </p>
+      </details>
 
       <h2>Sign-in &amp; registration</h2>
       <p>Joining is deliberately low-friction — where self-registration is enabled, a volunteer signs up with just an email and they're in.</p>
@@ -315,38 +333,40 @@
           yourself into activities) or <strong>Supervisor</strong> (see the full roster,
           read-only), and enter your email. Click the verification link we email you and you're signed in.
         </li>
-        <li>
-          <strong>Quick sign-in, no email (shared demo accounts)</strong> — Log in with one of the
-          accounts below; the password for all is <code>test</code>:
-          <ul>
-            <li><code>Betty</code> — <strong>Scheduler</strong>, the "Bicycle Club" group account
-              with 10 people. Add several people to an activity and watch a slot fill to its maximum
-              (Blue&nbsp;→&nbsp;Olive), and see the Orange state.</li>
-            <li><code>Mike</code> — <strong>Supervisor</strong>. See the full roster read-only,
-              and note that the private <strong>Board Committee</strong> Job appears in mike's pulldown —
-              it's hidden from accounts not assigned to it. mike can also use <strong>Add Job/Event</strong>
-              (top-right) to create its own Job or Event with activities. On its own private items (such as
-              <strong>Board Committee</strong>), click a current or upcoming activity to <strong>Lock</strong>
-              it against new assignments or <strong>Cancel/Restore</strong> that occurrence. Use
-              <strong>Generate Report</strong> (top-right) for a printable or CSV check-in sheet, and
-              <strong>Volunteer Hours</strong> for hours &amp; impact and by-Job/Event capacity &amp; fill-rate
-              reports (with verified hours where volunteers were checked in). mike can also
-              <strong>record check-in</strong> from an activity's roster on the day.</li>
-            <li><code>Front</code> — <strong>Check-in Station</strong>. A front-desk kiosk: pick a Job/Event,
-              type a volunteer's name, and check them in or out for the day — the whole account does nothing
-              else. (Also try self check-in from <code>Betty</code>'s phone view on a current-day shift.)</li>
-            <li><strong>Administrator</strong> — not shared publicly; email
-              <a href="mailto:contact@atyourservices.org">contact@atyourservices.org</a> for access to see the
-              Administrator role's capabilities (creating accounts, Jobs/Events, and activity plans).</li>
-          </ul>
-        </li>
       </ul>
+      <details>
+        <summary>Or use a shared demo account — no email needed</summary>
+        <p>Log in with one of the accounts below; the password for all is <code>test</code>:</p>
+        <ul>
+          <li><code>Betty</code> — <strong>Scheduler</strong>, the "Bicycle Club" group account
+            with 10 people. Add several people to an activity and watch a slot fill to its maximum
+            (Blue&nbsp;→&nbsp;Olive), and see the Orange state.</li>
+          <li><code>Mike</code> — <strong>Supervisor</strong>. See the full roster read-only,
+            and note that the private <strong>Board Committee</strong> Job appears in Mike's pulldown —
+            it's hidden from accounts not assigned to it. Mike can also use <strong>Add Job/Event</strong>
+            (top-right) to create its own Job or Event with activities. On its own private items (such as
+            <strong>Board Committee</strong>), click a current or upcoming activity to <strong>Lock</strong>
+            it against new assignments or <strong>Cancel/Restore</strong> that occurrence. Use
+            <strong>Generate Report</strong> (top-right) for a printable or CSV check-in sheet, and
+            <strong>Volunteer Hours</strong> for hours &amp; impact and by-Job/Event capacity &amp; fill-rate
+            reports (with verified hours where volunteers were checked in). Mike can also
+            <strong>record check-in</strong> from an activity's roster on the day.</li>
+          <li><code>Front</code> — <strong>Check-in Station</strong>. A front-desk kiosk: pick a Job/Event,
+            type a volunteer's name, and check them in or out for the day — the whole account does nothing
+            else. (Also try self check-in from <code>Betty</code>'s phone view on a current-day shift.)</li>
+          <li><strong>Administrator</strong> — not shared publicly; email
+            <a href="mailto:contact@atyourservices.org">contact@atyourservices.org</a> for access to see the
+            Administrator role's capabilities (creating accounts, Jobs/Events, and activity plans).</li>
+        </ul>
+      </details>
       <p class="callout">
         The demo accounts are shared — please be courteous, as others use them too. Activities in the
         past show <strong>Gray</strong> and cannot be modified.
       </p>
 
       <h2>What's in the demo</h2>
+      <details>
+        <summary>The seeded Jobs &amp; Events to explore</summary>
       <p>Use the calendar's Job/Event pulldown to explore the seeded content:</p>
       <ul>
         <li><strong>Kitchen</strong> (public Job) — daily meal and prep shifts.</li>
@@ -362,6 +382,7 @@
         <li><strong>Summer Art Fair</strong> (public Event) — a multi-day event with setup, check-in,
           and teardown activities.</li>
       </ul>
+      </details>
 
       <h2>Security</h2>
       <p class="callout">
@@ -369,6 +390,8 @@
         sign-ins are protected against guessing and abuse, and every action is permission-checked on the
         server based on your role.
       </p>
+      <details>
+        <summary>The security measures in detail</summary>
       <ul>
         <li>Passwords hashed (never stored in readable form); optional passwordless email sign-in with expiring links.</li>
         <li>Signed-token sessions that expire automatically; protection against session theft (XSS); logout clears cached data.</li>
@@ -376,8 +399,12 @@
         <li>Rate limiting against brute-force and email-spam abuse; security HTTP headers; input validation and injection guards.</li>
         <li>Information transmitted over HTTPS when deployed behind TLS.</li>
       </ul>
+      </details>
 
       <h2>Configuration &amp; branding</h2>
+      <p>Make it your own — brand, terminology, sign-in methods, and scheduling behavior are all configurable per deployment.</p>
+      <details>
+        <summary>What you can configure</summary>
       <ul>
         <li><strong>Branding</strong> — application name/title, home page, color scheme, logo/symbols.</li>
         <li><strong>Terminology</strong> — the "Job" label to fit your organization (Department, Skill Type, Ministry, etc.).</li>
@@ -386,6 +413,7 @@
         <li><strong>Allowed admin actions</strong> — add/edit/delete for accounts, Jobs/Events, and activity plans.</li>
         <li><strong>Scheduling window</strong> — how many months of past activity history are retained, and how many months ahead planned activities are generated and open for scheduling.</li>
       </ul>
+      </details>
 
       <h2>Getting started</h2>
       <p>Getting started begins with a conversation — <a href="/#contact">book a quick 15-minute consultation</a> and we'll walk through your organization's needs, gather a short configuration &amp; branding checklist, choose hosting, provision and brand your instance, and hand it off with admin guidance.</p>
