@@ -1,0 +1,7 @@
+# Cloudflare Pages redirects.
+# Short, printable links for the leaflet, QR codes, and anywhere a long URL won't fit.
+# Format: <from> <to> [status]. 302 (temporary) is deliberate — the Google appointment
+# link can be regenerated, and a 301 would stay cached in visitors' browsers.
+
+/book   https://calendar.google.com/calendar/appointments/schedules/AcZssZ2L5uKGFp8XqsR9OMb61MjV-o6UUIZKyOxZQ1cUEgiDg9uUVnceh87JnAWfFDZvr2fnPjddIzyH?gv=true   302
+/demo   https://schedule.atyourservices.org   302
