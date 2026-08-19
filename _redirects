@@ -2,6 +2,13 @@
 # Short, printable links for the leaflet, QR codes, and anywhere a long URL won't fit.
 # Format: <from> <to> [status]. 302 (temporary) is deliberate — the Google appointment
 # link can be regenerated, and a 301 would stay cached in visitors' browsers.
+#
+# NOTE: /book and /demo are now served by functions/book.js and functions/demo.js, which count the
+# click before redirecting. A Pages Function takes precedence over this file, and _redirects rules are
+# NOT applied to a request a Function serves — so the two rules below are currently INERT. They are
+# kept deliberately as a fallback: delete the Functions and these resume working, so the printed QR
+# code and leaflet links can never break just because the counting broke.
+# Keep the destinations here in sync with the DESTINATION constants in those two files.
 
 /book   https://calendar.google.com/calendar/appointments/schedules/AcZssZ2L5uKGFp8XqsR9OMb61MjV-o6UUIZKyOxZQ1cUEgiDg9uUVnceh87JnAWfFDZvr2fnPjddIzyH?gv=true   302
 /demo   https://schedule.atyourservices.org   302
