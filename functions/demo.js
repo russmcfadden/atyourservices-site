@@ -8,6 +8,8 @@
  * A Pages Function takes precedence over _redirects for the same path, so this file owns /demo.
  */
 
+import { clickValue } from "./_click.js";
+
 const DESTINATION = "https://schedule.atyourservices.org";
 
 const RETAIN_DAYS = 180;
@@ -27,15 +29,8 @@ async function record(env, request) {
   const now = new Date().toISOString();
   const key = `demo:${now}:${crypto.randomUUID().slice(0, 8)}`;
 
-  const value = JSON.stringify({
-    t: now,
-    // An empty referer here most likely means the leaflet QR code or a link from the PDF - i.e. an
-    // offline asset produced a visit. That is the number the go-to-market plan cannot otherwise see.
-    ref: request.headers.get("referer") || "",
-    ua: (request.headers.get("user-agent") || "").slice(0, 200),
-    country: request.cf?.country || "",
-    // Deliberately NOT stored: IP address.
-  });
-
-  await env.CLICKS.put(key, value, { expirationTtl: 60 * 60 * 24 * RETAIN_DAYS });
+  // An empty referer is the leaflet-QR / PDF-tap signal the go-to-market plan cannot otherwise see -
+  // but crawlers send an empty referer too, so the record carries a bot tag to keep the two apart.
+  // Automated requests are TAGGED, never dropped. See _click.js.
+  await env.CLICKS.put(key, clickValue(request, now), { expirationTtl: 60 * 60 * 24 * RETAIN_DAYS });
 }

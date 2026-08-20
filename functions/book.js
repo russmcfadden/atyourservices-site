@@ -15,6 +15,8 @@
  * NOT applied to a request a Function serves - so this file, not _redirects, owns /book.
  */
 
+import { clickValue } from "./_click.js";
+
 const DESTINATION =
   "https://calendar.google.com/calendar/appointments/schedules/AcZssZ2L5uKGFp8XqsR9OMb61MjV-o6UUIZKyOxZQ1cUEgiDg9uUVnceh87JnAWfFDZvr2fnPjddIzyH?gv=true";
 
@@ -39,13 +41,7 @@ async function record(env, request) {
   // leaflet handed over on a given day be matched to the click it produced.
   const key = `book:${now}:${crypto.randomUUID().slice(0, 8)}`;
 
-  const value = JSON.stringify({
-    t: now,
-    ref: request.headers.get("referer") || "",       // "" for QR scans and PDF taps - itself a signal
-    ua: (request.headers.get("user-agent") || "").slice(0, 200),
-    country: request.cf?.country || "",
-    // Deliberately NOT stored: IP address. Counting clicks does not require identifying people.
-  });
-
-  await env.CLICKS.put(key, value, { expirationTtl: 60 * 60 * 24 * RETAIN_DAYS });
+  // Automated requests are TAGGED (bot: "<reason>"), never dropped - see _click.js for why an empty
+  // referer alone can no longer be read as an offline scan.
+  await env.CLICKS.put(key, clickValue(request, now), { expirationTtl: 60 * 60 * 24 * RETAIN_DAYS });
 }
