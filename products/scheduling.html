@@ -37,7 +37,7 @@
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
     "url": "https://schedule.atyourservices.org",
-    "description": "Self-service volunteer and staff scheduling on a shared calendar. Volunteers book and cancel their own spots from any phone, capacity limits prevent over- and under-staffing, and role-based access keeps volunteers seeing only their own signups while coordinators see the master roster. Volunteers can check in on the day (front-desk station or their own phone) for verified attendance, and reports cover volunteer hours and impact, verified hours with a fulfillment rate, and by-program capacity and fill rate.",
+    "description": "Self-service volunteer and staff scheduling on a shared calendar. Volunteers book and cancel their own spots from any phone, capacity limits prevent over- and under-staffing, and role-based access keeps volunteers seeing only their own signups while coordinators see the master roster. Volunteers can check in on the day (front-desk station or their own phone) for verified attendance, and reports cover volunteer hours and impact, verified hours with a fulfillment rate, and by-program capacity and fill rate. Administrators can call off a shift that already has volunteers on it with a reason emailed to everyone assigned, review a tamper-evident audit trail of irreversible admin actions, and delete a program without losing the hours and attendance already recorded against it.",
     "image": "https://atyourservices.org/og-image.png",
     "offers": {
       "@type": "Offer",
@@ -98,7 +98,7 @@
         Application (VSA) takes that off your plate. It's a web-based schedule where people sign
         <em>themselves</em> in and out of activities on a shared calendar — from a phone if they like —
         while VSA quietly prevents over-scheduling and shows each person exactly what their role should
-        see. Schedulers manage only their own people, supervisors see the complete roster, and
+        see. Volunteers manage only their own people, supervisors see the complete roster, and
         administrators keep control.
       </p>
 
@@ -116,9 +116,10 @@
       <ul>
         <li><strong>Self-service scheduling</strong> — volunteers sign themselves up and cancel, from any phone; one account can cover a family or a whole group (a parent can sign up their kids, or a group leader their whole crew).</li>
         <li><strong>Capacity limits &amp; live status</strong> — per-activity maximums, current counts, and color-coded availability so full slots and gaps are obvious at a glance.</li>
-        <li><strong>Role-based privacy</strong> — Scheduler, Supervisor, and Administrator roles; volunteers see only their own signups, and private Jobs/Events stay hidden from unassigned accounts (enforced on the server).</li>
+        <li><strong>Role-based privacy</strong> — Volunteer, Supervisor, and Administrator roles; volunteers see only their own signups, and private Jobs/Events stay hidden from unassigned accounts (enforced on the server).</li>
         <li><strong>Delegation, not a lone administrator</strong> — add as many Supervisors as you need; each creates and manages their own Jobs/Events and controls who may access them, instead of everything routing through a single admin account.</li>
         <li><strong>Exception handling</strong> — lock a fully-staffed occurrence, or cancel and restore a single date, without disturbing the recurring plan behind it.</li>
+        <li><strong>Call off a shift people already signed up for</strong> — an Administrator can cancel an occurrence that already has volunteers on it, giving a reason that goes out by email to every one of them automatically. The screen then names anyone whose email could not be sent or who has no address on file, so you know exactly who still needs a phone call. Restoring it tells them too.</li>
         <li><strong>Flexible recurrence &amp; events</strong> — daily, weekday, day-of-week, or monthly schedules with open-ended or fixed end dates; dated multi-day events that can automatically reappear next season.</li>
         <li><strong>Volunteer check-in (verified attendance)</strong> — capture who actually shows up: a front-desk check-in station where volunteers sign themselves in by name on a shared tablet, self check-in from a volunteer's own phone, or a supervisor recording it from the roster. Verified hours and a fulfillment rate then sit alongside scheduled in the reports.</li>
         <li><strong>Printable check-in sheets</strong> — for signing people in on paper: printable or CSV rosters for a day or date range, with optional check-off boxes and write-in lines.</li>
@@ -128,7 +129,9 @@
         <li><strong>Easy sign-in</strong> — password and/or passwordless email ("magic link") sign-in, with optional self-registration.</li>
         <li><strong>Security built in</strong> — hashed passwords, expiring sessions, rate limiting, and server-side access control over HTTPS.</li>
         <li><strong>No third-party ads</strong> — no advertising is ever shown to your volunteers; the page is your organization's, not a billboard for someone else's.</li>
-        <li><strong>Branding &amp; configuration</strong> — your name, colors, and logo; configurable terminology (the "Job" label); adjustable admin actions and scheduling window.</li>
+        <li><strong>Admin audit trail</strong> — a tamper-evident record of who did the things that cannot be undone: deleting a Job/Event, activity plan, or account, changing someone's role, and cancelling or restoring an occupied shift. Administrators read it in a searchable table; records age out on a retention period you set.</li>
+        <li><strong>Deleting doesn't erase your history</strong> — removing a Job/Event takes its future occurrences off the calendar but keeps the past ones readable, so last quarter's hours and attendance still report correctly.</li>
+        <li><strong>Branding &amp; configuration</strong> — your name, colors, and logo; configurable terminology — both the "Job" label and what you call each role (Volunteer, Participant, Member…); adjustable admin actions and scheduling window.</li>
       </ul>
 
       <h2>How it works</h2>
@@ -206,17 +209,17 @@
           <li><span style="background:#9e9e9e"></span><strong>Gray</strong> — in the past; cannot be modified.</li>
           <li><span style="background:#808000"></span><strong>Olive</strong> — assigned count is at the maximum.</li>
           <li><span style="background:#2e78d6"></span><strong>Blue</strong> — assigned count is below the maximum.</li>
-          <li><span style="background:#ffa500"></span><strong>Orange</strong> — (Scheduler) your assigned people equal your account's number of associated people.</li>
+          <li><span style="background:#ffa500"></span><strong>Orange</strong> — (Volunteer) your assigned people equal your account's number of associated people.</li>
           <li><span style="background:#9e9e9e"></span><strong>Gray, name struck through ("Cancelled")</strong> — the occurrence has been cancelled for that day/time and takes no assignments.</li>
         </ul>
       </details>
 
       <h2>Roles</h2>
-      <p>Everyone sees exactly what their role needs — no more, no less: <strong>Scheduler</strong> (the volunteer), <strong>Supervisor</strong> (oversight &amp; setup), <strong>Administrator</strong> (full control), and an optional front-desk <strong>Check-in Station</strong>.</p>
+      <p>Everyone sees exactly what their role needs — no more, no less: <strong>Volunteer</strong> (signs up and manages their own spots), <strong>Supervisor</strong> (oversight &amp; setup), <strong>Administrator</strong> (full control), and an optional front-desk <strong>Check-in Station</strong>. What each role is <em>called</em> is your choice — a craft club calls its volunteers <em>Participants</em>, a ministry might say <em>Servers</em> — and the new word appears everywhere the role is shown.</p>
       <details>
         <summary>See what each role can do</summary>
       <ul>
-        <li><strong>Scheduler</strong> — the volunteer's account; schedules the people it's responsible for, and no one else's. A Scheduler:
+        <li><strong>Volunteer</strong> — the volunteer's own account; schedules the people it's responsible for, and no one else's. A Volunteer:
           <ul>
             <li>views, adds, and removes its associated people on activities;</li>
             <li>when check-in is enabled, checks its own people <strong>in and out</strong> for a current-day shift right from its phone;</li>
@@ -228,7 +231,7 @@
         </li>
         <li><strong>Supervisor</strong> — read-only oversight; sees everyone assigned to an activity but cannot add or remove people. A Supervisor can:
           <ul>
-            <li><strong>manage access</strong> for the private Jobs/Events it is assigned to — granting or revoking which Scheduler accounts may see and schedule them (configurable);</li>
+            <li><strong>manage access</strong> for the private Jobs/Events it is assigned to — granting or revoking which Volunteer accounts may see and schedule them (configurable);</li>
             <li><strong>create its own Jobs/Events</strong> and their activities; a private one it creates is automatically assigned to it, so it can immediately manage that item's access (private and public creation are each independently configurable);</li>
             <li><strong>lock</strong> or <strong>cancel/restore</strong> individual activity occurrences on the private Jobs/Events it is assigned to (see below; each is configurable);</li>
             <li><strong>record volunteer check-in</strong> — mark who actually showed up (or correct a check-in/out time, or swap in a same-account substitute) from the roster on the day — or backfill it from a paper sign-in sheet a day or two later — feeding verified hours into the reports;</li>
@@ -239,10 +242,11 @@
           <ul>
             <li>creates and manages accounts of any role, including additional Administrators;</li>
             <li>creates Jobs/Events and their <strong>activity plans</strong> (the recurring templates that generate the calendar's activities);</li>
-            <li>assigns Schedulers and Supervisors to private Jobs/Events;</li>
-            <li>adds people to a Scheduler account;</li>
+            <li>assigns Volunteers and Supervisors to private Jobs/Events;</li>
+            <li>adds people to a Volunteer account;</li>
             <li>generates the same <strong>reports</strong> as a Supervisor — check-in sheets, volunteer-hours &amp; impact totals (scheduled and verified), and by-Job/Event capacity &amp; fill rate (each configurable);</li>
-            <li>does not schedule people, but can open the calendar to <strong>record check-in</strong>, and to <strong>lock</strong> or <strong>cancel/restore</strong> individual activity occurrences on any Job/Event, public or private (see below; each is configurable).</li>
+            <li>does not schedule people, but can open the calendar to <strong>record check-in</strong>, and to <strong>lock</strong> or <strong>cancel/restore</strong> individual activity occurrences on any Job/Event, public or private — including one that <strong>already has volunteers assigned</strong>, with a required reason emailed to all of them (see below; each is configurable);</li>
+            <li>reads the <strong>audit trail</strong> of who performed the irreversible actions, and can re-verify the whole log on demand.</li>
           </ul>
         </li>
         <li><strong>Check-in Station</strong> — an optional front-desk kiosk account. Signed in once on a shared tablet and left open, it shows only a Job/Event picker and a name box: volunteers check themselves in and out for the day by typing their name. It can do nothing else — it never sees or changes anyone's schedule beyond recording attendance (configurable).</li>
@@ -262,14 +266,25 @@
           locked activity — useful when a shift is already staffed enough.</li>
         <li><strong>Cancel / Restore</strong> — make a single occurrence unavailable, for when a
           regularly scheduled activity should be skipped on a particular day/time. A cancelled
-          occurrence shows gray with its name struck through and takes no assignments; it can be
-          cancelled only when no one is assigned, and <strong>Restore</strong> brings it back. The rest
-          of the recurring schedule is untouched.</li>
+          occurrence shows gray with its name struck through and takes no assignments, and
+          <strong>Restore</strong> brings it back. The rest of the recurring schedule is untouched.</li>
+        <li><strong>Cancelling a shift that already has people on it</strong> — when the weather turns or
+          the venue falls through, an <strong>Administrator</strong> can call off an occupied occurrence
+          rather than removing everyone by hand. A dedicated page shows the roster first, requires a
+          <strong>reason</strong>, and flags up front anyone with no email address — so you can decide
+          whether you can reach everybody before you commit. On Proceed the reason is emailed to every
+          assigned account (regardless of their own notification preference — they did not choose this),
+          and the page reports the outcome by <em>name</em>: who was told, whose message failed, and who
+          has no address, each copyable for a phone-call list. <strong>Restore</strong> works the same
+          way, with its own reason, and notifies the same people. Both are written to the audit trail.</li>
       </ul>
       <p>
         Each capability is independently configurable per role: a <strong>Supervisor</strong> can lock
         and/or cancel occurrences on the private Jobs/Events it is assigned to, and an
-        <strong>Administrator</strong> can do so on any Job/Event, public or private.
+        <strong>Administrator</strong> can do so on any Job/Event, public or private. Cancelling an
+        occurrence that <em>has people assigned</em> is an Administrator capability, separately
+        configurable and available only where email notifications are switched on — with it off, an
+        occupied occurrence cannot be cancelled at all.
       </p>
       </details>
 
@@ -279,7 +294,7 @@
         <summary>Three ways to check in, and how verified hours work</summary>
       <ul>
         <li><strong>Front-desk check-in station</strong> — a dedicated kiosk account signed in on a shared tablet and left open at the entrance. A volunteer picks the Job/Event and types their own name to check in on arrival and out when they leave. Each button is a simple toggle, so a mistaken tap is undone by tapping again — no supervisor needed to fix it.</li>
-        <li><strong>From a volunteer's own phone</strong> — a Scheduler checks their own people in and out for a current-day shift, from shortly before it starts.</li>
+        <li><strong>From a volunteer's own phone</strong> — a Volunteer checks their own people in and out for a current-day shift, from shortly before it starts.</li>
         <li><strong>Supervisor / Administrator</strong> — record or correct check-in and check-out times from the roster on the volunteer's behalf, or swap in a substitute from the same account. Attendance can also be <strong>entered after the fact</strong> from a paper sign-in sheet for the last few days — so a weekend's shifts can be logged on the next workday, not lost.</li>
       </ul>
       <p>
@@ -333,6 +348,43 @@
       </p>
       </details>
 
+      <h2>Accountability &amp; history</h2>
+      <p>Two things a coordinator eventually needs and rarely has: a straight answer to <em>who removed
+        that?</em>, and last season's numbers still intact after somebody tidied up the calendar.</p>
+      <details>
+        <summary>The audit trail, and what happens when you delete something</summary>
+      <p>
+        <strong>Audit trail.</strong> When enabled, VSA records the handful of administrative actions that
+        cannot be undone or that change what someone is allowed to do: deleting a Job/Event, an activity
+        plan, or an account; changing an account's role; creating an account that is already an
+        Administrator; removing the last person from a group account; and cancelling or restoring a shift
+        that had volunteers on it. Each record keeps the time, who did it, what it was done to (captured
+        at the time, since the thing itself is usually gone), and how it turned out — including, for a
+        cancellation, the names of everyone who could not be emailed.
+      </p>
+      <ul>
+        <li><strong>Tamper-evident, not just a list.</strong> Every record is sealed and chained to the one
+          before it. An Administrator opening the log sees any altered row marked as such, and a
+          <strong>Verify whole log</strong> button re-checks the entire chain on demand.</li>
+        <li><strong>Readable, searchable, no editing.</strong> The log is a table like the other admin
+          views, searchable per column. Nothing in the application can edit or selectively delete a
+          record.</li>
+        <li><strong>Retention you set.</strong> Records age out automatically after a period you choose
+          (in months) — the whole retention policy is that one setting, with no manual purge to forget.</li>
+      </ul>
+      <p>
+        <strong>Deleting a Job/Event keeps the past.</strong> Removing a Job or Event takes its future
+        occurrences and its recurring plans off the calendar — but the occurrences that already happened
+        stay, and age out later on the ordinary history-retention clock, exactly like any other past
+        activity. That means hours and attendance already earned still report correctly after a program
+        ends. A Supervisor or Administrator can still open the item from an <strong>Archived</strong>
+        group in the calendar's Job/Event picker to see who was signed up and who checked in; archived
+        items are read-only, invisible to volunteers, and generate nothing new. Once the last past
+        occurrence has aged out, the item is removed for good. The delete confirmation says all of this
+        before you commit, and the deletion itself is recorded in the audit trail.
+      </p>
+      </details>
+
       <h2>Sign-in &amp; registration</h2>
       <p>Joining is deliberately low-friction — where self-registration is enabled, a volunteer signs up with just an email and they're in.</p>
       <p>
@@ -349,7 +401,7 @@
       <ul>
         <li>
           <strong>Register (self-serve, needs your email)</strong> — Open the demo and click
-          <strong>Register</strong>. Enter a name, pick <strong>Scheduler</strong> (schedule
+          <strong>Register</strong>. Enter a name, pick <strong>Volunteer</strong> (schedule
           yourself into activities) or <strong>Supervisor</strong> (see the full roster,
           read-only), and enter your email. Click the verification link we email you and you're signed in.
         </li>
@@ -358,7 +410,7 @@
         <summary>Or use a shared demo account — no email needed</summary>
         <p>Log in with one of the accounts below; the password for all is <code>test</code>:</p>
         <ul>
-          <li><code>Betty</code> — <strong>Scheduler</strong>, the "Bicycle Club" group account
+          <li><code>Betty</code> — <strong>Volunteer</strong>, the "Bicycle Club" group account
             with 10 people. Add several people to an activity and watch a slot fill to its maximum
             (Blue&nbsp;→&nbsp;Olive), and see the Orange state.</li>
           <li><code>Mike</code> — <strong>Supervisor</strong>. See the full roster read-only,
@@ -427,11 +479,12 @@
         <summary>What you can configure</summary>
       <ul>
         <li><strong>Branding</strong> — application name/title, home page, color scheme, logo/symbols.</li>
-        <li><strong>Terminology</strong> — the "Job" label to fit your organization (Department, Skill Type, Ministry, etc.).</li>
+        <li><strong>Terminology</strong> — the "Job" label to fit your organization (Department, Skill Type, Ministry, etc.), and the word for each role: a club can call its volunteers <em>Participants</em>, a school <em>Parent Helpers</em>.</li>
         <li><strong>Sign-in &amp; registration</strong> — which methods and which self-registration roles are allowed.</li>
         <li><strong>Password rules</strong> — length and required character types.</li>
         <li><strong>Allowed admin actions</strong> — add/edit/delete for accounts, Jobs/Events, and activity plans.</li>
         <li><strong>Scheduling window</strong> — how many months of past activity history are retained, and how many months ahead planned activities are generated and open for scheduling.</li>
+        <li><strong>Audit trail</strong> — on or off, and how many months of records to keep.</li>
       </ul>
       </details>
 
