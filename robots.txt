@@ -2,4 +2,13 @@ User-agent: *
 Allow: /
 Disallow: /cdn-cgi/
 
+# /demo and /book are 302 redirects (functions/demo.js, functions/book.js) - no indexable content,
+# so blocking them costs nothing in search. They are blocked because each one RECORDS A CLICK, and
+# the home page links to both: every crawler that indexed the site was following them and writing
+# click records, which swamped the only offline-attribution signal there is. Measured 2026-08-28 -
+# about half of the 37 stored records were automated, and most wore ordinary browser user-agents
+# that functions/_click.js could not tag.
+Disallow: /demo
+Disallow: /book
+
 Sitemap: https://atyourservices.org/sitemap.xml
