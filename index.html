@@ -101,10 +101,14 @@
         </p>
         <div class="shots">
           <figure class="shot">
+            <!-- Deliberately NOT lazy: the hero above is text-only, so this is the first large paint
+                 in a desktop viewport. Cloudflare RUM named it the LCP element at 7,272ms while it
+                 carried the lazy attribute - a browser cannot request an image it has not yet
+                 discovered, and discovery waits on layout.
+                 The second shot below stays lazy. -->
             <img src="products/volunteer-preview.webp"
                  alt="Volunteer view — a week of food-pantry shifts, each labelled with how many of its places are filled and color-coded by whether it still needs people"
                  width="1405" height="774"
-                 loading="lazy"
                  onerror="this.closest('figure').style.display='none'" />
             <figcaption><strong>What volunteers see</strong> — every shift says how full it is; sign up or cancel your own spot in a tap.</figcaption>
           </figure>
