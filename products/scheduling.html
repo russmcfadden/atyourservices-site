@@ -113,26 +113,31 @@
       <p>VSA is not limited to these organizations — it is a flexible application that can accommodate many types of organizations with scheduling needs.</p>
 
       <h2>Features at a glance</h2>
+      <!-- One line each, on purpose. Every item below that needed a paragraph has an accordion further
+           down the page carrying it at full length (locking &amp; cancelling, removing a person and the
+           walk-in, the audit trail, the three ways to check in, security, configuration). Saying it twice
+           a screen apart made the list unscannable and taught the reader nothing extra. Keep new entries
+           to a bold lead plus one clause; the depth goes in the accordion. -->
       <ul>
-        <li><strong>Self-service scheduling</strong> — volunteers sign themselves up and cancel, from any phone; one account can cover a family or a whole group (a parent can sign up their kids, or a group leader their whole crew).</li>
-        <li><strong>Capacity limits &amp; live status</strong> — per-activity maximums, current counts, and color-coded availability so full slots and gaps are obvious at a glance.</li>
-        <li><strong>Role-based privacy</strong> — Volunteer, Supervisor, and Administrator roles; volunteers see only their own signups, and private Jobs/Events stay hidden from unassigned accounts (enforced on the server).</li>
-        <li><strong>Delegation, not a lone administrator</strong> — add as many Supervisors as you need; each creates and manages their own Jobs/Events and controls who may access them, instead of everything routing through a single admin account.</li>
-        <li><strong>Exception handling</strong> — lock a fully-staffed occurrence, or cancel and restore a single date, without disturbing the recurring plan behind it.</li>
-        <li><strong>Call off a shift people already signed up for</strong> — an Administrator can cancel an occurrence that already has volunteers on it, giving a reason that goes out by email to every one of them automatically. The screen then names anyone whose email could not be sent or who has no address on file, so you know exactly who still needs a phone call. Restoring it tells them too.</li>
-        <li><strong>Change who is on a shift</strong> — take a volunteer off a shift that has not started (they are emailed, and you are told if the message did not reach them), or add someone who turns up on the day without having signed up — added and checked in in one act, even if the shift was already full. Neither is a cancellation: the shift still goes ahead.</li>
-        <li><strong>Flexible recurrence &amp; events</strong> — daily, weekday, day-of-week, or monthly schedules with open-ended or fixed end dates; dated multi-day events that can automatically reappear next season.</li>
-        <li><strong>Volunteer check-in (verified attendance)</strong> — capture who actually shows up: a front-desk check-in station where volunteers sign themselves in by name on a shared tablet, self check-in from a volunteer's own phone, or a supervisor recording it from the roster. Verified hours and a fulfillment rate then sit alongside scheduled in the reports.</li>
-        <li><strong>Printable check-in sheets</strong> — for signing people in on paper: printable or CSV rosters for a day or date range, with optional check-off boxes and write-in lines.</li>
-        <li><strong>Volunteer-hours &amp; impact reports</strong> — monthly, quarterly, and annual totals by account, job/program, or volunteer: <strong>scheduled and verified (checked-in)</strong> hours, unique and new volunteers, and estimated economic value — for grants, boards, and recognition.</li>
-        <li><strong>Capacity &amp; fill-rate reports</strong> — by Job/Event, available slots and hours shown next to sign-ups with a fill percentage, so under-subscribed programs stand out for recruiting.</li>
-        <li><strong>Confirmations &amp; reminders</strong> — optional email confirmation when a volunteer signs up (or cancels) and a reminder before each shift, each with an add-to-calendar (.ics) file; volunteers choose per sign-up or set a default (send automatically, ask each time, or off) in their profile.</li>
+        <li><strong>Self-service scheduling</strong> — volunteers sign up and cancel from any phone, and one account can cover a family or a whole crew.</li>
+        <li><strong>Capacity limits &amp; live status</strong> — per-activity maximums with live counts and color-coded status, so full shifts and gaps are obvious.</li>
+        <li><strong>Role-based privacy</strong> — volunteers see only their own sign-ups, and private Jobs/Events stay hidden from unassigned accounts (enforced on the server).</li>
+        <li><strong>Delegation, not a lone administrator</strong> — add as many Supervisors as you need, each running their own Jobs/Events and deciding who may access them.</li>
+        <li><strong>Exception handling</strong> — lock a fully-staffed occurrence, or cancel and restore a single date, without touching the recurring plan behind it.</li>
+        <li><strong>Call off a shift people already signed up for</strong> — cancel an occupied occurrence with a reason emailed to everyone on it, and see who could not be reached.</li>
+        <li><strong>Change who is on a shift</strong> — take someone off before it starts, or add a walk-in on the day; either way the shift still goes ahead.</li>
+        <li><strong>Flexible recurrence &amp; events</strong> — daily, weekday, day-of-week or monthly patterns, open-ended or fixed; dated multi-day events that can return next season.</li>
+        <li><strong>Volunteer check-in (verified attendance)</strong> — record who actually showed up, from a front-desk tablet, a volunteer's own phone, or the roster.</li>
+        <li><strong>Printable check-in sheets</strong> — printable or CSV rosters for a day or a date range, with check-off boxes and write-in lines.</li>
+        <li><strong>Volunteer-hours &amp; impact reports</strong> — monthly, quarterly and annual totals by account, program or volunteer: <strong>scheduled and verified</strong> hours, and estimated economic value.</li>
+        <li><strong>Capacity &amp; fill-rate reports</strong> — available slots and hours beside sign-ups, with a fill percentage, so under-subscribed programs stand out for recruiting.</li>
+        <li><strong>Confirmations &amp; reminders</strong> — optional sign-up confirmations and a reminder before each shift, each with an add-to-calendar file; volunteers set their own preference.</li>
         <li><strong>Easy sign-in</strong> — password and/or passwordless email ("magic link") sign-in, with optional self-registration.</li>
         <li><strong>Security built in</strong> — hashed passwords, expiring sessions, rate limiting, and server-side access control over HTTPS.</li>
-        <li><strong>No third-party ads</strong> — no advertising is ever shown to your volunteers; the page is your organization's, not a billboard for someone else's.</li>
-        <li><strong>Admin audit trail</strong> — a tamper-evident record of who did the things that cannot be undone: deleting a Job/Event, activity plan, or account, changing someone's role, taking a person off a shift or adding a walk-in, and cancelling or restoring an occupied shift. Administrators read it in a searchable table; records age out on a retention period you set.</li>
-        <li><strong>Deleting doesn't erase your history</strong> — removing a Job/Event takes its future occurrences off the calendar but keeps the past ones readable, so last quarter's hours and attendance still report correctly.</li>
-        <li><strong>Branding &amp; configuration</strong> — your name, colors, and logo; configurable terminology — both the "Job" label and what you call each role (Volunteer, Participant, Member…); adjustable admin actions and scheduling window.</li>
+        <li><strong>No third-party ads</strong> — no advertising is ever shown to your volunteers; the page is your organization's, not a billboard.</li>
+        <li><strong>Admin audit trail</strong> — a tamper-evident record of who deleted something, changed a role, or cancelled an occupied shift; records age out on a retention period you set.</li>
+        <li><strong>Deleting doesn't erase your history</strong> — removing a Job/Event clears its future occurrences but keeps the past ones, so last quarter still reports correctly.</li>
+        <li><strong>Branding &amp; configuration</strong> — your name, colors and logo; configurable wording for the "Job" label and each role; adjustable admin actions.</li>
       </ul>
 
       <h2>How it works</h2>
