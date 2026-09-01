@@ -106,7 +106,15 @@ a { color: var(--accent); }
 .doc { padding: 40px 0 64px; }
 .doc h1 { font-size: 2rem; margin-bottom: 8px; }
 .doc .subtitle { color: var(--muted); margin-top: 0; }
-.doc h2 { font-size: 1.35rem; margin-top: 36px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+.doc h2 { font-size: 1.35rem; margin-top: 36px; border-bottom: 1px solid var(--border); padding-bottom: 6px;
+  /* the site header is sticky, so an anchored jump would otherwise land the heading underneath it */
+  scroll-margin-top: 72px; }
+/* contents list on the long product page. .toc-label is a <p>, not a heading, so the jump list does not
+   insert itself into the document outline it describes. */
+.doc .toc { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 6px; padding: 12px 16px; margin: 20px 0 8px; }
+.doc .toc-label { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 0 0 8px; font-weight: 700; }
+.doc .toc ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 4px 18px; }
+.doc .toc li { font-size: 0.95rem; }
 .doc h3 { font-size: 1.1rem; margin-top: 24px; }
 .doc ul { padding-left: 20px; }
 .doc li > ul { margin: 6px 0 10px; }
