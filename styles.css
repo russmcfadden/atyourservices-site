@@ -107,10 +107,11 @@ a { color: var(--accent); }
 .doc h1 { font-size: 2rem; margin-bottom: 8px; }
 .doc .subtitle { color: var(--muted); margin-top: 0; }
 .doc h2 { font-size: 1.35rem; margin-top: 36px; border-bottom: 1px solid var(--border); padding-bottom: 6px;
-  /* .site-header is sticky, so an anchored jump lands the heading UNDER it unless the target reserves at
-     least the header's height. Measured, not guessed: 64px wide. Must stay above the header height - at
-     72px every anchor on a phone landed 26px behind it, i.e. just past the heading you asked for. */
-  scroll-margin-top: 76px; }
+  /* .site-header is sticky, so an anchored jump lands the heading UNDER it unless the target reserves
+     at least the header's height - and that height is not one number (64px wide, 98px narrow, and page
+     zoom moves the boundary). --header-h is measured by the inline script on the page; the fallback is
+     the TALLER case on purpose, so with no script an anchor sits low rather than hidden. */
+  scroll-margin-top: calc(var(--header-h, 98px) + 12px); }
 /* Contents list on the long product page - a <details> so it is one line until wanted, using the same
    styling as the page's other accordions. Its <summary> is not a heading, so the jump list stays out of
    the outline it describes. */
@@ -137,10 +138,9 @@ a { color: var(--accent); }
 
 @media (max-width: 600px) {
   .hero h1 { font-size: 1.95rem; }
-  /* this is what makes the sticky header 98px instead of 64px, and why the anchor offset above has to
-     grow with it - the two are the same fact stated twice, so change them together */
+  /* this is what makes the sticky header 98px instead of 64px; the anchor offset no longer has to be
+     restated here, because it is measured from the header itself (see --header-h) */
   .header-inner { flex-direction: column; gap: 10px; }
-  .doc h2 { scroll-margin-top: 110px; }
   .nav { flex-wrap: wrap; justify-content: center; }
   .nav a { margin: 0 8px; }
   .nav a.nav-demo { margin: 4px 8px 0; }

@@ -27,7 +27,10 @@
   <meta name="twitter:description" content="Stop chasing volunteers. A simple, self-service schedule your community will actually use — book and cancel their own spots, capacity limits prevent over- and under-staffing, privacy by role." />
   <meta name="twitter:image" content="https://atyourservices.org/og-image.png" />
 
-  <link rel="stylesheet" href="../styles.css" />
+  <!-- versioned: styles.css is served max-age=14400, so without this a reader who visited in the last
+       four hours keeps the previous stylesheet and sees none of the layout fix. Bump on any styles.css
+       change that this page depends on. -->
+  <link rel="stylesheet" href="../styles.css?v=20260901" />
 
   <script type="application/ld+json">
   {
@@ -634,6 +637,31 @@
       <a href="/#contact">Contact</a>
     </div>
   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Anchor offset for the sticky header. The header is 64px wide and 98px narrow (.header-inner goes
+    // to a column under 600px), and page zoom moves that boundary too - so any number written into the
+    // CSS is a guess that is wrong somewhere. Measure it instead, and let scroll-margin-top follow.
+    // The CSS fallback is the TALLER value: without this script an anchor lands a little low, never
+    // underneath the header, which is the direction that still works.
+    (function () {
+      var hdr = document.querySelector('.site-header');
+      if (!hdr) return;
+      var set = function () {
+        document.documentElement.style.setProperty('--header-h', hdr.offsetHeight + 'px');
+      };
+      set();
+      addEventListener('resize', set);
+    })();
+
+    // The contents list is collapsed in the markup because expanded it is 13 rows on a phone - half the
+    // viewport, pushing away the content it exists to reach. Where there is room it opens on arrival.
+    // Set once, on load only: re-deciding on resize would overrule whatever the reader had chosen.
+    (function () {
+      var toc = document.querySelector('.toc');
+      if (toc && innerWidth >= 900) toc.open = true;
+    })();
+  </script>
 </body>
 </html>
