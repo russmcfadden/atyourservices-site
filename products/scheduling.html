@@ -91,9 +91,12 @@
       </p>
 
       <!-- 18 sections and ~5,500 words: without this, "what does it cost" is a scroll to the bottom.
+           Collapsed, and reusing the page's own accordion styling: expanded it ran 18 links over 13 rows
+           on a phone - 420px, half the viewport - so the jump list pushed away the content it exists to
+           reach. Closed it is one line at every width. The links stay in the markup either way.
            Generated from the h2 ids - add a section, add its line here. -->
-      <nav class="toc" aria-label="On this page">
-        <p class="toc-label">On this page</p>
+      <details class="toc">
+        <summary>On this page</summary>
         <ul>
           <li><a href="#overview">Overview</a></li>
           <li><a href="#who-it-s-for">Who it's for</a></li>
@@ -114,7 +117,7 @@
           <li><a href="#getting-started">Getting started</a></li>
           <li><a href="#hosting-pricing">Hosting &amp; pricing</a></li>
         </ul>
-      </nav>
+      </details>
 
       <h2 id="overview">Overview</h2>
       <p>

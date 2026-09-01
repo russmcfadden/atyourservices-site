@@ -107,14 +107,17 @@ a { color: var(--accent); }
 .doc h1 { font-size: 2rem; margin-bottom: 8px; }
 .doc .subtitle { color: var(--muted); margin-top: 0; }
 .doc h2 { font-size: 1.35rem; margin-top: 36px; border-bottom: 1px solid var(--border); padding-bottom: 6px;
-  /* the site header is sticky, so an anchored jump would otherwise land the heading underneath it */
-  scroll-margin-top: 72px; }
-/* contents list on the long product page. .toc-label is a <p>, not a heading, so the jump list does not
-   insert itself into the document outline it describes. */
-.doc .toc { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 6px; padding: 12px 16px; margin: 20px 0 8px; }
-.doc .toc-label { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 0 0 8px; font-weight: 700; }
-.doc .toc ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 4px 18px; }
-.doc .toc li { font-size: 0.95rem; }
+  /* .site-header is sticky, so an anchored jump lands the heading UNDER it unless the target reserves at
+     least the header's height. Measured, not guessed: 64px wide. Must stay above the header height - at
+     72px every anchor on a phone landed 26px behind it, i.e. just past the heading you asked for. */
+  scroll-margin-top: 76px; }
+/* Contents list on the long product page - a <details> so it is one line until wanted, using the same
+   styling as the page's other accordions. Its <summary> is not a heading, so the jump list stays out of
+   the outline it describes. */
+.doc .toc ul { list-style: none; padding: 0; margin: 0 0 4px; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+/* one entry per line, never broken mid-phrase - a wrapped "Volunteer check-in & verified attendance"
+   reads as two entries */
+.doc .toc li { font-size: 0.95rem; white-space: nowrap; }
 .doc h3 { font-size: 1.1rem; margin-top: 24px; }
 .doc ul { padding-left: 20px; }
 .doc li > ul { margin: 6px 0 10px; }
@@ -134,7 +137,10 @@ a { color: var(--accent); }
 
 @media (max-width: 600px) {
   .hero h1 { font-size: 1.95rem; }
+  /* this is what makes the sticky header 98px instead of 64px, and why the anchor offset above has to
+     grow with it - the two are the same fact stated twice, so change them together */
   .header-inner { flex-direction: column; gap: 10px; }
+  .doc h2 { scroll-margin-top: 110px; }
   .nav { flex-wrap: wrap; justify-content: center; }
   .nav a { margin: 0 8px; }
   .nav a.nav-demo { margin: 4px 8px 0; }
