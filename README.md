@@ -24,7 +24,17 @@ structured data (`Organization` on the landing page, `SoftwareApplication` on th
    - Build output directory: `/` (repo root)
 3. Add custom domains `atyourservices.org` and `www.atyourservices.org`.
 
-The live demo links point to `https://schedule.atyourservices.org` (the scheduling app, hosted separately).
+The live demo links point to `/demo`, a Pages Function that records the click in KV and redirects to
+`https://schedule.atyourservices.org`. Link the demo that way, not directly, or the click is invisible.
+
+### ⚠️ Bump the stylesheet version whenever `styles.css` changes
+Every page links it as `styles.css?v=YYYYMMDD`. **All four pages must carry the same value**, and it must
+be bumped in the same commit as the CSS. The file is unhashed and shared, and the zone stamps
+`Cache-Control: max-age=14400` on it regardless of what `_headers` asks for (Cloudflare's Browser Cache
+TTL overrides origin headers) — so without a new query string a returning visitor gets new markup with a
+four-hour-stale stylesheet. That shipped once, on 2026-09-09, and rendered the How-it-works steps as a
+bare numbered list. The permanent fix is Cloudflare → Caching → Configuration → Browser Cache TTL →
+**Respect Existing Headers**, after which `_headers` governs and the query string is belt-and-braces.
 
 ## Get found by search engines (do once, after deploy)
 
