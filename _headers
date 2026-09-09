@@ -1,0 +1,8 @@
+# styles.css is a single unhashed, unversioned file shared by every page (no build step, by design), so
+# a deploy that changes markup AND css hands a returning browser new HTML with a stale stylesheet - the
+# 2026-09-09 rebuild shipped correctly and still rendered the How-it-works steps as a bare <ol>, because
+# the default `max-age=14400` meant the browser did not even ask for the new css for four hours.
+# max-age=0 + must-revalidate keeps the file cached but forces a conditional request; unchanged css
+# answers 304 (a few hundred bytes), so this costs almost nothing on a site this size.
+/styles.css
+  Cache-Control: public, max-age=0, must-revalidate
