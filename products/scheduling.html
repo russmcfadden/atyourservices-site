@@ -498,10 +498,13 @@
         <summary>Or use a shared demo account — no email needed</summary>
         <p>Log in with one of the accounts below; the password for all is <code>test</code>:</p>
         <ul>
-          <li><code>Betty</code> — <strong>Volunteer</strong>, the "Bicycle Club" group account
-            with 17 people — a contact plus 16 members. Add several to a shift and watch it fill to its maximum
-            (Blue&nbsp;→&nbsp;Olive). For the <strong>Orange</strong> state — every person on the account
-            assigned at once — use an activity with no maximum, such as Greeter's Info Table (Sundays).</li>
+          <li><code>Betty</code> — <strong>Volunteer</strong>, the "Bicycle Club" group account: one
+            login covering a whole club. Add several to a shift and watch it fill to its maximum
+            (Blue&nbsp;→&nbsp;Olive). For the <strong>Orange</strong> state — <em>every</em> person on the
+            account assigned to one activity at once — you need somewhere with room for all of them:
+            an activity with no maximum, such as Greeter's <strong>Info Table</strong> (Sundays) or
+            <strong>Visitor Center - Refreshment Stand</strong> (Saturdays), or the
+            <strong>Turkey Distribution</strong> shift on the Thanksgiving Food Drive.</li>
           <li><code>Mike</code> — <strong>Supervisor</strong>. See the full roster read-only,
             and note that the private <strong>Board Committee</strong> Job appears in Mike's pulldown —
             it's hidden from accounts not assigned to it. Mike can also use <strong>Add Job/Event</strong>
@@ -539,8 +542,8 @@
           Monthly Bible Distribution on the <strong>first Sunday of each month</strong> — a monthly
           recurrence set by week-number-and-weekday rather than a fixed date.</li>
         <li><strong>Summer Concert</strong> (public Job) — weekend stage setup, musicians, and
-          equipment teardown on Saturdays and Sundays, running through <strong>late September</strong>
-          (a Job with a fixed end date).</li>
+          equipment teardown on Saturdays and Sundays, running through <strong>26 September 2026</strong>
+          (a Job with a fixed end date — once past, it stops generating and shows the end of its run).</li>
         <li><strong>Community Food Pantry</strong> (public Job) — weekly distribution and sorting shifts
           on set days of the week.</li>
         <li><strong>Gardening</strong> (public Job) — a weekly <em>Saturday Clean up</em>. It is the
@@ -553,7 +556,7 @@
           Activity names may repeat across Jobs, and splitting the crews this way is what lets the hours
           report give each one its own line instead of a single combined total.</li>
         <li><strong>Safety Classes</strong> (public Job) — a series of classes on specific weekdays,
-          running through <strong>late September</strong> (a Job with a fixed end date).</li>
+          running through <strong>31 October 2026</strong> (a Job with a fixed end date).</li>
         <li><strong>Fall Book-Sale</strong> (public Event) — a weekend sale,
           <strong>September 18&ndash;20, 2026</strong>: Setup on the Friday, Cashier Table morning and afternoon
           shifts across Saturday and Sunday, then Teardown. Setup and Teardown have <strong>no
@@ -561,16 +564,32 @@
         <li><strong>Fall Fair</strong> (public Event) — a three-day event, <strong>October 16&ndash;18, 2026</strong>:
           Setup on the 16th, then Ticket Booth morning and afternoon shifts on the 17th and 18th. Shows how
           one dated Event carries different activities on different days of its run.</li>
+        <li><strong>Visitor Center - Crew/Tours</strong>, <strong>Visitor Center - Info Desk</strong> and
+          <strong>Visitor Center - Refreshment Stand</strong> (public Jobs) — one weekly
+          <strong>Saturday</strong> operating day, split across three crews and running 8am to 5pm:
+          opening crew, guided tours and closing crew; a morning and an afternoon shift on the info desk;
+          and the same two on the refreshment stand, which has <strong>no maximum</strong>. Splitting the
+          day this way is what lets the hours report give each crew its own line, and it is why the
+          calendar shows one Job at a time — checking a Saturday across all three is three selections.</li>
+        <li><strong>Thanksgiving Food Drive</strong> (public Event) — a six-day drive,
+          <strong>November 20&ndash;25, 2026</strong>: collection points morning and afternoon across the
+          Friday, Saturday and Sunday, sorting and packing on the Monday and Tuesday, then Turkey
+          Distribution and Teardown on the Wednesday. It is the only Event here that spans a weekend
+          <em>and</em> weekdays, and Turkey Distribution is the largest shift in the demo at 20 people.</li>
         <li><strong>Board Committee</strong> (private Job) — visible only to assigned accounts; sign in
           as <code>Mike</code> to see it. Illustrates private-vs-public access.</li>
       </ul>
       <p>
-        <strong>Two occurrence states are seeded so the colour legend is checkable.</strong> Kitchen's
-        shifts are <strong>cancelled on 6 September 2026</strong> — gray, name struck through, taking no
-        assignments — and its Dinner Prep shift is <strong>locked on 17&ndash;19 September 2026</strong>,
-        marked with a padlock: everyone already assigned stays, but nobody else can be added. Kitchen is
-        a public Job, so any account can see both. Both are fixed dates that stay put, so page the
-        calendar back to that month if it has passed — the states are permanent, not a passing week.
+        <strong>Two occurrence states are seeded so the colour legend is checkable</strong>, both on the
+        <strong>Kitchen</strong> Job, and both dated ahead so you can page <em>forward</em> to them.
+        Kitchen's Dinner Prep and Serving Dinner are <strong>cancelled on 31 October 2026</strong> —
+        gray, name struck through, taking no assignments — and its Lunch Prep and Serving Lunch are
+        <strong>locked on 26 November 2026</strong>, marked with a padlock: everyone already assigned
+        stays, but nobody else can be added. Kitchen is a public Job, so any account can see both.
+        (Earlier examples sit on <strong>6 September</strong> and <strong>17&ndash;19 September 2026</strong>
+        if you would rather page back.) These are fixed dates that stay put — the states are permanent,
+        not a passing week. Remember to select <strong>Kitchen</strong> in the pulldown first: the
+        calendar shows one Job at a time, so the date alone will not find them.
       </p>
       <p>
         <strong>Finished Events move to Archived — and that is worth a look.</strong> July's
