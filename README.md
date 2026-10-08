@@ -36,6 +36,23 @@ four-hour-stale stylesheet. That shipped once, on 2026-09-09, and rendered the H
 bare numbered list. The permanent fix is Cloudflare → Caching → Configuration → Browser Cache TTL →
 **Respect Existing Headers**, after which `_headers` governs and the query string is belt-and-braces.
 
+### ⚠️ Move a page's dates in the same commit as the page
+
+Two dates describe when a page's **content** changed, and neither of them updates itself:
+
+- **`sitemap.xml` → `<lastmod>`**, one per URL. It is the recrawl hint, so a page that changed under a
+  stale date tells a crawler there is nothing new on it.
+- **`dateModified`** in `products/scheduling.html`'s `SoftwareApplication` JSON-LD. Only that page
+  carries one — the landing page's `Organization` has no meaningful equivalent, and
+  `free-volunteer-scheduling.html` could take one on its `FAQPage` if it ever wants it.
+
+**Bump only what actually changed**, and only the URLs whose own page changed. Per page,
+`git log -1 --format=%ad --date=short -- <file>` is the answer, not today's date. These are *content*
+state, not deploy state: a redeploy that changes no markup moves neither.
+
+The scheduling page's `lastmod` has drifted twice — four copy commits on 2026-09-10, and again on
+2026-10-08 — both times because this rule lived nowhere. That is what this section is for.
+
 ## Get found by search engines (do once, after deploy)
 
 On-page SEO (sitemap, robots, canonical, Open Graph, structured data, favicons) ships in this
