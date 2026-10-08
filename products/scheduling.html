@@ -40,13 +40,13 @@
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
     "url": "https://schedule.atyourservices.org",
-    "description": "Self-service volunteer and staff scheduling on a shared calendar. Volunteers book and cancel their own spots from any phone, capacity limits prevent over- and under-staffing, and role-based access keeps volunteers seeing only their own signups while coordinators see the master roster. Volunteers can check in on the day (front-desk station or their own phone) to record who actually came, and reports cover volunteer hours and impact, check-in hours beside the scheduled ones, and by-program capacity and fill rate. Coordinators can take a volunteer off a shift before it starts, with an email telling them, and can add a walk-in who turned up without signing up — added and checked in together. Administrators can call off a shift that already has volunteers on it with a reason emailed to everyone assigned, review a tamper-evident audit trail of irreversible admin actions, and delete a program without losing the hours and attendance already recorded against it.",
+    "description": "Self-service volunteer and staff scheduling on a shared calendar. Volunteers book and cancel their own spots from any phone, capacity limits prevent over- and under-staffing, and role-based access keeps volunteers seeing only their own signups while coordinators see the master roster. Volunteers can check in on the day (front-desk station or their own phone) to record who actually came, and reports cover volunteer hours and impact, check-in hours beside the scheduled ones, and by-program capacity and fill rate. Coordinators can take a volunteer off a shift before it starts, with an email telling them, and can add a walk-in who turned up without signing up — added and checked in together. Administrators can call off a shift that already has volunteers on it with a reason emailed to everyone assigned, review a tamper-evident audit trail of irreversible admin actions, and delete a program without losing the hours and attendance already recorded against it. An activity plan can be changed after volunteers have signed up: the administrator is shown what the change would do and who is standing on it before confirming it, a day that moves takes its roster with it, and everyone affected can be emailed with a reason that also refreshes their calendar entry. Deleting an activity or a whole program likewise offers to email every account that loses an upcoming shift.",
     "image": "https://atyourservices.org/og-image.png",
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD",
-      "description": "Free software license; optional managed hosting at pass-through infrastructure cost."
+      "description": "No software-license cost; optional managed hosting at pass-through infrastructure cost."
     },
     "publisher": {
       "@type": "Organization",
@@ -93,7 +93,7 @@
         <a class="btn btn-primary" href="/demo" target="_blank" rel="noopener">Open the live demo</a>
       </p>
 
-      <!-- 18 sections and ~5,500 words: without this, "what does it cost" is a scroll to the bottom.
+      <!-- 19 sections and ~6,500 words: without this, "what does it cost" is a scroll to the bottom.
            Collapsed, and reusing the page's own accordion styling: expanded it ran 18 links over 13 rows
            on a phone - 420px, half the viewport - so the jump list pushed away the content it exists to
            reach. Closed it is one line at every width. The links stay in the markup either way.
@@ -108,6 +108,7 @@
           <li><a href="#roles">Roles</a></li>
           <li><a href="#locking-cancelling-occurrences">Locking &amp; cancelling occurrences</a></li>
           <li><a href="#changing-who-is-on-a-shift">Changing who is on a shift</a></li>
+          <li><a href="#changing-or-ending-an-activity">Changing or ending an activity</a></li>
           <li><a href="#volunteer-check-in-verified-attendance">Volunteer check-in &amp; attendance</a></li>
           <li><a href="#printable-check-in-sheets">Printable check-in sheets</a></li>
           <li><a href="#volunteer-hours-capacity-reports">Volunteer-hours &amp; capacity reports</a></li>
@@ -158,6 +159,8 @@
         <li><strong>Exception handling</strong> — lock a fully-staffed occurrence, or cancel and restore a single date, without touching the recurring plan behind it.</li>
         <li><strong>Call off a shift people already signed up for</strong> — cancel an occupied occurrence with a reason emailed to everyone on it, and see who could not be reached.</li>
         <li><strong>Change who is on a shift</strong> — take someone off before it starts, or add a walk-in on the day; either way the shift still goes ahead.</li>
+        <li><strong>Change a shift without losing its roster</strong> — editing an activity shows what it will do and who is standing on it first, and a day that moves takes its people with it.</li>
+        <li><strong>Ending a program tells the people on it</strong> — deleting a Job/Event or one activity can email every account that loses an upcoming shift, with your reason.</li>
         <li><strong>Flexible recurrence &amp; events</strong> — daily, weekday, day-of-week or monthly patterns, open-ended or fixed; dated multi-day events that can return next season.</li>
         <li><strong>Volunteer check-in</strong> — record who actually showed up, from a front-desk tablet, a volunteer's own phone, or the roster.</li>
         <li><strong>Printable check-in sheets</strong> — printable or CSV rosters for a day or a date range, with check-off boxes and write-in lines.</li>
@@ -220,8 +223,9 @@
         <ul>
           <li><strong>Recurring activities (Jobs)</strong> — repeat <strong>daily</strong>, on
             <strong>weekdays</strong>, on one or more chosen <strong>days of the week</strong>, or
-            <strong>monthly</strong> either by a specific date or by a week-number-plus-weekday (e.g. the
-            second Tuesday). Each has a start date and either an end date or <strong>no end date</strong>
+            <strong>monthly</strong> either by a specific date or by a week-number-plus-weekday —
+            a week number (<strong>first through fifth</strong>) and a weekday, such as the second
+            Tuesday. Each has a start date and either an end date or <strong>no end date</strong>
             (open-ended).</li>
           <li><strong>Event activities</strong> — you give the Event a name and a start and end date, then
             attach activities that fall on selected days within that window (each with its own name and
@@ -272,7 +276,7 @@
           <ul>
             <li><strong>manage access</strong> for the private Jobs/Events it is assigned to — granting or revoking which Volunteer accounts may see and schedule them (configurable);</li>
             <li><strong>create its own Jobs/Events</strong> and their activities; a private one it creates is automatically assigned to it, so it can immediately manage that item's access (private and public creation are each independently configurable);</li>
-            <li><strong>lock</strong> or <strong>cancel/restore</strong> individual activity occurrences on the private Jobs/Events it is assigned to (see below; each is configurable);</li>
+            <li><strong>lock</strong> or <strong>cancel/restore</strong> individual activity occurrences on the private Jobs/Events it is assigned to — and on public ones as well where that reach is widened, the same setting as for changing who is on a shift — including, where you switch it on, one that <strong>already has volunteers on it</strong>, through the same reason-and-email page an Administrator gets (see below; each is configurable);</li>
             <li><strong>change who is on a shift</strong> — remove a person from an occurrence that has not started, or add a day-of walk-in, on the Jobs/Events within its reach (see below; each is configurable);</li>
             <li><strong>record volunteer check-in</strong> — mark who actually showed up (or correct a check-in/out time, or swap in a same-account substitute) from the roster on the day — or backfill it from a paper sign-in sheet a day or two later — feeding check-in hours into the reports;</li>
             <li><strong>generate reports</strong> — printable or CSV check-in sheets, volunteer-hours &amp; impact totals (scheduled hours beside check-in hours), and by-Job/Event capacity &amp; fill rate (each configurable).</li>
@@ -286,6 +290,7 @@
             <li>adds people to a Volunteer account;</li>
             <li>generates the same <strong>reports</strong> as a Supervisor — check-in sheets, volunteer-hours &amp; impact totals (scheduled hours beside check-in hours), and by-Job/Event capacity &amp; fill rate (each configurable);</li>
             <li>does not schedule people, but can open the calendar to <strong>record check-in</strong>, and to <strong>lock</strong> or <strong>cancel/restore</strong> individual activity occurrences on any Job/Event, public or private — including one that <strong>already has volunteers assigned</strong>, with a required reason emailed to all of them (see below; each is configurable);</li>
+            <li><strong>changes or ends an activity plan</strong> after people have signed up — shown what the change would do and who is standing on it before it happens, with the option to email everyone affected (see below);</li>
             <li><strong>removes a person</strong> from a shift that has not started, and <strong>adds a day-of walk-in</strong>, on any Job/Event;</li>
             <li>reads the <strong>audit trail</strong> of who performed the irreversible actions, and can re-verify the whole log on demand.</li>
           </ul>
@@ -321,11 +326,14 @@
       </ul>
       <p>
         Each capability is independently configurable per role: a <strong>Supervisor</strong> can lock
-        and/or cancel occurrences on the private Jobs/Events it is assigned to, and an
+        and/or cancel occurrences on the private Jobs/Events it is assigned to — and on public ones too
+        where you widen that reach, the one setting that governs every occurrence-level action it has — and an
         <strong>Administrator</strong> can do so on any Job/Event, public or private. Cancelling an
-        occurrence that <em>has people assigned</em> is an Administrator capability, separately
+        occurrence that <em>has people assigned</em> is an Administrator capability by default, separately
         configurable and available only where email notifications are switched on — with it off, an
-        occupied occurrence cannot be cancelled at all.
+        occupied occurrence cannot be cancelled at all. A further setting extends it to
+        <strong>Supervisors</strong> as well, for the Jobs/Events already within their reach, so a club
+        that runs on supervisors rather than a central administrator can call off its own shifts.
       </p>
       </details>
 
@@ -348,8 +356,10 @@
         <li><strong>Add someone who came — on the day.</strong> A volunteer turns up without having signed
           up, and the front-desk station cannot find them. Inside the <strong>Check-in</strong> panel —
           where staff already are on the day — type a name, pick the person, and they are added
-          <strong>and checked in</strong> in one act. Only people who could have signed up for that
-          Job/Event are offered; somebody with no account at all needs an account first.</li>
+          <strong>and checked in</strong> in one act. The Check-in panel opens even on a shift
+          <strong>nobody signed up for</strong>, so an activity with an empty list can still record the
+          people who turned up. Only people who could have signed up for that Job/Event are offered;
+          somebody with no account at all needs an account first.</li>
       </ul>
       <p>
         <strong>Two deliberate limits, both protecting your attendance record.</strong> Remove disappears
@@ -365,6 +375,59 @@
         written to the audit trail. A Supervisor's reach here is deliberately narrower than for check-in:
         by default it covers the private Jobs/Events assigned to them, and a setting extends it to public
         ones as well — so where the option is not offered, that capability is simply switched off.
+      </p>
+      </details>
+
+      <h2 id="changing-or-ending-an-activity">Changing or ending an activity</h2>
+      <p>
+        Programs change. A shift moves an hour later, a monthly meeting shifts to a different Saturday, a
+        class finishes its run. Every one of those reaches shifts volunteers are <em>already</em> holding —
+        so VSA shows an Administrator what the change would do, and who is standing on it, before anything
+        happens.
+      </p>
+      <details>
+        <summary>The review step, keeping a roster through a move, and telling people</summary>
+      <ul>
+        <li><strong>Save shows you the change before it happens.</strong> Editing an activity's name,
+          start/end time, maximum, or which days it runs on opens a <strong>recap</strong> on the same
+          form: how many upcoming shifts would be re-timed, moved, deleted or added, how many sign-ups
+          each of those touches, and which dates are affected. The form locks while the recap is open, so
+          what you confirm is what you were shown — and nothing is written until you confirm it. The recap
+          appears every time, including for a change nobody needs telling about; one that sometimes asks
+          and sometimes does not is harder to trust.</li>
+        <li><strong>A day that moves takes its people with it.</strong> A <strong>Move</strong> control
+          relocates an occurrence to its new date with the <em>roster intact</em> — nobody loses their
+          place, and everyone is told the new date. <strong>The alternative is not the same thing:</strong>
+          unticking one day and ticking another produces the same calendar and the opposite consequence —
+          the first day's shift is deleted with its roster, and the new day is created empty. Both are
+          legitimate and the recap states plainly which one it is about to do, but only one keeps the
+          people, so it is worth knowing the difference before you need it.</li>
+        <li><strong>Everyone affected can be emailed, with your reason.</strong> The recap arrives set to
+          notify wherever there is something a volunteer would notice, with a <strong>required
+          reason</strong> that goes out in your words; "do not email anyone" is one dropdown away. The
+          notice says what actually happened to that shift — a re-timed shift is not described as a
+          cancellation — and its calendar attachment <strong>updates</strong> the entry already in the
+          volunteer's calendar rather than cancelling it. Afterwards the page reports by name who was
+          told, whose message failed, and who has no address.</li>
+        <li><strong>Ending an activity, or a whole program.</strong> Deleting an activity plan or its
+          Job/Event opens a page rather than a confirmation dialog, and that page likewise offers to email
+          <em>every account losing an upcoming shift</em> — one message per account listing the shifts it
+          lost, with a calendar attachment that removes them, and a required reason when you send. The two
+          messages are deliberately different: ending a <strong>Job/Event</strong> says the whole thing is
+          cancelled, while ending <strong>one activity</strong> names the Job as continuing, because that
+          volunteer may still hold other shifts under it.</li>
+      </ul>
+      <p>
+        <strong>Two boundaries worth knowing.</strong> An edit applies from <strong>tomorrow</strong>
+        onward and never changes today — somebody may be working a shift later today and must keep the
+        time they were given. And a <strong>maximum</strong> change emails nobody, since it appears
+        nowhere in a volunteer's calendar entry; if the new maximum sits below what is already signed up,
+        the recap warns and names those dates rather than removing anybody.
+      </p>
+      <p>
+        Changing and deleting activity plans are <strong>Administrator</strong> capabilities, and whether
+        each one offers to email is configurable per deployment — switched on by default, because the
+        alternative is silence. Every change is written to the audit trail.
       </p>
       </details>
 
@@ -441,9 +504,11 @@
       <p>
         <strong>Audit trail.</strong> When enabled, VSA records the handful of administrative actions that
         cannot be undone or that change what someone is allowed to do: deleting a Job/Event, an activity
-        plan, or an account; changing an account's role; creating an account that is already an
+        plan, or an account; <strong>changing an activity plan people are signed up for</strong>;
+        changing an account's role; creating an account that is already an
         Administrator; removing the last person from a group account; taking a person off a shift or
-        adding a day-of walk-in; and cancelling or restoring a shift that had volunteers on it. Each
+        adding a day-of walk-in; and cancelling or restoring a shift that had volunteers on it —
+        recording, where more than one role may do it, which role did. Each
         record keeps the time, who did it, what it was done to (captured at the time, since the thing
         itself is usually gone), and how it turned out — including, for a
         cancellation, the names of everyone who could not be emailed, and, for a walk-in, the resulting
@@ -468,8 +533,9 @@
         ends. A Supervisor or Administrator can still open the item from an <strong>Archived</strong>
         group in the calendar's Job/Event picker to see who was signed up and who checked in; archived
         items are read-only, invisible to volunteers, and generate nothing new. Once the last past
-        occurrence has aged out, the item is removed for good. The delete confirmation says all of this
-        before you commit, and the deletion itself is recorded in the audit trail.
+        occurrence has aged out, the item is removed for good. The delete page says all of this
+        before you commit — alongside the roster it is about to email — and the deletion itself is
+        recorded in the audit trail.
       </p>
       </details>
 
