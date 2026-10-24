@@ -40,7 +40,7 @@
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
     "url": "https://schedule.atyourservices.org",
-    "description": "Self-service volunteer and staff scheduling on a shared calendar. Volunteers book and cancel their own spots from any phone, capacity limits prevent over- and under-staffing, and role-based access keeps volunteers seeing only their own signups while coordinators see the master roster. Volunteers can check in on the day (front-desk station or their own phone) to record who actually came, and reports cover volunteer hours and impact, check-in hours beside the scheduled ones, and by-program capacity and fill rate. Coordinators can take a volunteer off a shift before it starts, with an email telling them, and can add a walk-in who turned up without signing up — added and checked in together. Administrators can call off a shift that already has volunteers on it with a reason emailed to everyone assigned, review a tamper-evident audit trail of irreversible admin actions, and delete a program without losing the hours and attendance already recorded against it. An activity plan can be changed after volunteers have signed up: the administrator is shown what the change would do and who is standing on it before confirming it, a day that moves takes its roster with it, and everyone affected can be emailed with a reason that also refreshes their calendar entry. Deleting an activity or a whole program likewise offers to email every account that loses an upcoming shift.",
+    "description": "Self-service volunteer and staff scheduling on a shared calendar. Volunteers book and cancel their own spots from any phone, capacity limits prevent over- and under-staffing, and role-based access keeps volunteers seeing only their own signups while coordinators see the master roster. Volunteers get an automatic email reminder about a day before each shift, with an add-to-calendar file and a \"Can't make it?\" link that drops the shift without signing in so the place opens up for someone else. Volunteers can check in on the day (front-desk station or their own phone) to record who actually came, and reports cover volunteer hours and impact, check-in hours beside the scheduled ones, and by-program capacity and fill rate. Coordinators can take a volunteer off a shift before it starts, with an email telling them, and can add a walk-in who turned up without signing up — added and checked in together. Administrators can call off a shift that already has volunteers on it with a reason emailed to everyone assigned, review a tamper-evident audit trail of irreversible admin actions, and delete a program without losing the hours and attendance already recorded against it. An activity plan can be changed after volunteers have signed up: the administrator is shown what the change would do and who is standing on it before confirming it, a day that moves takes its roster with it, and everyone affected can be emailed with a reason that also refreshes their calendar entry. Deleting an activity or a whole program likewise offers to email every account that loses an upcoming shift.",
     "image": "https://atyourservices.org/og-image.png",
     "dateModified": "2026-10-23",
     "offers": {
@@ -167,8 +167,8 @@
         <li><strong>Printable check-in sheets</strong> — printable or CSV rosters for a day or a date range, with check-off boxes and write-in lines.</li>
         <li><strong>Volunteer-hours &amp; impact reports</strong> — monthly, quarterly and annual totals by account, program or volunteer: hours <strong>scheduled and checked in</strong>, and estimated economic value.</li>
         <li><strong>Capacity &amp; fill-rate reports</strong> — available slots and hours beside sign-ups, with a fill percentage, so under-subscribed programs stand out for recruiting.</li>
-        <li><strong>Automatic shift reminders</strong> — an email about a day before each shift, with an add-to-calendar file and a <strong>"Can't make it?"</strong> link that lets the volunteer drop the shift without signing in, freeing the place for someone else. Volunteers can switch reminders off in their profile; your organization can make them opt-in instead and choose how far ahead they go. Sign-up confirmations are optional, and each volunteer sets their own preference.</li>
-        <li><strong>Bounced addresses are caught</strong> — an address the mail provider refuses is flagged on the account, mail to it stops, and administrators get one daily summary so it can be fixed.</li>
+        <li><strong>Automatic shift reminders</strong> — an email about a day before each shift, with an add-to-calendar file and a <strong>"Can't make it?"</strong> link that drops the shift without signing in.</li>
+        <li><strong>Bounced addresses are caught</strong> — an address the mail provider refuses is flagged, mail to it stops, and administrators get one daily summary.</li>
         <li><strong>Easy sign-in</strong> — password and/or passwordless email ("magic link") sign-in, with optional self-registration.</li>
         <li><strong>Security built in</strong> — hashed passwords, expiring sessions, rate limiting, and server-side access control over HTTPS.</li>
         <li><strong>No third-party ads</strong> — no advertising is ever shown to your volunteers; the page is your organization's, not a billboard.</li>
@@ -271,7 +271,8 @@
             <li>may hold one or more associated people (a family) or be a group account (a contact/group lead plus members);</li>
             <li>sees and manages only the people associated with the account;</li>
             <li>has a self-service <strong>profile</strong> panel to edit its contact name and add, rename, or remove its own people. When enabled it can also update its own <strong>email</strong> (adding one if the account has none) and rename a group account's <strong>group name</strong> — each independently configurable;</li>
-            <li>where email sign-in is available, changing the email sends a verification link to the new address to confirm it.</li>
+            <li>where email sign-in is available, changing the email sends a verification link to the new address to confirm it;</li>
+            <li>chooses its own email: sign-up confirmations (ask each time, always, or never) and, where reminders are automatic, shift reminders on or off. If the mail provider has refused its address, the profile says so beside it, and correcting the address clears it.</li>
           </ul>
         </li>
         <li><strong>Supervisor</strong> — oversight and setup; sees everyone assigned to an activity. A Supervisor does not sign people up — that is the volunteer's own doing — but can take somebody off a shift at their request and add a volunteer who turns up without one. A Supervisor can:
@@ -294,6 +295,7 @@
             <li>does not schedule people, but can open the calendar to <strong>record check-in</strong>, and to <strong>lock</strong> or <strong>cancel/restore</strong> individual activity occurrences on any Job/Event, public or private — including one that <strong>already has volunteers assigned</strong>, with a required reason emailed to all of them (see below; each is configurable);</li>
             <li><strong>changes or ends an activity plan</strong> after people have signed up — shown what the change would do and who is standing on it before it happens, with the option to email everyone affected (see below);</li>
             <li><strong>removes a person</strong> from a shift that has not started, and <strong>adds a day-of walk-in</strong>, on any Job/Event;</li>
+            <li>sees which accounts' email addresses have <strong>bounced</strong> — an <strong>Email Status</strong> column in the account list, filterable to just those, plus one summary email a day when new ones appear — and can clear the mark once a mailbox works again;</li>
             <li>reads the <strong>audit trail</strong> of who performed the irreversible actions, and can re-verify the whole log on demand.</li>
           </ul>
         </li>
@@ -348,8 +350,10 @@
       <details>
         <summary>Removing a person, and adding a walk-in</summary>
       <ul>
-        <li><strong>Remove a person — before the shift starts.</strong> A volunteer tells you in advance
-          they cannot make it. A Supervisor or Administrator opens <strong>Remove person&hellip;</strong>
+        <li><strong>Remove a person — before the shift starts.</strong> A volunteer can now do this
+          themselves: the reminder they get about a day ahead carries a <strong>"Can't make it?"</strong>
+          link that takes them off without signing in, asks before it changes anything, and lets a family
+          choose who is not coming. When a volunteer tells you instead, a Supervisor or Administrator opens <strong>Remove person&hellip;</strong>
           from the occurrence and takes that one person off; the slot frees up for somebody else. The
           volunteer is emailed that they have come off the shift — whatever their notification preference,
           since an opt-out covers reminders, not a change somebody else made to their commitment — and the
@@ -409,8 +413,13 @@
           reason</strong> that goes out in your words; "do not email anyone" is one dropdown away. The
           notice says what actually happened to that shift — a re-timed shift is not described as a
           cancellation — and its calendar attachment <strong>updates</strong> the entry already in the
-          volunteer's calendar rather than cancelling it. Afterwards the page reports by name who was
-          told, whose message failed, and who has no address.</li>
+          volunteer's calendar rather than cancelling it. A shift that now starts within the next day or
+          so also carries the <strong>"Can't make it?"</strong> link, since a new time is exactly when people
+          find they cannot come. Afterwards the page reports by name who was told, whose message failed,
+          and who has no address.</li>
+        <li><strong>A change nobody is told about still reaches them.</strong> If you choose not to email,
+          or a message fails, a volunteer whose reminder had already gone out gets it again, stating the
+          new time — so nobody turns up at the old one on the strength of an email you never corrected.</li>
         <li><strong>Ending an activity, or a whole program.</strong> Deleting an activity plan or its
           Job/Event opens a page rather than a confirmation dialog, and that page likewise offers to email
           <em>every account losing an upcoming shift</em> — one message per account listing the shifts it
@@ -509,7 +518,8 @@
         plan, or an account; <strong>changing an activity plan people are signed up for</strong>;
         changing an account's role; creating an account that is already an
         Administrator; removing the last person from a group account; taking a person off a shift or
-        adding a day-of walk-in; and cancelling or restoring a shift that had volunteers on it —
+        adding a day-of walk-in; clearing an account's bounced-address mark; and cancelling or restoring
+        a shift that had volunteers on it —
         recording, where more than one role may do it, which role did. Each
         record keeps the time, who did it, what it was done to (captured at the time, since the thing
         itself is usually gone), and how it turned out — including, for a
@@ -560,6 +570,11 @@
           <strong>Register</strong>. Enter a name, pick <strong>Volunteer</strong> (schedule
           yourself into activities) or <strong>Supervisor</strong> (see the full roster,
           read-only), and enter your email. Click the verification link we email you and you're signed in.
+          As a Volunteer, sign up for a shift and answer <strong>Yes</strong> when asked about emails: you
+          get a confirmation and, about a day before the shift, a reminder with a working
+          <strong>"Can't make it?"</strong> link — or, for a shift starting sooner than that, the link
+          comes in the confirmation itself. (The demo uses opt-in reminders; an organization can make
+          them automatic.)
         </li>
       </ul>
       <details>
@@ -701,6 +716,7 @@
         <li><strong>Password rules</strong> — length and required character types.</li>
         <li><strong>Allowed admin actions</strong> — add/edit/delete for accounts, Jobs/Events, and activity plans.</li>
         <li><strong>Scheduling window</strong> — how many months of past activity history are retained, and how many months ahead planned activities are generated and open for scheduling.</li>
+        <li><strong>Reminders</strong> — automatic for everyone (each volunteer can switch them off) or only for those who opt in at sign-up; how far ahead they go (a day before each shift, or the evening before at an hour you choose); whether they carry the <strong>"Can't make it?"</strong> link; and whether administrators get the daily bounced-address summary.</li>
         <li><strong>Audit trail</strong> — on or off, and how many months of records to keep.</li>
       </ul>
       </details>
