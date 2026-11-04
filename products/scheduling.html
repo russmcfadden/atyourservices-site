@@ -40,9 +40,9 @@
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
     "url": "https://schedule.atyourservices.org",
-    "description": "Self-service volunteer and staff scheduling on a shared calendar. Volunteers book and cancel their own spots from any phone, capacity limits prevent over- and under-staffing, and role-based access keeps volunteers seeing only their own signups while coordinators see the master roster. Volunteers get an automatic email reminder about a day before each shift, with an add-to-calendar file and a \"Can't make it?\" link that drops the shift without signing in so the place opens up for someone else. Volunteers can check in on the day (front-desk station or their own phone) to record who actually came, and reports cover volunteer hours and impact, check-in hours beside the scheduled ones, and by-program capacity and fill rate. Coordinators can take a volunteer off a shift before it starts, with an email telling them, and can add a walk-in who turned up without signing up — added and checked in together. Administrators can call off a shift that already has volunteers on it with a reason emailed to everyone assigned, review a tamper-evident audit trail of irreversible admin actions, and delete a program without losing the hours and attendance already recorded against it. An activity plan can be changed after volunteers have signed up: the administrator is shown what the change would do and who is standing on it before confirming it, a day that moves takes its roster with it, and everyone affected can be emailed with a reason that also refreshes their calendar entry. Deleting an activity or a whole program likewise offers to email every account that loses an upcoming shift.",
+    "description": "Self-service volunteer and staff scheduling on a shared calendar. Volunteers book and cancel their own spots from any phone, capacity limits prevent over- and under-staffing, and role-based access keeps volunteers seeing only their own signups while coordinators see the master roster. Volunteers get an automatic email reminder about a day before each shift, with an add-to-calendar file and a \"Can't make it?\" link that drops the shift without signing in so the place opens up for someone else. Volunteers can check in on the day (front-desk station or their own phone) to record who actually came, and reports cover volunteer hours and impact, check-in hours beside the scheduled ones, and by-program capacity and fill rate. Coordinators can take a volunteer off a shift before it starts, with an email telling them, and can add a walk-in who turned up without signing up — added and checked in together. Administrators can call off a shift that already has volunteers on it with a reason emailed to everyone assigned, review a tamper-evident audit trail of irreversible admin actions, and delete a program without losing the hours and attendance already recorded against it. An activity plan can be changed after volunteers have signed up: the administrator is shown what the change would do and who is standing on it before confirming it, a day that moves takes its roster with it, and everyone affected can be emailed with a reason that also refreshes their calendar entry. Deleting an activity or a whole program likewise offers to email every account that loses an upcoming shift. A program that has finished leaves the volunteer calendar by itself, with its history kept, and a Job can be restarted by giving one of its plans new dates. Administrators can bring an existing volunteer list in from a CSV file: each row is checked first, an account that already exists is never changed, and nothing is created until the administrator confirms.",
     "image": "https://atyourservices.org/og-image.png",
-    "dateModified": "2026-10-23",
+    "dateModified": "2026-11-04",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -162,6 +162,7 @@
         <li><strong>Change who is on a shift</strong> — take someone off before it starts, or add a walk-in on the day; either way the shift still goes ahead.</li>
         <li><strong>Change a shift without losing its roster</strong> — editing an activity shows what it will do and who is standing on it first, and a day that moves takes its people with it.</li>
         <li><strong>Ending a program tells the people on it</strong> — deleting a Job/Event or one activity can email every account that loses an upcoming shift, with your reason.</li>
+        <li><strong>Finished programs step aside on their own</strong> — a Job whose plans have all ended, or an Event past its last day, leaves the volunteer calendar with its history kept; a Job restarts when a plan gets new dates.</li>
         <li><strong>Flexible recurrence &amp; events</strong> — daily, weekday, day-of-week or monthly patterns, open-ended or fixed; dated multi-day events that can return next season.</li>
         <li><strong>Volunteer check-in</strong> — record who actually showed up, from a front-desk tablet, a volunteer's own phone, or the roster.</li>
         <li><strong>Printable check-in sheets</strong> — printable or CSV rosters for a day or a date range, with check-off boxes and write-in lines.</li>
@@ -169,6 +170,7 @@
         <li><strong>Capacity &amp; fill-rate reports</strong> — available slots and hours beside sign-ups, with a fill percentage, so under-subscribed programs stand out for recruiting.</li>
         <li><strong>Automatic shift reminders</strong> — an email about a day before each shift, with an add-to-calendar file and a <strong>"Can't make it?"</strong> link that drops the shift without signing in.</li>
         <li><strong>Bounced addresses are caught</strong> — an address the mail provider refuses is flagged, mail to it stops, and administrators get one daily summary.</li>
+        <li><strong>Bring your volunteer list with you</strong> — import Volunteer accounts from a spreadsheet saved as CSV, checked row by row before anything is created.</li>
         <li><strong>Easy sign-in</strong> — password and/or passwordless email ("magic link") sign-in, with optional self-registration.</li>
         <li><strong>Security built in</strong> — hashed passwords, expiring sessions, rate limiting, and server-side access control over HTTPS.</li>
         <li><strong>No third-party ads</strong> — no advertising is ever shown to your volunteers; the page is your organization's, not a billboard.</li>
@@ -288,6 +290,7 @@
         <li><strong>Administrator</strong> — full control over setup and people. An organization can have as many Administrator accounts as it needs, so top-level access (and a backup admin) is never stuck with one person. An Administrator:
           <ul>
             <li>creates and manages accounts of any role, including additional Administrators;</li>
+            <li><strong>imports Volunteer accounts from a CSV file</strong> — saved from the spreadsheet you already keep. A check lists what would be created, what is refused and why (by row number), and who is already here, and nothing is written until you confirm. An existing account is skipped and never changed, and the import sends no email, so you tell volunteers yourself how to sign in;</li>
             <li>creates Jobs/Events and their <strong>activity plans</strong> (the recurring templates that generate the calendar's activities);</li>
             <li>assigns Volunteers and Supervisors to private Jobs/Events;</li>
             <li>adds people to a Volunteer account;</li>
@@ -427,11 +430,21 @@
           messages are deliberately different: ending a <strong>Job/Event</strong> says the whole thing is
           cancelled, while ending <strong>one activity</strong> names the Job as continuing, because that
           volunteer may still hold other shifts under it.</li>
+        <li><strong>A program that runs out ends by itself — and can come back.</strong> When every
+          plan on a Job has passed its end date, the Job leaves the volunteer calendar, with nothing
+          deleted. Supervisors and Administrators still find it in the <strong>Archived</strong> group of
+          the Job/Event picker, marked <strong>(ended)</strong>, and opening it jumps to its last days. It
+          keeps its name, its plans and its history. To run it again, give one of its plans new dates —
+          the next session of a class, next season's concerts — and it is back on the calendar, without
+          being rebuilt. A plan with <strong>no end date</strong> keeps its Job running indefinitely.</li>
       </ul>
       <p>
-        <strong>Two boundaries worth knowing.</strong> An edit applies from <strong>tomorrow</strong>
+        <strong>Three boundaries worth knowing.</strong> An edit applies from <strong>tomorrow</strong>
         onward and never changes today — somebody may be working a shift later today and must keep the
-        time they were given. And a <strong>maximum</strong> change emails nobody, since it appears
+        time they were given. A date you <strong>set or change can't be before today</strong> — a plan's
+        start or end, an Event's own dates, an Event day you add — so nothing is put into days that are
+        already over; to stop a plan now, end it today, and its past shifts are kept. And a
+        <strong>maximum</strong> change emails nobody, since it appears
         nowhere in a volunteer's calendar entry; if the new maximum sits below what is already signed up,
         the recap warns and names those dates rather than removing anybody.
       </p>
@@ -517,7 +530,8 @@
         cannot be undone or that change what someone is allowed to do: deleting a Job/Event, an activity
         plan, or an account; <strong>changing an activity plan people are signed up for</strong>;
         changing an account's role; creating an account that is already an
-        Administrator; removing the last person from a group account; taking a person off a shift or
+        Administrator; an Administrator setting an account's password or changing its email address
+        (neither the password nor the addresses are recorded); importing accounts (the counts only); removing the last person from a group account; taking a person off a shift or
         adding a day-of walk-in; clearing an account's bounced-address mark; and cancelling or restoring
         a shift that had volunteers on it —
         recording, where more than one role may do it, which role did. Each
@@ -532,7 +546,7 @@
           before it. An Administrator opening the log sees any altered row marked as such, and a
           <strong>Verify whole log</strong> button re-checks the entire chain on demand.</li>
         <li><strong>Readable, searchable, no editing.</strong> The log is a table like the other admin
-          views, searchable per column. Nothing in the application can edit or selectively delete a
+          views, searchable per column, and any row opens to show its whole record. Nothing in the application can edit or selectively delete a
           record.</li>
         <li><strong>Retention you set.</strong> Records age out automatically after a period you choose
           (in months) — the whole retention policy is that one setting, with no manual purge to forget.</li>
@@ -545,7 +559,12 @@
         ends. A Supervisor or Administrator can still open the item from an <strong>Archived</strong>
         group in the calendar's Job/Event picker to see who was signed up and who checked in; archived
         items are read-only, invisible to volunteers, and generate nothing new. Once the last past
-        occurrence has aged out, the item is removed for good. The delete page says all of this
+        occurrence has aged out, the item is removed for good. A program that simply
+        <em>finished</em> — its last date passed — is a different case: an Event is archived the same way
+        and can come back next season on its own, if it was set to; a Job stays editable and keeps its
+        plans, so it can be restarted (see <em>Changing or ending an activity</em>), and is only ever
+        deleted by an administrator. The Jobs/Events list can be filtered by status, so finished
+        programs are easy to find. The delete page says all of this
         before you commit — alongside the roster it is about to email — and the deletion itself is
         recorded in the audit trail.
       </p>
@@ -556,7 +575,8 @@
       <p>
         The application supports username/password and/or email-link ("magic link") sign-in; the
         available methods depend on configuration. "Forgot Password" uses an email link to verify the
-        account and set up a password reset. It can also be configured to let people self-register from
+        account and set up a password reset. Usernames are not case-sensitive: <code>MSmith</code> and
+        <code>msmith</code> are the same account. It can also be configured to let people self-register from
         the Home page, with the allowed roles controlled by configuration.
       </p>
 
@@ -627,8 +647,10 @@
           Monthly Bible Distribution on the <strong>first Sunday of each month</strong> — a monthly
           recurrence set by week-number-and-weekday rather than a fixed date.</li>
         <li><strong>Summer Concert</strong> (public Job) — weekend stage setup, musicians, and
-          equipment teardown on Saturdays and Sundays, running through <strong>26 September 2026</strong>
-          (a Job with a fixed end date — once past, it stops generating and shows the end of its run).</li>
+          equipment teardown on Saturdays and Sundays. It ran through <strong>26 September 2026</strong>
+          and has <strong>ended</strong>: it is no longer in a volunteer's pulldown, and signed in as
+          <code>Mike</code> you find it in the <strong>Archived</strong> group, marked
+          <strong>(ended)</strong> (see below).</li>
         <li><strong>Community Food Pantry</strong> (public Job) — weekly distribution and sorting shifts
           on set days of the week.</li>
         <li><strong>Gardening</strong> (public Job) — a weekly <em>Saturday Clean up</em>. It is the
@@ -640,13 +662,13 @@
           <em>Open House &ndash; Afternoon</em> shifts on the <strong>first Saturday of each month</strong>.
           Activity names may repeat across Jobs, and splitting the crews this way is what lets the hours
           report give each one its own line instead of a single combined total.</li>
-        <li><strong>Safety Classes</strong> (public Job) — a series of classes on specific weekdays,
-          running through <strong>31 October 2026</strong> (a Job with a fixed end date).</li>
-        <li><strong>Fall Book-Sale</strong> (public Event) — a weekend sale,
+        <li><strong>Safety Classes</strong> (public Job) — a series of classes on specific weekdays. It
+          ran through <strong>31 October 2026</strong> and has <strong>ended</strong>, like Summer Concert.</li>
+        <li><strong>Fall Book-Sale</strong> (public Event, now <strong>archived</strong>) — a weekend sale,
           <strong>September 18&ndash;20, 2026</strong>: Setup on the Friday, Cashier Table morning and afternoon
           shifts across Saturday and Sunday, then Teardown. Setup and Teardown have <strong>no
           maximum</strong>, so they read &ldquo;3 signed up&rdquo; instead of &ldquo;3 of 8 filled&rdquo;.</li>
-        <li><strong>Fall Fair</strong> (public Event) — a three-day event, <strong>October 16&ndash;18, 2026</strong>:
+        <li><strong>Fall Fair</strong> (public Event, now <strong>archived</strong>) — a three-day event, <strong>October 16&ndash;18, 2026</strong>:
           Setup on the 16th, then Ticket Booth morning and afternoon shifts on the 17th and 18th. Shows how
           one dated Event carries different activities on different days of its run.</li>
         <li><strong>Visitor Center - Crew/Tours</strong>, <strong>Visitor Center- Info Desk</strong> and
@@ -661,28 +683,32 @@
           Friday, Saturday and Sunday, sorting and packing on the Monday and Tuesday, then Turkey
           Distribution and Teardown on the Wednesday. It is the only Event here that spans a weekend
           <em>and</em> weekdays, and Turkey Distribution is the largest shift in the demo at 20 people.</li>
+        <li><strong>Christmas Concert</strong> (private Event) — <strong>December 18&ndash;21, 2026</strong>.
+          A private Event appears only for the accounts assigned to it, the same way as Board Committee below.</li>
         <li><strong>Board Committee</strong> (private Job) — visible only to assigned accounts; sign in
           as <code>Mike</code> to see it. Illustrates private-vs-public access.</li>
       </ul>
       <p>
         <strong>Two occurrence states are seeded so the colour legend is checkable</strong>, both on the
         <strong>Kitchen</strong> Job, and both dated ahead so you can page <em>forward</em> to them.
-        Kitchen's Dinner Prep and Serving Dinner are <strong>cancelled on 31 October 2026</strong> —
-        gray, name struck through, taking no assignments — and its Lunch Prep and Serving Lunch are
-        <strong>locked on 26 November 2026</strong>, marked with a padlock: everyone already assigned
-        stays, but nobody else can be added. Kitchen is a public Job, so any account can see both.
-        (Earlier examples sit on <strong>6 September</strong> and <strong>17&ndash;19 September 2026</strong>
-        if you would rather page back.) These are fixed dates that stay put — the states are permanent,
+        Kitchen's Lunch Prep and Serving Lunch are <strong>locked on 26 November 2026</strong>, marked
+        with a padlock: everyone already assigned stays, but nobody else can be added. Its Serving Lunch
+        is <strong>cancelled on 25 December 2026</strong> — gray, name struck through, taking no
+        assignments. Kitchen is a public Job, so any account can see both. (Earlier examples sit on
+        <strong>6 September</strong>, <strong>17&ndash;19 September</strong> and <strong>31 October
+        2026</strong> if you would rather page back.) These are fixed dates that stay put — the states are permanent,
         not a passing week. Remember to select <strong>Kitchen</strong> in the pulldown first: the
         calendar shows one Job at a time, so the date alone will not find them.
       </p>
       <p>
-        <strong>Finished Events move to Archived — and that is worth a look.</strong> July's
-        <strong>Summer Art Fair</strong> and <strong>Ice Cream Social</strong> are done, so they have
-        dropped off the calendar a volunteer sees: an Event retires itself automatically once its last
-        date has passed. Sign in as <code>Mike</code> and both are still there at the bottom of the
-        Job/Event pulldown, marked <strong>(archived)</strong> — read-only, but every roster and check-in
-        they collected is intact and still counts in the hours reports. It is the same
+        <strong>Finished programs move to Archived — and that is worth a look.</strong> The
+        <strong>Fall Book-Sale</strong> and <strong>Fall Fair</strong> are over, so they have dropped off
+        the calendar a volunteer sees: an Event retires itself once its last date has passed. Sign in as
+        <code>Mike</code> and both are still there at the bottom of the Job/Event pulldown, marked
+        <strong>(archived)</strong> — read-only, but every roster and check-in they collected is intact
+        and still counts in the hours reports. <strong>Summer Concert</strong> and <strong>Safety
+        Classes</strong> sit beside them marked <strong>(ended)</strong>: Jobs whose run is over, kept
+        editable so they can be restarted rather than rebuilt. It is the same
         keep-the-past behavior described under <em>Accountability &amp; history</em> above, which you can
         see working rather than take on trust.
       </p>
