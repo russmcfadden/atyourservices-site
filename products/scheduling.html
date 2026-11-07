@@ -42,7 +42,7 @@
     "url": "https://schedule.atyourservices.org",
     "description": "Self-service volunteer and staff scheduling on a shared calendar. Volunteers book and cancel their own spots from any phone, capacity limits prevent over- and under-staffing, and role-based access keeps volunteers seeing only their own signups while coordinators see the master roster. Volunteers get an automatic email reminder about a day before each shift, with an add-to-calendar file and a \"Can't make it?\" link that drops the shift without signing in so the place opens up for someone else. Volunteers can check in on the day (front-desk station or their own phone) to record who actually came, and reports cover volunteer hours and impact, check-in hours beside the scheduled ones, and by-program capacity and fill rate. Coordinators can take a volunteer off a shift before it starts, with an email telling them, and can add a walk-in who turned up without signing up — added and checked in together. Administrators can call off a shift that already has volunteers on it with a reason emailed to everyone assigned, review a tamper-evident audit trail of irreversible admin actions, and delete a program without losing the hours and attendance already recorded against it. An activity plan can be changed after volunteers have signed up: the administrator is shown what the change would do and who is standing on it before confirming it, a day that moves takes its roster with it, and everyone affected can be emailed with a reason that also refreshes their calendar entry. Deleting an activity or a whole program likewise offers to email every account that loses an upcoming shift. A program that has finished leaves the volunteer calendar by itself, with its history kept, and a Job can be restarted by giving one of its plans new dates. Administrators can bring an existing volunteer list in from a CSV file: each row is checked first, an account that already exists is never changed, and nothing is created until the administrator confirms.",
     "image": "https://atyourservices.org/og-image.png",
-    "dateModified": "2026-11-04",
+    "dateModified": "2026-11-07",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -169,7 +169,7 @@
         <li><strong>Volunteer-hours &amp; impact reports</strong> — monthly, quarterly and annual totals by account, program or volunteer: hours <strong>scheduled and checked in</strong>, and estimated economic value.</li>
         <li><strong>Capacity &amp; fill-rate reports</strong> — available slots and hours beside sign-ups, with a fill percentage, so under-subscribed programs stand out for recruiting.</li>
         <li><strong>Automatic shift reminders</strong> — an email about a day before each shift, with an add-to-calendar file and a <strong>"Can't make it?"</strong> link that drops the shift without signing in.</li>
-        <li><strong>Bounced addresses are caught</strong> — an address the mail provider refuses is flagged, mail to it stops, and administrators get one daily summary.</li>
+        <li><strong>Refused addresses are caught</strong> — an address the mail provider refuses when sending is flagged, mail to it stops, and administrators get one daily summary.</li>
         <li><strong>Bring your volunteer list with you</strong> — import Volunteer accounts from a spreadsheet saved as CSV, checked row by row before anything is created.</li>
         <li><strong>Easy sign-in</strong> — password and/or passwordless email ("magic link") sign-in, with optional self-registration.</li>
         <li><strong>Security built in</strong> — hashed passwords, expiring sessions, rate limiting, and server-side access control over HTTPS.</li>
@@ -298,7 +298,7 @@
             <li>does not schedule people, but can open the calendar to <strong>record check-in</strong>, and to <strong>lock</strong> or <strong>cancel/restore</strong> individual activity occurrences on any Job/Event, public or private — including one that <strong>already has volunteers assigned</strong>, with a required reason emailed to all of them (see below; each is configurable);</li>
             <li><strong>changes or ends an activity plan</strong> after people have signed up — shown what the change would do and who is standing on it before it happens, with the option to email everyone affected (see below);</li>
             <li><strong>removes a person</strong> from a shift that has not started, and <strong>adds a day-of walk-in</strong>, on any Job/Event;</li>
-            <li>sees which accounts' email addresses have <strong>bounced</strong> — an <strong>Email Status</strong> column in the account list, filterable to just those, plus one summary email a day when new ones appear — and can clear the mark once a mailbox works again;</li>
+            <li>sees which accounts' email addresses the mail provider has <strong>refused</strong> — an <strong>Email Status</strong> column in the account list, filterable to just those, plus one summary email a day when new ones appear — and can clear the mark once a mailbox works again;</li>
             <li>reads the <strong>audit trail</strong> of who performed the irreversible actions, and can re-verify the whole log on demand.</li>
           </ul>
         </li>
@@ -320,15 +320,16 @@
         <li><strong>Cancel / Restore</strong> — make a single occurrence unavailable, for when a
           regularly scheduled activity should be skipped on a particular day/time. A cancelled
           occurrence shows gray with its name struck through and takes no assignments, and
-          <strong>Restore</strong> brings it back. The rest of the recurring schedule is untouched.</li>
+          <strong>Restore</strong> brings it back. Cancel is offered until the occurrence starts, and
+          Restore stays available for the rest of that day. The rest of the recurring schedule is untouched.</li>
         <li><strong>Cancelling a shift that already has people on it</strong> — when the weather turns or
           the venue falls through, an <strong>Administrator</strong> can call off an occupied occurrence
           rather than removing everyone by hand. A dedicated page shows the roster first, requires a
           <strong>reason</strong>, and flags up front anyone with no email address — so you can decide
           whether you can reach everybody before you commit. On Proceed the reason is emailed to every
           assigned account (regardless of their own notification preference — they did not choose this),
-          and the page reports the outcome by <em>name</em>: who was told, whose message failed, and who
-          has no address, each copyable for a phone-call list. <strong>Restore</strong> works the same
+          and the page reports the outcome by <em>name</em>: who was emailed, who was not, and who has no
+          address, each copyable for a phone-call list. <strong>Restore</strong> works the same
           way, with its own reason, and notifies the same people. Both are written to the audit trail.</li>
       </ul>
       <p>
@@ -360,7 +361,7 @@
           from the occurrence and takes that one person off; the slot frees up for somebody else. The
           volunteer is emailed that they have come off the shift — whatever their notification preference,
           since an opt-out covers reminders, not a change somebody else made to their commitment — and the
-          panel then reports by name whether the message reached them, failed, or the account has no
+          panel then reports by name whether they were emailed, could not be, or the account has no
           address at all, so you know exactly who still needs a phone call.</li>
         <li><strong>Add someone who came — on the day.</strong> A volunteer turns up without having signed
           up, and the front-desk station cannot find them. Inside the <strong>Check-in</strong> panel —
@@ -418,8 +419,8 @@
           cancellation — and its calendar attachment <strong>updates</strong> the entry already in the
           volunteer's calendar rather than cancelling it. A shift that now starts within the next day or
           so also carries the <strong>"Can't make it?"</strong> link, since a new time is exactly when people
-          find they cannot come. Afterwards the page reports by name who was told, whose message failed,
-          and who has no address.</li>
+          find they cannot come. Afterwards the page reports by name who was emailed, who was not, and
+          who has no address.</li>
         <li><strong>A change nobody is told about still reaches them.</strong> If you choose not to email,
           or a message fails, a volunteer whose reminder had already gone out gets it again, stating the
           new time — so nobody turns up at the old one on the strength of an email you never corrected.</li>
@@ -532,7 +533,7 @@
         changing an account's role; creating an account that is already an
         Administrator; an Administrator setting an account's password or changing its email address
         (neither the password nor the addresses are recorded); importing accounts (the counts only); removing the last person from a group account; taking a person off a shift or
-        adding a day-of walk-in; clearing an account's bounced-address mark; and cancelling or restoring
+        adding a day-of walk-in; clearing an account's undeliverable-address mark; and cancelling or restoring
         a shift that had volunteers on it —
         recording, where more than one role may do it, which role did. Each
         record keeps the time, who did it, what it was done to (captured at the time, since the thing
@@ -575,7 +576,8 @@
       <p>
         The application supports username/password and/or email-link ("magic link") sign-in; the
         available methods depend on configuration. "Forgot Password" uses an email link to verify the
-        account and set up a password reset. Usernames are not case-sensitive: <code>MSmith</code> and
+        account and set up a password reset; an account that signs in only by email link has no password
+        to reset, so it is told to use the link instead. Usernames are not case-sensitive: <code>MSmith</code> and
         <code>msmith</code> are the same account. It can also be configured to let people self-register from
         the Home page, with the allowed roles controlled by configuration.
       </p>
@@ -749,7 +751,7 @@
         <li><strong>Password rules</strong> — length and required character types.</li>
         <li><strong>Allowed admin actions</strong> — add/edit/delete for accounts, Jobs/Events, and activity plans.</li>
         <li><strong>Scheduling window</strong> — how many months of past activity history are retained, and how many months ahead planned activities are generated and open for scheduling.</li>
-        <li><strong>Reminders</strong> — automatic for everyone (each volunteer can switch them off) or only for those who opt in at sign-up; how far ahead they go (a day before each shift, or the evening before at an hour you choose); whether they carry the <strong>"Can't make it?"</strong> link; and whether administrators get the daily bounced-address summary.</li>
+        <li><strong>Reminders</strong> — automatic for everyone (each volunteer can switch them off) or only for those who opt in at sign-up; how far ahead they go (a day before each shift, or the evening before at an hour you choose); whether they carry the <strong>"Can't make it?"</strong> link; and whether administrators get the daily undeliverable-address summary.</li>
         <li><strong>Audit trail</strong> — on or off, and how many months of records to keep.</li>
       </ul>
       </details>
@@ -762,9 +764,19 @@
       <ul>
         <li><strong>Software — free.</strong> There is no software-license cost.</li>
         <li><strong>Self-hosted</strong> — you host and manage it on your own infrastructure, with our onboarding help.</li>
-        <li><strong>Managed hosting</strong> — we set up and run your instance for you. Costs are pass-through infrastructure only (app hosting, database, and email): typically <strong>about $10&ndash;40/month</strong> for most organizations depending on size and email volume, and up to roughly <strong>$60&ndash;100/month</strong> for larger organizations needing dedicated resources. A one-time setup/installation fee (typically <strong>$150&ndash;500</strong>) is <strong>currently waived for nonprofits and early adopters</strong> &mdash; you cover only the third-party hosting/email costs.</li>
+        <li><strong>Managed hosting</strong> — we set up and run your instance for you. Costs are pass-through infrastructure only (app hosting, database, and email): typically <strong>about $10&ndash;40/month</strong> for most organizations depending on size and email volume, and up to roughly <strong>$60&ndash;100/month</strong> for larger organizations needing dedicated resources. A one-time setup/installation fee (typically <strong>$150&ndash;500</strong>) is <strong>currently waived for nonprofits and early adopters</strong> &mdash; you cover only the third-party hosting/email costs. Each organization is kept separate: its own database, its own sign-in keys and its own running copy of the application, even where several organizations share one hosting plan.</li>
         <li><strong>Open-source licensing</strong> — the app is built on open-source components, each under its own license; a complete list is displayed within the application.</li>
       </ul>
+      <details>
+        <summary>What self-hosting needs</summary>
+        <ul>
+          <li><strong>Runtime</strong> — Node.js 26.</li>
+          <li><strong>Database</strong> — MongoDB. A free hosted MongoDB Atlas cluster is enough for a small organization.</li>
+          <li><strong>Email</strong> — a sending service, either Resend or your own SMTP server, on a domain where you can add DNS records.</li>
+          <li><strong>HTTPS</strong> — a secure connection in front of the application.</li>
+          <li><strong>Server size</strong> — 256 MB of memory at minimum, 512 MB recommended for headroom on busy sign-up days, and half a CPU.</li>
+        </ul>
+      </details>
 
       <p style="margin-top:32px">Ready to see if it fits your organization? Try the demo, or grab 15 minutes with us.</p>
       <p>
