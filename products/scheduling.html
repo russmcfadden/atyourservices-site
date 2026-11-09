@@ -261,7 +261,7 @@
         <li><strong>Volunteer</strong> — the volunteer's own account; schedules the people it's responsible for, and no one else's. A Volunteer:
           <ul>
             <li>views, adds, and removes its associated people on activities — removing only until the shift <strong>starts</strong>, after which an absence stays on record as a no-show;</li>
-            <li>where guests are enabled, says how many <strong>guests</strong> each person is bringing when signing up, and can raise or lower that number — down to none — until the shift starts;</li>
+            <li>where guests are enabled, says how many <strong>guests</strong> each person is bringing when first signing up for a shift, and can raise or lower that number — down to none — until the shift starts;</li>
             <li>when check-in is enabled, checks its own people <strong>in and out</strong> for a current-day shift right from its phone;</li>
             <li>may hold one or more associated people (a family) or be a group account (a contact/group lead plus members);</li>
             <li>sees and manages only the people associated with the account;</li>
@@ -288,7 +288,7 @@
             <li>creates Jobs/Events and their <strong>activity plans</strong> (the recurring templates that generate the calendar's activities);</li>
             <li>assigns Volunteers and Supervisors to private Jobs/Events;</li>
             <li>adds people to a Volunteer account;</li>
-            <li>generates the same <strong>reports</strong> as a Supervisor — check-in sheets, volunteer-hours &amp; impact totals (scheduled hours beside check-in hours), and by-Job/Event capacity &amp; fill rate (each configurable);</li>
+            <li>generates the <strong>reports</strong> — volunteer-hours &amp; impact totals (scheduled hours beside check-in hours) and by-Job/Event capacity &amp; fill rate (configurable). The printable check-in sheet is a Supervisor's tool;</li>
             <li>does not schedule people, but can open the calendar to <strong>record check-in</strong>, and to <strong>lock</strong> or <strong>cancel/restore</strong> individual activity occurrences on any Job/Event, public or private — including one that <strong>already has volunteers assigned</strong>, with a required reason emailed to all of them (see below; each is configurable);</li>
             <li><strong>changes or ends an activity plan</strong> after people have signed up — shown what the change would do and who is standing on it before it happens, with the option to email everyone affected (see below);</li>
             <li><strong>removes a person</strong> from a shift that has not started, and <strong>adds a day-of walk-in</strong> or <strong>guest</strong>, on any Job/Event;</li>
@@ -381,6 +381,7 @@
         written to the audit trail. A Supervisor's reach here is deliberately narrower than for check-in:
         by default it covers the private Jobs/Events assigned to them, and a setting extends it to public
         ones as well — so where the option is not offered, that capability is simply switched off.
+        Guests are different: they go wherever check-in does (see <a href="#guests">Bringing guests</a>).
       </p>
       </details>
 
@@ -392,7 +393,7 @@
         arrive, and counts guests in the hours report without treating them as volunteers.
       </p>
       <details>
-        <summary>Signing up with guests, guest places on the day, and guests with no account</summary>
+        <summary>Signing up with guests, checking them in, and guests nobody signed up for</summary>
       <ul>
         <li><strong>Volunteers bringing guests.</strong> When first signing up for a shift, a volunteer can say
           they are bringing guests — up to four per person, and only as many as there are places left. Each guest
@@ -402,25 +403,26 @@
           volunteer changes the number instead: the <strong>Guests</strong> item raises or lowers it while
           there is room for another guest, and <strong>Remove</strong> lowers it at any time, down to none,
           without taking the volunteer off.</li>
-        <li><strong>Guest places on the day.</strong> In the <strong>Check-in</strong> panel each guest
+        <li><strong>Checking in a volunteer's guests.</strong> In the <strong>Check-in</strong> panel each guest
           place is an open row under its volunteer. Staff fill it with the person who came — one of the
           volunteer's own account people, who then earns their own hours, or a typed name — and that person
           is checked in as it is filled. Filling a place never takes a shift past its maximum, because the
           place was already counted. A guest who did not come is deleted, giving the place up. Only guests
           named and checked in count as attended; the panel's header reads <strong>Signed up N &middot;
           Here M</strong>.</li>
-        <li><strong>A guest with no account.</strong> Somebody who has never had an account can be added
-          as a <strong>guest</strong>: type their name, and anyone it matches — people on accounts, and
+        <li><strong>A guest nobody signed up for.</strong> Someone who turns up unannounced, without an
+          account, can be added by staff from the <strong>Check-in</strong> panel as a <strong>guest</strong>: type their name, and anyone it matches — people on accounts, and
           guests seen before — is offered first, so a regular is not added twice. If nobody fits,
           <strong>Add as a guest</strong> records them, checked in, shown as <em>Name (guest)</em>. Guests
           are counted together as one <strong>Guests</strong> row in the hours report rather than as
-          volunteers.</li>
+          volunteers. A guest added by mistake can be removed, and a misspelled name corrected.</li>
       </ul>
       <p>
-        <strong>Who can do it: wherever check-in does, because a guest is attendance.</strong> Adding a guest, filling or
-        deleting a guest place, and correcting a guest's name record who came, like a check-in, so they work
-        wherever check-in does — for a Supervisor, any Job/Event it can see, public ones included. Volunteers
-        bringing guests and staff adding guests are separate settings, each on or off per deployment, and every
+        <strong>Who can do it.</strong> Saying how many guests are coming is part of signing up, so any
+        volunteer who can sign up for the shift can do it. Everything after that — filling or deleting a
+        guest place, adding a guest, correcting a guest's name — is a Supervisor or Administrator recording
+        who came, like a check-in, so it works wherever check-in does: for a Supervisor, any Job/Event it can
+        see, public ones included. The two are separate settings, each on or off per deployment, and every
         staff guest action is written to the audit trail.
       </p>
       </details>
@@ -570,8 +572,8 @@
         plan, or an account; <strong>changing an activity plan people are signed up for</strong>;
         changing an account's role; creating an account that is already an
         Administrator; an Administrator setting an account's password or changing its email address
-        (neither the password nor the addresses are recorded); importing accounts (the counts only); removing the last person from a group account; taking a person off a shift or
-        adding a day-of walk-in; clearing an account's undeliverable-address mark; and cancelling or restoring
+        (neither the password nor the addresses are recorded); importing accounts (the counts only); removing the last person from a group account; taking a person off a shift,
+        adding a day-of walk-in, or adding, filling or removing a guest; clearing an account's undeliverable-address mark; and cancelling or restoring
         a shift that had volunteers on it —
         recording, where more than one role may do it, which role did. Each
         record keeps the time, who did it, what it was done to (captured at the time, since the thing
@@ -789,11 +791,17 @@
       <ul>
         <li><strong>Branding</strong> — application name/title, home page, color scheme, logo/symbols.</li>
         <li><strong>Terminology</strong> — the "Job" label to fit your organization (Department, Skill Type, Ministry, etc.), and the word for each role: a club can call its volunteers <em>Participants</em>, a school <em>Parent Helpers</em>.</li>
-        <li><strong>Sign-in &amp; registration</strong> — which methods and which self-registration roles are allowed.</li>
+        <li><strong>Sign-in &amp; registration</strong> — which methods and which self-registration roles are allowed, and how long sessions and emailed sign-in links last.</li>
         <li><strong>Password rules</strong> — length and required character types.</li>
         <li><strong>Allowed admin actions</strong> — add/edit/delete for accounts, Jobs/Events, and activity plans.</li>
+        <li><strong>Supervisor powers</strong> — creating Jobs/Events, managing who may see private ones, locking and cancelling, and changing who is on a shift, each separately; and whether that reach extends to public Jobs/Events.</li>
+        <li><strong>Volunteer self-service</strong> — whether volunteers may edit their own people, email address and group name.</li>
+        <li><strong>Time zone</strong> — your organization's, for activity times, reminders and calendar attachments.</li>
         <li><strong>Scheduling window</strong> — how many months of past activity history are retained, and how many months ahead planned activities are generated and open for scheduling.</li>
+        <li><strong>Email</strong> — on or off as a whole; the sender name and the help address shown in each email; whether a new account is asked about sign-up confirmations, always gets them or never does, and whether cancellations are confirmed too; and whether changing or deleting a program offers to email the people on it.</li>
         <li><strong>Reminders</strong> — automatic for everyone (each volunteer can switch them off) or only for those who opt in at sign-up; how far ahead they go (a day before each shift, or the evening before at an hour you choose); whether they carry the <strong>"Can't make it?"</strong> link; and whether administrators get the daily undeliverable-address summary.</li>
+        <li><strong>Check-in</strong> — on or off, and which of the three ways (front-desk station, a volunteer's phone, the staff roster); how early phone check-in opens; and how many days back staff may enter a paper sheet.</li>
+        <li><strong>Reports</strong> — Supervisors' check-in sheets and the hours reports each on or off; the hourly rate behind the economic value; and how many years of hours history to keep.</li>
         <li><strong>Guests</strong> — whether volunteers may sign up with guests, and whether Supervisors and Administrators may add guests on the day; each on or off.</li>
         <li><strong>Audit trail</strong> — on or off, and how many months of records to keep.</li>
       </ul>
@@ -815,7 +823,7 @@
         <ul>
           <li><strong>Runtime</strong> — Node.js 26.</li>
           <li><strong>Database</strong> — MongoDB. A free hosted MongoDB Atlas cluster is enough for a small organization.</li>
-          <li><strong>Email</strong> — a sending service, either Resend or your own SMTP server, on a domain where you can add DNS records.</li>
+          <li><strong>Email</strong> — a sending service: Resend (an API key) or your own SMTP server (host, port, username and password), and a sender address on a domain where you can add the DNS records that verify it. Email sign-in links, confirmations, reminders and every notice depend on it.</li>
           <li><strong>HTTPS</strong> — a secure connection in front of the application.</li>
           <li><strong>Server size</strong> — 256 MB of memory at minimum, 512 MB recommended for headroom on busy sign-up days, and half a CPU.</li>
         </ul>
