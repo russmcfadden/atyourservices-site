@@ -396,7 +396,7 @@
         <summary>Signing up with guests, checking them in, and guests nobody signed up for</summary>
       <ul>
         <li><strong>Volunteers bringing guests.</strong> When first signing up for a shift, a volunteer can say
-          they are bringing guests — up to four per person, and only as many as there are places left. Each guest
+          they are bringing guests — up to four per person by default (configurable), and only as many as there are places left. Each guest
           holds a place, so people and guests together must fit: a sign-up that does not fit is refused
           whole, never half-seated. The roster shows <em>Jane Doe +2</em>, and the confirmation and reminder
           emails say <em>Jane Doe + 2 guests</em>. After that, adding to the shift adds people only, and until the shift starts the
@@ -408,14 +408,18 @@
           volunteer's own account people, who then earns their own hours, or a typed name — and that person
           is checked in as it is filled. Filling a place never takes a shift past its maximum, because the
           place was already counted. A guest who did not come is deleted, giving the place up. Only guests
-          named and checked in count as attended; the panel's header reads <strong>Signed up N &middot;
-          Here M</strong>.</li>
+          named and checked in count as attended, and the panel's header keeps count:
+          <strong>Signed up 6 &middot; Here 4</strong> means six places are held, guests included, and four
+          people have been checked in so far.</li>
         <li><strong>A guest nobody signed up for.</strong> Someone who turns up unannounced, without an
           account, can be added by staff from the <strong>Check-in</strong> panel as a <strong>guest</strong>: type their name, and anyone it matches — people on accounts, and
           guests seen before — is offered first, so a regular is not added twice. If nobody fits,
-          <strong>Add as a guest</strong> records them, checked in, shown as <em>Name (guest)</em>. Guests
-          are counted together as one <strong>Guests</strong> row in the hours report rather than as
-          volunteers. A guest added by mistake can be removed, and a misspelled name corrected.</li>
+          <strong>Add as a guest</strong> records them, checked in, shown as <em>Name (guest)</em>. A guest
+          added by mistake can be removed, and a misspelled name corrected.</li>
+        <li><strong>In the reports.</strong> All guests share one <strong>Guests</strong> row in the hours
+          report: their hours count toward the totals, but not toward the number of volunteers or new
+          volunteers, and the report shows how many guest visits there were. A guest place nobody came for
+          counts as a scheduled slot, never as a visit.</li>
       </ul>
       <p>
         <strong>Who can do it.</strong> Saying how many guests are coming is part of signing up, so any
@@ -802,7 +806,7 @@
         <li><strong>Reminders</strong> — automatic for everyone (each volunteer can switch them off) or only for those who opt in at sign-up; how far ahead they go (a day before each shift, or the evening before at an hour you choose); whether they carry the <strong>"Can't make it?"</strong> link; and whether administrators get the daily undeliverable-address summary.</li>
         <li><strong>Check-in</strong> — on or off, and which of the three ways (front-desk station, a volunteer's phone, the staff roster); how early phone check-in opens; and how many days back staff may enter a paper sheet.</li>
         <li><strong>Reports</strong> — Supervisors' check-in sheets and the hours reports each on or off; the hourly rate behind the economic value; and how many years of hours history to keep.</li>
-        <li><strong>Guests</strong> — whether volunteers may sign up with guests, and whether Supervisors and Administrators may add guests on the day; each on or off.</li>
+        <li><strong>Guests</strong> — whether volunteers may sign up with guests, and whether Supervisors and Administrators may add guests on the day, each on or off; and the most guests one person may bring.</li>
         <li><strong>Audit trail</strong> — on or off, and how many months of records to keep.</li>
       </ul>
       </details>
