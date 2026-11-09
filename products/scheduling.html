@@ -381,13 +381,14 @@
           <strong>Add as a guest</strong> records them, checked in, shown as <em>Name (guest)</em>. Guests
           are counted together as one <strong>Guests</strong> row in the hours report rather than as
           volunteers.</li>
-        <li><strong>Volunteers bringing guests.</strong> When signing up, a volunteer can say they are
-          bringing guests — up to four per person, and only as many as there are places left. Each guest
+        <li><strong>Volunteers bringing guests.</strong> When first signing up for a shift, a volunteer can say
+          they are bringing guests — up to four per person, and only as many as there are places left. Each guest
           holds a place, so people and guests together must fit: a sign-up that does not fit is refused
           whole, never half-seated. The roster shows <em>Jane Doe +2</em>, and the confirmation and reminder
-          emails say <em>Jane Doe + 2 guests</em>. Until the shift starts the volunteer can change the number: the
-          <strong>Guests</strong> item raises or lowers it, and <strong>Remove</strong> lowers it too, down
-          to none, without taking the volunteer off.</li>
+          emails say <em>Jane Doe + 2 guests</em>. After that, adding to the shift adds people only, and until the shift starts the
+          volunteer changes the number instead: the <strong>Guests</strong> item raises or lowers it while
+          there is room for another guest, and <strong>Remove</strong> lowers it at any time, down to none,
+          without taking the volunteer off.</li>
         <li><strong>Guest places on the day.</strong> In the <strong>Check-in</strong> panel each guest
           place is an open row under its volunteer. Staff fill it with the person who came — one of the
           volunteer's own account people, who then earns their own hours, or a typed name — and that person
@@ -642,7 +643,7 @@
             account assigned to one activity at once — you need an activity with <strong>no maximum</strong>,
             so there is always room for all of them: Greeter's <strong>Info Table</strong> (Sundays) or
             <strong>Visitor Center - Refreshment Stand</strong> (Saturdays). The demo also lets a volunteer
-            <strong>bring guests</strong>: the Add dialog asks how many, and <strong>Guests</strong> or
+            <strong>bring guests</strong>: the first Add asks how many, and <strong>Guests</strong> or
             <strong>Remove</strong> changes the number afterwards.</li>
           <li><code>Mike</code> — <strong>Supervisor</strong>. See the full roster read-only,
             and note that the private <strong>Board Committee</strong> Job appears in Mike's pulldown —
@@ -655,11 +656,11 @@
             reports (with the check-in columns where volunteers were checked in). Mike can also
             <strong>record check-in</strong> from an activity's roster on the day — and, on
             <strong>Board Committee</strong>, <strong>Remove person&hellip;</strong> from an upcoming
-            occurrence or <strong>+ Add someone who came</strong> from within the check-in panel. On any
-            current-day shift Mike can also fill a volunteer's <strong>guest places</strong> and add a
-            <strong>guest</strong> with no account, since guests go wherever check-in does. (On the
+            occurrence or <strong>+ Add someone who came</strong> from within the check-in panel. (On the
             demo those two are limited to Mike's own private Job, which is the default setting; the
-            Administrator can do them anywhere.)</li>
+            Administrator can do them anywhere.) Guests are not limited that way: on any current-day
+            shift Mike can fill a volunteer's <strong>guest places</strong> and add a
+            <strong>guest</strong> with no account, since guests go wherever check-in does.</li>
           <li><code>Front</code> — <strong>Check-in Station</strong>. A front-desk kiosk: pick a Job/Event,
             type a volunteer's name, and check them in or out for the day — the whole account does nothing
             else. (Also try self check-in from <code>Betty</code>'s phone view on a current-day shift.)</li>
