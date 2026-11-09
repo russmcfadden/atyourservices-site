@@ -109,6 +109,7 @@
           <li><a href="#roles">Roles</a></li>
           <li><a href="#locking-cancelling-occurrences">Locking &amp; cancelling occurrences</a></li>
           <li><a href="#changing-who-is-on-a-shift">Changing who is on a shift</a></li>
+          <li><a href="#guests">Bringing guests</a></li>
           <li><a href="#changing-or-ending-an-activity">Changing or ending an activity</a></li>
           <li><a href="#volunteer-check-in-verified-attendance">Volunteer check-in &amp; attendance</a></li>
           <li><a href="#printable-check-in-sheets">Printable check-in sheets</a></li>
@@ -151,33 +152,23 @@
            down the page carrying it at full length (locking &amp; cancelling, removing a person and the
            walk-in, the audit trail, the three ways to check in, security, configuration). Saying it twice
            a screen apart made the list unscannable and taught the reader nothing extra. Keep new entries
-           to a bold lead plus one clause; the depth goes in the accordion. -->
+           to a bold lead plus one clause; the depth goes in the accordion. Merge into an existing line
+           before adding one: past a dozen or so lines the list stops being scanned at all. -->
       <ul>
-        <li><strong>Self-service scheduling</strong> — volunteers sign up and cancel from any phone, and one account can cover a family or a whole crew.</li>
+        <li><strong>Self-service scheduling</strong> — volunteers sign up and cancel from any phone, signing in with a password or an emailed link, and one account can cover a family or a whole crew.</li>
         <li><strong>Capacity limits &amp; live status</strong> — per-activity maximums with live counts and color-coded status, so full shifts and gaps are obvious.</li>
-        <li><strong>Role-based privacy</strong> — volunteers see only their own sign-ups, and private Jobs/Events stay hidden from unassigned accounts (enforced on the server).</li>
-        <li><strong>Delegation, not a lone administrator</strong> — add as many Supervisors as you need, each running their own Jobs/Events and deciding who may access them.</li>
-        <li><strong>Exception handling</strong> — lock a fully-staffed occurrence, or cancel and restore a single date, without touching the recurring plan behind it.</li>
-        <li><strong>Call off a shift people already signed up for</strong> — cancel an occupied occurrence with a reason emailed to everyone on it, and see who could not be reached.</li>
+        <li><strong>Privacy and delegation</strong> — volunteers see only their own sign-ups and private Jobs/Events stay hidden (enforced on the server); Supervisors each run their own.</li>
+        <li><strong>Exceptions without touching the plan</strong> — lock a fully-staffed date, or cancel one, even an occupied one, with your reason emailed to everyone on it.</li>
         <li><strong>Change who is on a shift</strong> — take someone off before it starts, or add a walk-in on the day; either way the shift still goes ahead.</li>
-        <li><strong>Bring guests</strong> — a volunteer signs up "+2" and the guests hold their places; staff take their names when they arrive, and add a guest with no account at all.</li>
-        <li><strong>Change a shift without losing its roster</strong> — editing an activity shows what it will do and who is standing on it first, and a day that moves takes its people with it.</li>
-        <li><strong>Ending a program tells the people on it</strong> — deleting a Job/Event or one activity can email every account that loses an upcoming shift, with your reason.</li>
-        <li><strong>Finished programs step aside on their own</strong> — a Job whose plans have all ended, or an Event past its last day, leaves the volunteer calendar with its history kept; a Job restarts when a plan gets new dates.</li>
+        <li><strong><a href="#guests">Bring guests</a></strong> — a volunteer signs up "+2" and the guests hold their places; staff take their names when they arrive, and add a guest with no account at all.</li>
+        <li><strong>Change or end a program without losing people</strong> — an edit shows who it affects before it saves, the people affected can be emailed, and finished programs leave the calendar with their history kept.</li>
         <li><strong>Flexible recurrence &amp; events</strong> — daily, weekday, day-of-week or monthly patterns, open-ended or fixed; dated multi-day events that can return next season.</li>
-        <li><strong>Volunteer check-in</strong> — record who actually showed up, from a front-desk tablet, a volunteer's own phone, or the roster.</li>
-        <li><strong>Printable check-in sheets</strong> — printable or CSV rosters for a day or a date range, with check-off boxes and write-in lines.</li>
-        <li><strong>Volunteer-hours &amp; impact reports</strong> — monthly, quarterly and annual totals by account, program or volunteer: hours <strong>scheduled and checked in</strong>, and estimated economic value.</li>
-        <li><strong>Capacity &amp; fill-rate reports</strong> — available slots and hours beside sign-ups, with a fill percentage, so under-subscribed programs stand out for recruiting.</li>
-        <li><strong>Automatic shift reminders</strong> — an email about a day before each shift, with an add-to-calendar file and a <strong>"Can't make it?"</strong> link that drops the shift without signing in.</li>
-        <li><strong>Refused addresses are caught</strong> — an address the mail provider refuses when sending is flagged, mail to it stops, and administrators get one daily summary.</li>
+        <li><strong>Check-in and check-in sheets</strong> — record who actually showed up from a front-desk tablet, a volunteer's phone or the roster, or print the day's roster with write-in lines.</li>
+        <li><strong>Hours, impact &amp; fill-rate reports</strong> — monthly, quarterly and annual hours <strong>scheduled and checked in</strong>, estimated economic value, and fill percentages that show where to recruit.</li>
+        <li><strong>Reminders that catch problems</strong> — an email about a day before each shift with an add-to-calendar file and a <strong>"Can't make it?"</strong> link; addresses the mail provider refuses are flagged and stopped.</li>
         <li><strong>Bring your volunteer list with you</strong> — import Volunteer accounts from a spreadsheet saved as CSV, checked row by row before anything is created.</li>
-        <li><strong>Easy sign-in</strong> — password and/or passwordless email ("magic link") sign-in, with optional self-registration.</li>
-        <li><strong>Security built in</strong> — hashed passwords, expiring sessions, rate limiting, and server-side access control over HTTPS.</li>
-        <li><strong>No third-party ads</strong> — no advertising is ever shown to your volunteers; the page is your organization's, not a billboard.</li>
-        <li><strong>Admin audit trail</strong> — a tamper-evident record of who deleted something, changed a role, or cancelled an occupied shift; records age out on a retention period you set.</li>
-        <li><strong>Deleting doesn't erase your history</strong> — removing a Job/Event clears its future occurrences but keeps the past ones, so last quarter still reports correctly.</li>
-        <li><strong>Branding &amp; configuration</strong> — your name, colors and logo; configurable wording for the "Job" label and each role; adjustable admin actions.</li>
+        <li><strong>Accountability that keeps history</strong> — a tamper-evident admin audit trail, and deleting a Job/Event keeps its past so last quarter still reports correctly.</li>
+        <li><strong>Secure, ad-free, and yours</strong> — hashed passwords, expiring sessions and server-side access control over HTTPS; no ads ever; your name, colors, logo and wording.</li>
       </ul>
 
       <h2 id="how-it-works">How it works</h2>
@@ -355,7 +346,7 @@
         still going ahead; what changes is <em>who</em> is on it.
       </p>
       <details>
-        <summary>Removing a person, adding a walk-in, and guests</summary>
+        <summary>Removing a person, and adding a walk-in</summary>
       <ul>
         <li><strong>Remove a person — before the shift starts.</strong> A volunteer can now do this
           themselves, from the calendar until the shift starts — and taking a person or a whole account
@@ -375,27 +366,6 @@
           people who turned up. Entered on a <strong>later</strong> day, while the shift's check-in can
           still be corrected, a walk-in is recorded for its scheduled start and end. Only people who could
           have signed up for that Job/Event are offered.</li>
-        <li><strong>A guest with no account.</strong> Somebody who has never had an account can be added
-          as a <strong>guest</strong>: type their name, and anyone it matches — people on accounts, and
-          guests seen before — is offered first, so a regular is not added twice. If nobody fits,
-          <strong>Add as a guest</strong> records them, checked in, shown as <em>Name (guest)</em>. Guests
-          are counted together as one <strong>Guests</strong> row in the hours report rather than as
-          volunteers.</li>
-        <li><strong>Volunteers bringing guests.</strong> When first signing up for a shift, a volunteer can say
-          they are bringing guests — up to four per person, and only as many as there are places left. Each guest
-          holds a place, so people and guests together must fit: a sign-up that does not fit is refused
-          whole, never half-seated. The roster shows <em>Jane Doe +2</em>, and the confirmation and reminder
-          emails say <em>Jane Doe + 2 guests</em>. After that, adding to the shift adds people only, and until the shift starts the
-          volunteer changes the number instead: the <strong>Guests</strong> item raises or lowers it while
-          there is room for another guest, and <strong>Remove</strong> lowers it at any time, down to none,
-          without taking the volunteer off.</li>
-        <li><strong>Guest places on the day.</strong> In the <strong>Check-in</strong> panel each guest
-          place is an open row under its volunteer. Staff fill it with the person who came — one of the
-          volunteer's own account people, who then earns their own hours, or a typed name — and that person
-          is checked in as it is filled. Filling a place never takes a shift past its maximum, because the
-          place was already counted. A guest who did not come is deleted, giving the place up. Only guests
-          named and checked in count as attended; the panel's header reads <strong>Signed up N &middot;
-          Here M</strong>.</li>
       </ul>
       <p>
         <strong>Two deliberate limits, both protecting your attendance record.</strong> Remove disappears
@@ -412,8 +382,42 @@
         by default it covers the private Jobs/Events assigned to them, and a setting extends it to public
         ones as well — so where the option is not offered, that capability is simply switched off.
       </p>
+      </details>
+
+      <h2 id="guests">Bringing guests</h2>
       <p>
-        <strong>Guests are the exception, because a guest is attendance.</strong> Adding a guest, filling or
+        Plenty of shifts and events welcome a plus-one: a volunteer bringing a friend, a parent bringing a
+        neighbor, someone turning up with a guest nobody expected. VSA lets a volunteer sign up
+        <em>Jane Doe +2</em> so the guests hold their places, lets staff record each guest's name when they
+        arrive, and counts guests in the hours report without treating them as volunteers.
+      </p>
+      <details>
+        <summary>Signing up with guests, guest places on the day, and guests with no account</summary>
+      <ul>
+        <li><strong>Volunteers bringing guests.</strong> When first signing up for a shift, a volunteer can say
+          they are bringing guests — up to four per person, and only as many as there are places left. Each guest
+          holds a place, so people and guests together must fit: a sign-up that does not fit is refused
+          whole, never half-seated. The roster shows <em>Jane Doe +2</em>, and the confirmation and reminder
+          emails say <em>Jane Doe + 2 guests</em>. After that, adding to the shift adds people only, and until the shift starts the
+          volunteer changes the number instead: the <strong>Guests</strong> item raises or lowers it while
+          there is room for another guest, and <strong>Remove</strong> lowers it at any time, down to none,
+          without taking the volunteer off.</li>
+        <li><strong>Guest places on the day.</strong> In the <strong>Check-in</strong> panel each guest
+          place is an open row under its volunteer. Staff fill it with the person who came — one of the
+          volunteer's own account people, who then earns their own hours, or a typed name — and that person
+          is checked in as it is filled. Filling a place never takes a shift past its maximum, because the
+          place was already counted. A guest who did not come is deleted, giving the place up. Only guests
+          named and checked in count as attended; the panel's header reads <strong>Signed up N &middot;
+          Here M</strong>.</li>
+        <li><strong>A guest with no account.</strong> Somebody who has never had an account can be added
+          as a <strong>guest</strong>: type their name, and anyone it matches — people on accounts, and
+          guests seen before — is offered first, so a regular is not added twice. If nobody fits,
+          <strong>Add as a guest</strong> records them, checked in, shown as <em>Name (guest)</em>. Guests
+          are counted together as one <strong>Guests</strong> row in the hours report rather than as
+          volunteers.</li>
+      </ul>
+      <p>
+        <strong>Who can do it: wherever check-in does, because a guest is attendance.</strong> Adding a guest, filling or
         deleting a guest place, and correcting a guest's name record who came, like a check-in, so they work
         wherever check-in does — for a Supervisor, any Job/Event it can see, public ones included. Volunteers
         bringing guests and staff adding guests are separate settings, each on or off per deployment, and every
