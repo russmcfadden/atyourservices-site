@@ -42,7 +42,7 @@
     "url": "https://schedule.atyourservices.org",
     "description": "Self-service volunteer and staff scheduling on a shared calendar. Volunteers book and cancel their own spots from any phone, capacity limits prevent over- and under-staffing, and role-based access keeps volunteers seeing only their own signups while coordinators see the master roster. Volunteers get an automatic email reminder about a day before each shift, with an add-to-calendar file and a \"Can't make it?\" link that drops the shift without signing in so the place opens up for someone else. Volunteers can check in on the day (front-desk station or their own phone) to record who actually came, and reports cover volunteer hours and impact, check-in hours beside the scheduled ones, and by-program capacity and fill rate. Coordinators can take a volunteer off a shift before it starts, with an email telling them, and can add a walk-in who turned up without signing up — added and checked in together, including a guest with no account at all. Volunteers can sign up with guests (\"Jane Doe +2\"), each holding a place on the shift, and change that number until it starts; on the day staff record each guest who came, and only guests checked in count as attended. Administrators can call off a shift that already has volunteers on it with a reason emailed to everyone assigned, review a tamper-evident audit trail of irreversible admin actions, and delete a program without losing the hours and attendance already recorded against it. An activity plan can be changed after volunteers have signed up: the administrator is shown what the change would do and who is standing on it before confirming it, a day that moves takes its roster with it, and everyone affected can be emailed with a reason that also refreshes their calendar entry. Deleting an activity or a whole program likewise offers to email every account that loses an upcoming shift. A program that has finished leaves the volunteer calendar by itself, with its history kept, and a Job can be restarted by giving one of its plans new dates. Administrators can bring an existing volunteer list in from a CSV file: each row is checked first, an account that already exists is never changed, and nothing is created until the administrator confirms.",
     "image": "https://atyourservices.org/og-image.png",
-    "dateModified": "2026-11-09",
+    "dateModified": "2026-11-13",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -159,7 +159,7 @@
         <li><strong>Capacity limits &amp; live status</strong> — per-activity maximums with live counts and color-coded status, so full shifts and gaps are obvious.</li>
         <li><strong>Privacy and delegation</strong> — volunteers see only their own sign-ups and private Jobs/Events stay hidden (enforced on the server); Supervisors each run their own.</li>
         <li><strong>Exceptions without touching the plan</strong> — lock a fully-staffed date, or cancel one, even an occupied one, with your reason emailed to everyone on it.</li>
-        <li><strong>Change who is on a shift</strong> — take someone off before it starts, or add a walk-in on the day; either way the shift still goes ahead.</li>
+        <li><strong>Change who is on a shift</strong> — take someone off before the day, or add a walk-in on the day; either way the shift still goes ahead.</li>
         <li><strong><a href="#guests">Bring guests</a></strong> — a volunteer signs up "+2" and the guests hold their places; staff take their names when they arrive, and add a guest with no account at all.</li>
         <li><strong>Change or end a program without losing people</strong> — an edit shows who it affects before it saves, the people affected can be emailed, and finished programs leave the calendar with their history kept.</li>
         <li><strong>Flexible recurrence &amp; events</strong> — daily, weekday, day-of-week or monthly patterns, open-ended or fixed; dated multi-day events that can return next season.</li>
@@ -242,7 +242,8 @@
           height — and it defaults to the day view on phones. Each activity shows a name, how full it is —
           <strong>&ldquo;3 of 8 filled&rdquo;</strong>, or <strong>&ldquo;3 signed up&rdquo;</strong> where there is no
           maximum — the assigned people's names, and status symbols. The first number can exceed the
-          second (<strong>&ldquo;4 of 3 filled&rdquo;</strong>) where staff added someone who turned up on the day. Colors convey status:
+          second (<strong>&ldquo;4 of 3 filled&rdquo;</strong>) where staff added someone who turned up on the day;
+          staff also see how many on a line below, <strong>&ldquo;(1 walk-in)&rdquo;</strong>. Colors convey status:
         </p>
         <ul class="legend">
           <li><span style="background:#9e9e9e"></span><strong>Gray</strong> — in the past; cannot be modified.</li>
@@ -260,8 +261,8 @@
       <ul>
         <li><strong>Volunteer</strong> — the volunteer's own account; schedules the people it's responsible for, and no one else's. A Volunteer:
           <ul>
-            <li>views, adds, and removes its associated people on activities — removing only until the shift <strong>starts</strong>, after which an absence stays on record as a no-show;</li>
-            <li>where guests are enabled, says how many <strong>guests</strong> each person is bringing when first signing up for a shift, and can raise or lower that number — down to none — until the shift starts;</li>
+            <li>views, adds, and removes its associated people on activities — removing only until the shift <strong>starts</strong>, and not once that person is checked in or their guest has arrived; after that an absence stays on record as a no-show;</li>
+            <li>where guests are enabled, says how many <strong>guests</strong> each person is bringing when first signing up for a shift, and can raise or lower that number — down to none — until the shift starts; once staff write in a guest's name, the volunteer sees that guest listed under them;</li>
             <li>when check-in is enabled, checks its own people <strong>in and out</strong> for a current-day shift right from its phone;</li>
             <li>may hold one or more associated people (a family) or be a group account (a contact/group lead plus members);</li>
             <li>sees and manages only the people associated with the account;</li>
@@ -270,12 +271,12 @@
             <li>chooses its own email: sign-up confirmations (ask each time, always, or never) and, where reminders are automatic, shift reminders on or off. If the mail provider has refused its address, the profile says so beside it, and correcting the address clears it.</li>
           </ul>
         </li>
-        <li><strong>Supervisor</strong> — oversight and setup; sees everyone assigned to an activity. A Supervisor does not sign people up — that is the volunteer's own doing — but can take somebody off a shift at their request and add a volunteer who turns up without one. A Supervisor can:
+        <li><strong>Supervisor</strong> — oversight and setup; sees everyone assigned to an activity. A Supervisor does not sign people up — that is the volunteer's own doing — but can take somebody off a shift at their request before the day, and add a volunteer who turns up without one. A Supervisor can:
           <ul>
             <li><strong>manage access</strong> for the private Jobs/Events it is assigned to — granting or revoking which Volunteer accounts may see and schedule them, and, where enabled, giving the front-desk Check-in Station access so it can check people in there (each configurable);</li>
             <li><strong>create its own Jobs/Events</strong> and their activities; a private one it creates is automatically assigned to it, so it can immediately manage that item's access (private and public creation are each independently configurable);</li>
             <li><strong>lock</strong> or <strong>cancel/restore</strong> individual activity occurrences on the private Jobs/Events it is assigned to — and on public ones as well where that reach is widened, the same setting as for changing who is on a shift — including, where you switch it on, one that <strong>already has volunteers on it</strong>, through the same reason-and-email page an Administrator gets (see below; each is configurable);</li>
-            <li><strong>change who is on a shift</strong> — remove a person from an occurrence that has not started, or add a day-of walk-in, on the Jobs/Events within its reach (see below; each is configurable);</li>
+            <li><strong>change who is on a shift</strong> — remove a person before the occurrence's day, or add a day-of walk-in, on the Jobs/Events within its reach (see below; each is configurable);</li>
             <li><strong>record guests</strong> — add a guest with no account who turned up, and fill the guest places volunteers signed up for with the people who came, wherever it can record check-in (configurable);</li>
             <li><strong>record volunteer check-in</strong> — mark who actually showed up (or correct a check-in/out time, or swap in a same-account substitute) from the roster on the day — or backfill it from a paper sign-in sheet a day or two later — feeding check-in hours into the reports;</li>
             <li><strong>generate reports</strong> — printable or CSV check-in sheets, volunteer-hours &amp; impact totals (scheduled hours beside check-in hours), and by-Job/Event capacity &amp; fill rate (each configurable).</li>
@@ -291,7 +292,7 @@
             <li>generates the <strong>reports</strong> — volunteer-hours &amp; impact totals (scheduled hours beside check-in hours) and by-Job/Event capacity &amp; fill rate (configurable). The printable check-in sheet is a Supervisor's tool;</li>
             <li>does not schedule people, but can open the calendar to <strong>record check-in</strong>, and to <strong>lock</strong> or <strong>cancel/restore</strong> individual activity occurrences on any Job/Event, public or private — including one that <strong>already has volunteers assigned</strong>, with a required reason emailed to all of them (see below; each is configurable);</li>
             <li><strong>changes or ends an activity plan</strong> after people have signed up — shown what the change would do and who is standing on it before it happens, with the option to email everyone affected (see below);</li>
-            <li><strong>removes a person</strong> from a shift that has not started, and <strong>adds a day-of walk-in</strong> or <strong>guest</strong>, on any Job/Event;</li>
+            <li><strong>removes a person</strong> from a shift before its day, and <strong>adds a day-of walk-in</strong> or <strong>guest</strong>, on any Job/Event;</li>
             <li>sees which accounts' email addresses the mail provider has <strong>refused</strong> — an <strong>Email Status</strong> column in the account list, filterable to just those, plus one summary email a day when new ones appear — and can clear the mark once a mailbox works again;</li>
             <li>reads the <strong>audit trail</strong> of who performed the irreversible actions, and can re-verify the whole log on demand.</li>
           </ul>
@@ -348,16 +349,17 @@
       <details>
         <summary>Removing a person, and adding a walk-in</summary>
       <ul>
-        <li><strong>Remove a person — before the shift starts.</strong> A volunteer can now do this
-          themselves, from the calendar until the shift starts — and taking a person or a whole account
-          off the books leaves any shift already under way alone, so it still shows whether they came. The reminder they get about a day ahead carries a <strong>"Can't make it?"</strong>
-          link that takes them off without signing in, asks before it changes anything, and lets a family
-          choose who is not coming. When a volunteer tells you instead, a Supervisor or Administrator opens <strong>Remove person&hellip;</strong>
-          from the occurrence and takes that one person off; the slot frees up for somebody else. The
-          volunteer is emailed that they have come off the shift — whatever their notification preference,
-          since an opt-out covers reminders, not a change somebody else made to their commitment — and the
-          panel then reports by name whether they were emailed, could not be, or the account has no
-          address at all, so you know exactly who still needs a phone call.</li>
+        <li><strong>A volunteer cancels — until the shift starts.</strong> From the calendar, or from the
+          <strong>"Can't make it?"</strong> link in the reminder they get about a day ahead, which works
+          without signing in, asks before it changes anything, and lets a family choose who is not coming.
+          Not for someone already checked in, or whose guest has arrived — they are keeping the booking.</li>
+        <li><strong>Staff remove a person — before the shift's day.</strong> When a volunteer tells you
+          instead, a Supervisor or Administrator opens <strong>Remove person&hellip;</strong> from the
+          occurrence and takes that one person off; the slot frees up for somebody else. The volunteer is
+          emailed that they have come off the shift — whatever their notification preference, since an
+          opt-out covers reminders, not a change somebody else made to their commitment — and the panel
+          reports by name whether they were emailed, could not be, or the account has no address at all,
+          so you know exactly who still needs a phone call.</li>
         <li><strong>Add someone who came — on the day.</strong> A volunteer turns up without having signed
           up, and the front-desk station cannot find them. Inside the <strong>Check-in</strong> panel —
           where staff already are on the day — type a name, pick the person, and they are added
@@ -368,13 +370,16 @@
           have signed up for that Job/Event are offered.</li>
       </ul>
       <p>
-        <strong>Two deliberate limits, both protecting your attendance record.</strong> Remove disappears
-        once the shift has started, on purpose: from then on, a volunteer who is signed up and never
-        checked in <em>is</em> the record that they did not come, and deleting them would erase that rather
-        than report it. If someone simply does not turn up, leave them listed and do not check them in.
-        For the same reason the walk-in add will take a shift <strong>past its maximum</strong> when it was
-        already full — the alternative would be deleting the no-show to make room, destroying the same
-        evidence. A capacity figure over 100% is the application working, and the report says so.
+        <strong>Two deliberate limits, both protecting your attendance record.</strong> On the shift's
+        own day staff can no longer take anyone off, and deleting a person or an account leaves that day's
+        shifts alone too: from then on, a volunteer who is signed up and never checked in <em>is</em> the
+        record that they did not come, and deleting them would erase it. A call that morning, or someone
+        who simply does not turn up, stays listed as a sign-up who did not come — leave them and do not
+        check them in. (An organization that wants staff to free places on the day can set this back to
+        &ldquo;until the shift starts&rdquo;.) For the same reason the walk-in add will take a shift
+        <strong>past its maximum</strong> when it was already full, rather than delete the no-show to make
+        room. A walk-in is counted as there, never as signed up, so the sign-ups stay what was booked in
+        advance.
       </p>
       <p>
         Both are Administrator and Supervisor capabilities, each independently configurable, and both are
@@ -407,10 +412,12 @@
           place is an open row under its volunteer. Staff fill it with the person who came — one of the
           volunteer's own account people, who then earns their own hours, or a typed name — and that person
           is checked in as it is filled. Filling a place never takes a shift past its maximum, because the
-          place was already counted. A guest who did not come is deleted, giving the place up. Only guests
-          named and checked in count as attended, and the panel's header keeps count:
-          <strong>Signed up 6 &middot; Here 4</strong> means six places are held, guests included, and four
-          people have been checked in so far.</li>
+          place was already counted. A guest who did not come is deleted: the place is free again, and it
+          still counts as signed up — a guest who did not come. Only guests named and checked in count as
+          attended, and the panel's header keeps count: <strong>Signed up 6 &middot; Here 4</strong> means
+          six places were booked before the day, guests included, and four people have been checked in so
+          far. Someone added on the day — a walk-in or a guest nobody signed up for — raises
+          <strong>Here</strong>, never <strong>Signed up</strong>.</li>
         <li><strong>A guest nobody signed up for.</strong> Someone who turns up unannounced, without an
           account, can be added by staff from the <strong>Check-in</strong> panel as a <strong>guest</strong>: type their name, and anyone it matches — people on accounts, and
           guests seen before — is offered first, so a regular is not added twice. If nobody fits,
@@ -505,7 +512,7 @@
         <summary>Three ways to check in, and how the hours are counted</summary>
       <ul>
         <li><strong>Front-desk check-in station</strong> — a dedicated kiosk account signed in on a shared tablet and left open at the entrance. A volunteer picks the Job/Event and types their own name to check in on arrival and out when they leave. Each button is a simple toggle, so a mistaken tap is undone by tapping again — no supervisor needed to fix it.</li>
-        <li><strong>From a volunteer's own phone</strong> — a Volunteer checks their own people in and out for a current-day shift, from shortly before it starts.</li>
+        <li><strong>From a volunteer's own phone</strong> — a Volunteer checks their own people in and out for a current-day shift, from shortly before it starts; check-out opens at the same time, even for someone staff checked in early.</li>
         <li><strong>Supervisor / Administrator</strong> — record or correct check-in and check-out times from the roster on the volunteer's behalf, or swap in a substitute from the same account. Attendance can also be <strong>entered after the fact</strong> from a paper sign-in sheet for the last few days — so a weekend's shifts can be logged on the next workday, not lost. The same panel carries <strong>+ Add someone who came</strong>, for a volunteer who turned up without having signed up at all, and the open <strong>guest places</strong> volunteers signed up for, filled as each guest arrives.</li>
       </ul>
       <p>
@@ -555,8 +562,8 @@
         <summary>What the reports show</summary>
       <p>When enabled, a Supervisor or Administrator produces a summary over a <strong>month, quarter, year, or custom range</strong>, grouped by <strong>account</strong>, <strong>Job/Event</strong>, or <strong>volunteer</strong>:</p>
       <ul>
-        <li><strong>Hours &amp; impact</strong> — sign-ups, scheduled hours, unique and new volunteers, and estimated economic value (hours × an hourly rate). Where check-in is used, a <strong>Check-ins</strong> count sits beside sign-ups and <strong>Check-in Hours</strong> and <strong>Check-in Value</strong> beside the scheduled figures, and the total line says what share got that far — what percentage of scheduled hours have a check-in, and what percentage of sign-ups do, each shown with the division behind it. It is a record of what was captured, not a show-up rate: a shift nobody remembered to record counts as zero. Group <strong>by volunteer</strong> and a <strong>New</strong> column flags each person who first served in the period — so you can see exactly <em>who</em> to welcome, not just how many. Guests are reported together on one <strong>Guests</strong> row, kept apart from your volunteers; a guest place nobody came for shows as a scheduled slot, never as a visit.</li>
-        <li><strong>Capacity &amp; fill rate</strong> (by Job/Event) — available slots and hours next to what was filled, with a per-program <strong>fill percentage</strong>. Programs that offered capacity but drew no sign-ups appear too, so unused capacity is visible for recruiting. A fill percentage can read <strong>above 100%</strong> where a walk-in was added to a shift that was already full; the report explains that in a footnote — on the printed sheet and in the CSV — whenever it happens.</li>
+        <li><strong>Hours &amp; impact</strong> — sign-ups, scheduled hours, unique and new volunteers, and estimated economic value (hours × an hourly rate). Where check-in is used, a <strong>Check-ins</strong> count sits beside sign-ups and <strong>Check-in Hours</strong> and <strong>Check-in Value</strong> beside the scheduled figures, with a <strong>Walk-ins</strong> count of the people added on the day, and the total line shows the shares, each with the division behind it: what percentage of scheduled hours have a check-in, check-ins as a percentage of sign-ups (above 100% when more came than signed up), and what percentage of the sign-ups came. They are a record of what was captured: a shift nobody remembered to record counts as zero. Group <strong>by volunteer</strong> and a <strong>New</strong> column flags each person who first appeared in the period — signed up, or walked in — so you can see exactly <em>who</em> to welcome, not just how many. Guests are reported together on one <strong>Guests</strong> row, kept apart from your volunteers; a guest place nobody came for shows as a scheduled slot, never as a visit.</li>
+        <li><strong>Capacity &amp; fill rate</strong> (by Job/Event) — available slots and hours next to what was filled, with a per-program <strong>fill percentage</strong>. Programs that offered capacity but drew no sign-ups appear too, so unused capacity is visible for recruiting. Walk-ins never count toward it. It can read <strong>above 100%</strong> where a guest place given up on the day was taken by someone else; the report explains that in a footnote — on the printed sheet and in the CSV — whenever it happens.</li>
       </ul>
       <p>
         Both print to a sheet (or PDF) and download as CSV, mark group-account members with
@@ -798,7 +805,7 @@
         <li><strong>Sign-in &amp; registration</strong> — which methods and which self-registration roles are allowed, and how long sessions and emailed sign-in links last.</li>
         <li><strong>Password rules</strong> — length and required character types.</li>
         <li><strong>Allowed admin actions</strong> — add/edit/delete for accounts, Jobs/Events, and activity plans.</li>
-        <li><strong>Supervisor powers</strong> — creating Jobs/Events, managing who may see private ones, giving the check-in station access to them, locking and cancelling, and changing who is on a shift, each separately; and whether that reach extends to public Jobs/Events.</li>
+        <li><strong>Supervisor powers</strong> — creating Jobs/Events, managing who may see private ones, giving the check-in station access to them, locking and cancelling, and changing who is on a shift, each separately; whether that reach extends to public Jobs/Events; and whether staff may still take someone off on the shift's own day (by default they may not).</li>
         <li><strong>Volunteer self-service</strong> — whether volunteers may edit their own people, email address and group name.</li>
         <li><strong>Time zone</strong> — your organization's, for activity times, reminders and calendar attachments.</li>
         <li><strong>Scheduling window</strong> — how many months of past activity history are retained, and how many months ahead planned activities are generated and open for scheduling.</li>
