@@ -40,7 +40,7 @@
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
     "url": "https://schedule.atyourservices.org",
-    "description": "Self-service volunteer and staff scheduling on a shared calendar. Volunteers book and cancel their own spots from any phone, capacity limits prevent over- and under-staffing, and role-based access keeps volunteers seeing only their own signups while coordinators see the master roster. Volunteers get an automatic email reminder about a day before each shift, with an add-to-calendar file and a \"Can't make it?\" link that drops the shift without signing in so the place opens up for someone else. Volunteers can check in on the day (front-desk station or their own phone) to record who actually came, and reports cover volunteer hours and impact, check-in hours beside the scheduled ones, and by-program capacity and fill rate. Coordinators can take a volunteer off a shift before it starts, with an email telling them, and can add a walk-in who turned up without signing up — added and checked in together, including a guest with no account at all. Volunteers can sign up with guests (\"Jane Doe +2\"), each holding a place on the shift, and change that number until it starts; on the day staff record each guest who came, and only guests checked in count as attended. Administrators can call off a shift that already has volunteers on it with a reason emailed to everyone assigned, review a tamper-evident audit trail of irreversible admin actions, and delete a program without losing the hours and attendance already recorded against it. An activity plan can be changed after volunteers have signed up: the administrator is shown what the change would do and who is standing on it before confirming it, a day that moves takes its roster with it, and everyone affected can be emailed with a reason that also refreshes their calendar entry. Deleting an activity or a whole program likewise offers to email every account that loses an upcoming shift. A program that has finished leaves the volunteer calendar by itself, with its history kept, and a Job can be restarted by giving one of its plans new dates. Administrators can bring an existing volunteer list in from a CSV file: each row is checked first, an account that already exists is never changed, and nothing is created until the administrator confirms.",
+    "description": "Self-service volunteer and staff scheduling on a shared calendar. Volunteers book and cancel their own spots from any phone, capacity limits prevent over- and under-staffing, and role-based access keeps volunteers seeing only their own signups while coordinators see the master roster. Volunteers get an automatic email reminder about a day before each shift, with an add-to-calendar file and a \"Can't make it?\" link that drops the shift without signing in so the place opens up for someone else. Volunteers can check in on the day (front-desk station or their own phone) to record who actually came, and reports cover volunteer hours and impact, check-in hours beside the scheduled ones, and by-program capacity and fill rate. Coordinators can take a volunteer off a shift before it starts, with an email telling them, and can add a walk-in who turned up without signing up — added and checked in together, including a guest with no account at all. Volunteers can sign up with guests (\"Jane Doe +2\"), each holding a place on the shift, and change that number until it starts; on the day staff record each guest who came, and only guests checked in count as attended. Administrators can call off a shift that already has volunteers on it with a reason emailed to everyone assigned, review a tamper-evident audit trail of irreversible admin actions, and delete a program without losing the hours and attendance already recorded against it. An activity plan can be changed after volunteers have signed up: the administrator is shown what the change would do and who is standing on it before confirming it, a day that moves takes its roster with it, and everyone affected can be emailed with a reason that also refreshes their calendar entry. Deleting an activity or a whole program likewise offers to email every account that loses an upcoming shift. A program that has finished leaves the volunteer calendar by itself, with its history kept, and a Job can be restarted by giving one of its plans new dates. Administrators can bring an existing volunteer list in from a CSV file: each row is checked first, an account that already exists is never changed, and nothing is created until the administrator confirms. Every email waits its turn in a queue that survives restarts and keeps to the mail plan's daily and monthly allowance, an Email Activity page shows administrators what was sent and how it went, and an address the mail service refuses, or later reports as bounced, is marked and no longer emailed.",
     "image": "https://atyourservices.org/og-image.png",
     "dateModified": "2026-11-13",
     "offers": {
@@ -165,7 +165,8 @@
         <li><strong>Flexible recurrence &amp; events</strong> — daily, weekday, day-of-week or monthly patterns, open-ended or fixed; dated multi-day events that can return next season.</li>
         <li><strong>Check-in and check-in sheets</strong> — record who actually showed up from a front-desk tablet, a volunteer's phone or the roster, or print the day's roster with write-in lines.</li>
         <li><strong>Hours, impact &amp; fill-rate reports</strong> — monthly, quarterly and annual hours <strong>scheduled and checked in</strong>, estimated economic value, and fill percentages that show where to recruit.</li>
-        <li><strong>Reminders that catch problems</strong> — an email about a day before each shift with an add-to-calendar file and a <strong>"Can't make it?"</strong> link; addresses the mail provider refuses are flagged and stopped.</li>
+        <li><strong>Reminders that catch problems</strong> — an email about a day before each shift with an add-to-calendar file and a <strong>"Can't make it?"</strong> link; addresses the mail provider refuses, or later reports as bounced, are flagged and stopped.</li>
+        <li><strong>Email you can see</strong> — every message waits its turn in a queue that survives restarts and keeps to your mail plan's daily and monthly allowance; an Email Activity page shows what was sent and how it went.</li>
         <li><strong>Bring your volunteer list with you</strong> — import Volunteer accounts from a spreadsheet saved as CSV, checked row by row before anything is created.</li>
         <li><strong>Accountability that keeps history</strong> — a tamper-evident admin audit trail, and deleting a Job/Event keeps its past so last quarter still reports correctly.</li>
         <li><strong>Secure, ad-free, and yours</strong> — hashed passwords, expiring sessions and server-side access control over HTTPS; no ads, ever; your data stays your organization's; your name, colors, logo and wording.</li>
@@ -293,7 +294,9 @@
             <li>does not schedule people, but can open the calendar to <strong>record check-in</strong>, and to <strong>lock</strong> or <strong>cancel/restore</strong> individual activity occurrences on any Job/Event, public or private — including one that <strong>already has volunteers assigned</strong>, with a required reason emailed to all of them (see below; each is configurable);</li>
             <li><strong>changes or ends an activity plan</strong> after people have signed up — shown what the change would do and who is standing on it before it happens, with the option to email everyone affected (see below);</li>
             <li><strong>removes a person</strong> from a shift or <strong>signs someone up</strong> before its day, and <strong>adds a day-of walk-in</strong> or <strong>guest</strong>, on any Job/Event;</li>
-            <li>sees which accounts' email addresses the mail provider has <strong>refused</strong> — an <strong>Email Status</strong> column in the account list, filterable to just those, plus one summary email a day when new ones appear — and can clear the mark once a mailbox works again;</li>
+            <li>sees which accounts' email addresses the mail provider has <strong>refused</strong>, or later reported as bounced, marked as spam by the recipient, or on its list of addresses it will not send to — an <strong>Email Status</strong> column in the account list, filterable to just those, plus one summary email a day when new ones appear — and can clear the mark once a mailbox works again;</li>
+            <li>watches the <strong>email queue</strong> on an <strong>Email Activity</strong> page — whether it is sending, paused or on hold, and what is waiting; every message and how it went (accepted by the mail service, delivered, bounced); and each batch of notices a staff action sent, with <strong>Retry failed</strong> and <strong>Cancel waiting</strong>. It can pause and resume the queue, or allow more email on a busy day (configurable);</li>
+            <li>deletes a person from an account, or a whole account, and the account is emailed the upcoming shifts that came off, whatever its own email setting;</li>
             <li>reads the <strong>audit trail</strong> of who performed the irreversible actions, and can re-verify the whole log on demand.</li>
           </ul>
         </li>
@@ -323,8 +326,8 @@
           <strong>reason</strong>, and flags up front anyone with no email address — so you can decide
           whether you can reach everybody before you commit. On Proceed the reason is emailed to every
           assigned account (regardless of their own notification preference — they did not choose this),
-          and the page reports the outcome by <em>name</em>: who was emailed, who was not, and who has no
-          address, each copyable for a phone-call list. <strong>Restore</strong> works the same
+          and the page answers as soon as the emails are queued, then reports the outcome by <em>name</em>: who was emailed, who was not, and who has no
+          address, each copyable for a phone-call list. If some are still on their way after a few seconds it says so — <em>Sent 3 of 5 — the rest are on their way</em> — and the queue keeps sending after you leave the page. <strong>Restore</strong> works the same
           way, with its own reason, and notifies the same people. Both are written to the audit trail.</li>
       </ul>
       <p>
@@ -367,8 +370,8 @@
           — and, where guests are enabled, how many guests come with them. The panel shows how many places
           are left and lets you tick only as many as fit. It is the volunteer's own sign-up, made for
           them: it counts as <strong>signed up</strong>, they can cancel it themselves, and it is refused
-          for the same reasons theirs would be — the shift is full, locked or cancelled, or the account
-          has no access to that private Job/Event. Staff choose whether the account is emailed its
+          for the same reasons theirs would be — the shift is full, locked or cancelled, the account
+          has no access to that private Job/Event, or the account itself is locked. Staff choose whether the account is emailed its
           confirmation (ticked to start with); when sent, it goes out whatever the account's own email
           setting, since somebody else made the booking, and the panel says whether it reached them.</li>
         <li><strong>Add someone who came — on the day.</strong> A volunteer turns up without having signed
@@ -482,7 +485,7 @@
           volunteer's calendar rather than cancelling it. A shift that now starts within the next day or
           so also carries the <strong>"Can't make it?"</strong> link, since a new time is exactly when people
           find they cannot come. Afterwards the page reports by name who was emailed, who was not, and
-          who has no address.</li>
+          who has no address — or, while some are still going, how many have been sent so far.</li>
         <li><strong>A change nobody is told about still reaches them.</strong> If you choose not to email,
           or a message fails, a volunteer whose reminder had already gone out gets it again, stating the
           new time — so nobody turns up at the old one on the strength of an email you never corrected.</li>
@@ -596,12 +599,12 @@
         changing an account's role; creating an account that is already an
         Administrator; an Administrator setting an account's password or changing its email address
         (neither the password nor the addresses are recorded); importing accounts (the counts only); removing the last person from a group account; taking a person off a shift,
-        signing someone up on their behalf, adding a day-of walk-in, or adding, filling or removing a guest; clearing an account's undeliverable-address mark; and cancelling or restoring
+        signing someone up on their behalf, adding a day-of walk-in, or adding, filling or removing a guest; clearing an account's undeliverable-address mark; pausing or resuming the email queue, allowing more email for the day, and retrying or cancelling a batch of notices; and cancelling or restoring
         a shift that had volunteers on it —
         recording, where more than one role may do it, which role did. Each
         record keeps the time, who did it, what it was done to (captured at the time, since the thing
         itself is usually gone), and how it turned out — including, for a
-        cancellation, the names of everyone who could not be emailed, and, for a walk-in, the resulting
+        cancellation, how many people were emailed and the names of anyone who could not be, and, for a walk-in, the resulting
         roster size against the maximum — so a capacity figure over 100% can still be explained months
         later.
       </p>
@@ -822,7 +825,7 @@
         <li><strong>Volunteer self-service</strong> — whether volunteers may edit their own people, email address and group name.</li>
         <li><strong>Time zone</strong> — your organization's, for activity times, reminders and calendar attachments.</li>
         <li><strong>Scheduling window</strong> — how many months of past activity history are retained, and how many months ahead planned activities are generated and open for scheduling.</li>
-        <li><strong>Email</strong> — on or off as a whole; the sender name and the help address shown in each email; whether a new account is asked about sign-up confirmations, always gets them or never does, and whether cancellations are confirmed too; and whether changing or deleting a program offers to email the people on it.</li>
+        <li><strong>Email</strong> — on or off as a whole; the sender name and the help address shown in each email; whether a new account is asked about sign-up confirmations, always gets them or never does, and whether cancellations are confirmed too; whether changing or deleting a program offers to email the people on it; daily and monthly sending limits to match your mail plan; and whether administrators have the Email Activity page.</li>
         <li><strong>Reminders</strong> — automatic for everyone (each volunteer can switch them off) or only for those who opt in at sign-up; how far ahead they go (a day before each shift, or the evening before at an hour you choose); whether they carry the <strong>"Can't make it?"</strong> link; and whether administrators get the daily undeliverable-address summary.</li>
         <li><strong>Check-in</strong> — on or off, and which of the three ways (front-desk station, a volunteer's phone, the staff roster); how early phone check-in opens; and how many days back staff may enter a paper sheet.</li>
         <li><strong>Reports</strong> — Supervisors' check-in sheets and the hours reports each on or off; the hourly rate behind the economic value; and how many years of hours history to keep.</li>
@@ -848,7 +851,7 @@
         <ul>
           <li><strong>Runtime</strong> — Node.js 26.</li>
           <li><strong>Database</strong> — MongoDB. A free hosted MongoDB Atlas cluster is enough for a small organization. The free tier takes no backups, so schedule your own.</li>
-          <li><strong>Email</strong> — a sending service: Resend (an API key) or your own SMTP server (host, port, username and password), and a sender address on a domain where you can add the DNS records that verify it. Email sign-in links, confirmations, reminders and every notice depend on it.</li>
+          <li><strong>Email</strong> — a sending service: Resend (an API key) or your own SMTP server (host, port, username and password), and a sender address on a domain where you can add the DNS records that verify it. Email sign-in links, confirmations, reminders and every notice depend on it. With Resend, an optional webhook also lets bounces, spam complaints and suppressed addresses mark the account; with SMTP, an address is marked only when the server refuses it at sending.</li>
           <li><strong>HTTPS</strong> — a secure connection in front of the application.</li>
           <li><strong>Server size</strong> — 256 MB of memory at minimum, 512 MB recommended for headroom on busy sign-up days, and half a CPU.</li>
         </ul>
