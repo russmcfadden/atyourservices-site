@@ -36,11 +36,18 @@ export function classifyBot(request) {
  * Build the stored record. `bot` is present ONLY when the request looks automated, so human rows keep
  * the exact shape written before 2026-08-19 and old records stay comparable to new ones.
  * Deliberately NOT stored: IP address. Counting clicks does not require identifying people.
+ *
+ * `src` is an opaque per-email tag from the link itself (`/demo?s=h94`). An email click and a mail
+ * scanner's prefetch both arrive with an empty referer, so without it no click can be tied to a send.
+ * It sits right after `t` so it stays visible in the dashboard's truncated value column. Untagged
+ * links keep the old shape.
  */
 export function clickValue(request, now) {
   const bot = classifyBot(request);
+  const src = (new URL(request.url).searchParams.get("s") || "").toLowerCase().replace(/[^a-z0-9-]/g, "").slice(0, 16);
   return JSON.stringify({
     t: now,
+    ...(src ? { src } : {}),
     ref: request.headers.get("referer") || "",     // "" for QR scans and PDF taps - AND for most bots
     ua: (request.headers.get("user-agent") || "").slice(0, 200),
     country: request.cf?.country || "",
