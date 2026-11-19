@@ -5,7 +5,7 @@ Static portfolio/landing site for **atyourservices.org**. No build step — plai
 ```
 index.html                 Landing page (intro, Products, About, Contact)
 styles.css                 Single stylesheet
-products/scheduling.html   Product description for the Volunteer Scheduling Application
+products/scheduling.html   Product description for At Your Services Volunteer Scheduling
 robots.txt                 Crawl directives + sitemap pointer
 sitemap.xml                URL list for search engines
 favicon.svg / .ico         Calendar-heart brand mark (ice blue / white)
