@@ -5,7 +5,8 @@ Static portfolio/landing site for **atyourservices.org**. No build step — plai
 ```
 index.html                 Landing page (intro, Products, About, Contact)
 styles.css                 Single stylesheet
-products/scheduling.html   Product description for At Your Services Volunteer Scheduling
+products/scheduling.html   Product page: overview, pricing, features, screenshots (kept short, for buyers)
+products/scheduling-guide.html  User guide: every section in full (how it works, roles, check-in, demo, settings)
 robots.txt                 Crawl directives + sitemap pointer
 sitemap.xml                URL list for search engines
 favicon.svg / .ico         Calendar-heart brand mark (ice blue / white)
@@ -14,7 +15,13 @@ og-image.png               1200×630 social/link-preview card
 ```
 
 Each page carries a `<link rel="canonical">`, Open Graph / Twitter Card tags, and JSON-LD
-structured data (`Organization` on the landing page, `SoftwareApplication` on the product page).
+structured data (`Organization` + `SoftwareApplication` on the landing page, `SoftwareApplication` on the product page).
+
+**Release-note copy goes in the guide.** Per-release detail ("Product page: 2.x" commits) belongs in
+`products/scheduling-guide.html`. The product page carries one line per feature in *Features at a glance*
+and a link; it was split from a ~10k-word manual on 2026-11-19 so a buyer can reach pricing in one scroll.
+A section moved off the product page must be added to the `moved` list in its script, so old
+`/products/scheduling#section` links still land.
 
 ## Deploy (Cloudflare Pages)
 1. Push this folder to its own GitHub repo (e.g. `atyourservices-site`).
@@ -28,7 +35,7 @@ The live demo links point to `/demo`, a Pages Function that records the click in
 `https://schedule.atyourservices.org`. Link the demo that way, not directly, or the click is invisible.
 
 ### ⚠️ Bump the stylesheet version whenever `styles.css` changes
-Every page links it as `styles.css?v=YYYYMMDD`. **All four pages must carry the same value**, and it must
+Every page links it as `styles.css?v=YYYYMMDD`. **Every page must carry the same value**, and it must
 be bumped in the same commit as the CSS. The file is unhashed and shared, and the zone stamps
 `Cache-Control: max-age=14400` on it regardless of what `_headers` asks for (Cloudflare's Browser Cache
 TTL overrides origin headers) — so without a new query string a returning visitor gets new markup with a
