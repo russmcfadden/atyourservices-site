@@ -7,6 +7,7 @@ index.html                 Landing page (intro, Products, About, Contact)
 styles.css                 Single stylesheet
 products/scheduling.html   Product page: overview, pricing, features, screenshots (kept short, for buyers)
 products/scheduling-guide.html  User guide: every section in full (how it works, roles, check-in, demo, settings)
+volunteer-scheduling-for-museums.html  Segment page for the outreach's main segment (demo link tagged ?s=museums)
 robots.txt                 Crawl directives + sitemap pointer
 sitemap.xml                URL list for search engines
 favicon.svg / .ico         Calendar-heart brand mark (ice blue / white)
