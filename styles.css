@@ -77,6 +77,15 @@ a { color: var(--accent); }
 .section[id] { scroll-margin-top: calc(var(--header-h, 145px) + 12px); }
 .section-alt { background: var(--bg-alt); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .section h2 { font-size: 1.95rem; font-weight: 800; letter-spacing: -0.3px; margin: 0 0 20px; }
+/* subheadings & prose inside standard sections */
+.section h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 28px 0 8px;
+}
+.section > .wrap > p {
+  max-width: 760px;
+}
 
 /* product block + feature cards */
 .product h3 { margin: 0 0 6px; font-size: 1.5rem; }
